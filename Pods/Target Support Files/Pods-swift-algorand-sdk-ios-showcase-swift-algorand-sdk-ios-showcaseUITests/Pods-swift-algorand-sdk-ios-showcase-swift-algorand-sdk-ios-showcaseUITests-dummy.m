@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests : NSObject
+@end
+@implementation PodsDummy_Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests
+@end

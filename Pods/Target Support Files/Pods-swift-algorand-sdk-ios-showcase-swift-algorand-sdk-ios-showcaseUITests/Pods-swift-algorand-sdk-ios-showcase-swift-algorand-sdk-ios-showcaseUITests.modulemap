@@ -1,0 +1,6 @@
+framework module Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests {
+  umbrella header "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

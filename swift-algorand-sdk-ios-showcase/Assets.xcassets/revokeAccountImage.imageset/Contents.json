@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "revoke.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OKh-HB-ICF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUU-3p-hlI">
+                                <rect key="frame" x="218" y="206" width="165" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="homeaccounttransfers"/>
+                                <connections>
+                                    <action selector="moveToAccountsAndTransactionsPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o4S-gk-UeW"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Node and Network Settings" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFd-ZK-yXE">
+                                <rect key="frame" x="9" y="368" width="201" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Atomic Transfer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTA-bD-9CM">
+                                <rect key="frame" x="236" y="580" width="129" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Algorand Standard Assets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNL-C8-o0L">
+                                <rect key="frame" x="11" y="572" width="199" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57v-sO-rJv">
+                                <rect key="frame" x="221" y="422" width="158" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="homeatomictransfers"/>
+                                <connections>
+                                    <action selector="moveToAtomicTransferScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wlf-SD-hWu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibi-C6-5J0">
+                                <rect key="frame" x="11" y="422" width="201" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="homeasa"/>
+                                <connections>
+                                    <action selector="moveToAlgorandStandardAssetsPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sb4-fW-Y2o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfQ-aS-SsQ">
+                                <rect key="frame" x="11" y="609" width="199" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="homeasclayer1"/>
+                                <connections>
+                                    <action selector="moveToSmartContractController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JtL-8W-9sY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Accounts And Transactions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqZ-Wk-CuC">
+                                <rect key="frame" x="218" y="368" width="165" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JF8-pF-9J8">
+                                <rect key="frame" x="9" y="206" width="201" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="homenodeandnetworksettings"/>
+                                <connections>
+                                    <action selector="moveToNodeAndNetworkSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rfm-sm-wWR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Network: Testnet" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IP-C8-48c">
+                                <rect key="frame" x="11" y="156" width="394" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome to Algorand Swift SDK" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vje-MV-DLK">
+                                <rect key="frame" x="11" y="100" width="394" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ASC Layer 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-NK-HwL">
+                                <rect key="frame" x="45" y="777" width="129" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="luP-4o-3u3"/>
+                    <connections>
+                        <outlet property="networkLabel" destination="7IP-C8-48c" id="4lA-wg-PQ3"/>
+                        <segue destination="z7E-TS-K0K" kind="show" identifier="moveToNodeAndNetworkSettings" id="tZT-n1-g6B"/>
+                        <segue destination="TLn-tw-ch3" kind="show" identifier="moveToAccountsAndTransactions" id="Gi9-jA-fCm"/>
+                        <segue destination="gxD-hL-igz" kind="show" identifier="moveToAlgorandAssetController" id="FBU-SR-MfV"/>
+                        <segue destination="dgU-Na-JVj" kind="show" identifier="moveToAtomicTransferScreen" id="wSk-3J-Oio"/>
+                        <segue destination="FN4-FL-Ypk" kind="show" identifier="moveToSmartContractController" id="YbF-gn-rCE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597.10144927536237" y="71.651785714285708"/>
+        </scene>
+        <!--Algorand Assets Controller-->
+        <scene sceneID="OZI-Gq-HbS">
+            <objects>
+                <viewController id="gxD-hL-igz" customClass="AlgorandAssetsController" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ylf-Ru-3y0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZ5-ie-Adc">
+                                <rect key="frame" x="19" y="475" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Configure Manager Role"/>
+                                <connections>
+                                    <action selector="configureManagerRoleClicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="9kv-ko-UrB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAr-b6-xuq">
+                                <rect key="frame" x="241" y="303" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Opt In Account 3"/>
+                                <connections>
+                                    <action selector="optIntoAccount3Clicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="idN-yL-Ujs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBw-wb-DoG">
+                                <rect key="frame" x="240" y="475" width="117" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Freeze Account3"/>
+                                <connections>
+                                    <action selector="freezeAccount3:" destination="gxD-hL-igz" eventType="touchUpInside" id="b5Q-Tw-0TC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhe-nw-0S6">
+                                <rect key="frame" x="28" y="647" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Revoke Account3"/>
+                                <connections>
+                                    <action selector="revokeAccount3Clicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="gB1-OE-pVj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNe-ic-zHO">
+                                <rect key="frame" x="231" y="647" width="142" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Destroy on Account1"/>
+                                <connections>
+                                    <action selector="destroyAccount1Clicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="qPu-TR-VRF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-uZ-EoI">
+                                <rect key="frame" x="28" y="97" width="353" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="Asset ID ="/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Network:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4La-JA-7ke">
+                                <rect key="frame" x="35" y="140" width="338" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kls-bj-eDH">
+                                <rect key="frame" x="231" y="685" width="163" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ks-Ov-imX">
+                                <rect key="frame" x="30" y="169" width="148" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="createAssetImage"/>
+                                <connections>
+                                    <action selector="createAssetClicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="UfU-pn-RFd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XE-SZ-4i2">
+                                <rect key="frame" x="28" y="341" width="148" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="changeManager"/>
+                                <connections>
+                                    <action selector="configureManagerRoleClicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="4Ce-0n-uSI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5SQ-c2-QRB">
+                                <rect key="frame" x="19" y="513" width="148" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="revokeAccountImage"/>
+                                <connections>
+                                    <action selector="revokeAccount3Clicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="B3v-JZ-Z20"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfq-55-egY">
+                                <rect key="frame" x="19" y="680" width="148" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="transferAssetImage"/>
+                                <connections>
+                                    <action selector="transferFromAccount1to3:" destination="gxD-hL-igz" eventType="touchUpInside" id="RMH-Pj-hES"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAX-wb-t4R">
+                                <rect key="frame" x="225" y="513" width="148" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="destroyAccountImage"/>
+                                <connections>
+                                    <action selector="destroyAccount1Clicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="BOZ-no-oep"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwC-Zp-2aE">
+                                <rect key="frame" x="225" y="341" width="148" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="freezeAsset"/>
+                                <connections>
+                                    <action selector="freezeAccount3:" destination="gxD-hL-igz" eventType="touchUpInside" id="Ovv-Pa-9NN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhw-WW-plp">
+                                <rect key="frame" x="225" y="169" width="148" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="optinasset"/>
+                                <connections>
+                                    <action selector="optIntoAccount3Clicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="9ym-o8-LO4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-gH-T2u">
+                                <rect key="frame" x="60" y="303" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create Asset"/>
+                                <connections>
+                                    <action selector="createAssetClicked:" destination="gxD-hL-igz" eventType="touchUpInside" id="xsd-h8-vgL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCK-ex-cse">
+                                <rect key="frame" x="0.0" y="803" width="194" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Transfer From Account1 to 3"/>
+                                <connections>
+                                    <action selector="transferFromAccount1to3:" destination="gxD-hL-igz" eventType="touchUpInside" id="OB3-Ba-1hf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dpr-C7-Bo3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="usi-Hi-053"/>
+                    <connections>
+                        <outlet property="assetIDLabel" destination="aiJ-uZ-EoI" id="rXh-0J-Vca"/>
+                        <outlet property="infoLabel" destination="kls-bj-eDH" id="5sa-7c-HuE"/>
+                        <outlet property="networkLabel" destination="4La-JA-7ke" id="4Gm-c3-b3i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bH2-VA-2re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.57971014492762" y="1413.6160714285713"/>
+        </scene>
+        <!--Node And Network Settings Controller-->
+        <scene sceneID="mj1-rR-mFB">
+            <objects>
+                <viewController id="z7E-TS-K0K" customClass="NodeAndNetworkSettingsController" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ai9-Vc-p5e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vPO-bY-2jw">
+                                <rect key="frame" x="10" y="108" width="394" height="32"/>
+                                <segments>
+                                    <segment title="Testnet"/>
+                                    <segment title="Betanet"/>
+                                </segments>
+                                <connections>
+                                    <action selector="netSelectionChanged:" destination="z7E-TS-K0K" eventType="valueChanged" id="Ixk-qJ-LS6"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1g-ft-VEB" customClass="DLRadioButton">
+                                <rect key="frame" x="10" y="199" width="394" height="34"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" title="Purestake">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" systemColor="linkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorSize">
+                                        <real key="value" value="31"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected">
+                                        <imageReference key="value" image="circle.dashed.inset.fill" catalog="system" symbolScale="medium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon">
+                                        <imageReference key="value" image="circle.dashed" catalog="system" symbolScale="medium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" systemColor="linkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectPurestakeNode:" destination="z7E-TS-K0K" eventType="touchUpInside" id="gKB-Eq-F4T"/>
+                                    <outletCollection property="otherButtons" destination="g9T-r6-Fby" id="zFP-3F-fCp"/>
+                                    <outletCollection property="otherButtons" destination="Zjb-CT-tal" id="ial-8q-SVH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9T-r6-Fby" customClass="DLRadioButton">
+                                <rect key="frame" x="10" y="256" width="394" height="34"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" title="Hackathon">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" systemColor="linkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorSize">
+                                        <real key="value" value="31"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected">
+                                        <imageReference key="value" image="circle.dashed.inset.fill" catalog="system" symbolScale="medium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon">
+                                        <imageReference key="value" image="circle.dashed" catalog="system" symbolScale="medium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" systemColor="linkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectHackathonNode:" destination="z7E-TS-K0K" eventType="touchUpInside" id="AaI-t0-pY9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjb-CT-tal" customClass="DLRadioButton">
+                                <rect key="frame" x="10" y="315" width="394" height="34"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" title="Custom Node">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                        <color key="value" systemColor="linkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorSize">
+                                        <real key="value" value="31"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconSelected">
+                                        <imageReference key="value" image="circle.dashed.inset.fill" catalog="system" symbolScale="medium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon">
+                                        <imageReference key="value" image="circle.dashed" catalog="system" symbolScale="medium"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconOnRight" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="iconSquare" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" systemColor="linkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectCustomNode:" destination="z7E-TS-K0K" eventType="touchUpInside" id="hwU-6D-ni2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BQY-gc-BAw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g9T-r6-Fby" firstAttribute="leading" secondItem="BQY-gc-BAw" secondAttribute="leading" constant="10" id="4VY-mS-3Us"/>
+                            <constraint firstItem="BQY-gc-BAw" firstAttribute="trailing" secondItem="vPO-bY-2jw" secondAttribute="trailing" constant="10" id="4gZ-5z-Yya"/>
+                            <constraint firstItem="Zjb-CT-tal" firstAttribute="top" secondItem="g9T-r6-Fby" secondAttribute="bottom" constant="25" id="Az3-6f-6dK"/>
+                            <constraint firstItem="BQY-gc-BAw" firstAttribute="trailing" secondItem="Zjb-CT-tal" secondAttribute="trailing" constant="10" id="CYR-pi-lfx"/>
+                            <constraint firstItem="vPO-bY-2jw" firstAttribute="top" secondItem="BQY-gc-BAw" secondAttribute="top" constant="20" id="Hhw-eC-7wf"/>
+                            <constraint firstItem="o1g-ft-VEB" firstAttribute="top" secondItem="vPO-bY-2jw" secondAttribute="bottom" constant="60" id="Oko-zb-eNy"/>
+                            <constraint firstItem="Zjb-CT-tal" firstAttribute="leading" secondItem="BQY-gc-BAw" secondAttribute="leading" constant="10" id="TPm-Rs-AnP"/>
+                            <constraint firstItem="BQY-gc-BAw" firstAttribute="trailing" secondItem="o1g-ft-VEB" secondAttribute="trailing" constant="10" id="Tr5-9y-5BF"/>
+                            <constraint firstItem="BQY-gc-BAw" firstAttribute="trailing" secondItem="g9T-r6-Fby" secondAttribute="trailing" constant="10" id="Z2x-DY-4KD"/>
+                            <constraint firstItem="g9T-r6-Fby" firstAttribute="top" secondItem="o1g-ft-VEB" secondAttribute="bottom" constant="23" id="d4J-f4-Hn2"/>
+                            <constraint firstItem="vPO-bY-2jw" firstAttribute="leading" secondItem="BQY-gc-BAw" secondAttribute="leading" constant="10" id="kKx-Ri-AaR"/>
+                            <constraint firstItem="o1g-ft-VEB" firstAttribute="leading" secondItem="BQY-gc-BAw" secondAttribute="leading" constant="10" id="ybd-7h-g9w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CfV-K2-ywt"/>
+                    <connections>
+                        <outlet property="netSelector" destination="vPO-bY-2jw" id="VwK-4I-POg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXD-Sj-qVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1405.7971014492755" y="71.651785714285708"/>
+        </scene>
+        <!--Atomic Transfer Controller-->
+        <scene sceneID="hBp-Wd-NEV">
+            <objects>
+                <viewController id="dgU-Na-JVj" customClass="AtomicTransferController" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bHr-Hb-o7g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-06-511">
+                                <rect key="frame" x="53" y="107" width="303" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="homeatomictransfers"/>
+                                <connections>
+                                    <action selector="transferFromAccount1to2And3:" destination="dgU-Na-JVj" eventType="touchUpInside" id="0VH-Vu-8pG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mQ-z5-USn">
+                                <rect key="frame" x="109" y="300" width="196" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Account 1 to both A2 and A3"/>
+                                <connections>
+                                    <action selector="transferFromAccount1to2And3:" destination="dgU-Na-JVj" eventType="touchUpInside" id="IG7-J2-Af7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q80-Mt-JXs">
+                                <rect key="frame" x="20" y="423" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AD-dU-tPU">
+                                <rect key="frame" x="20" y="469" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-N0-27z">
+                                <rect key="frame" x="20" y="376" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dUO-Da-GHR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1kP-xO-TbL"/>
+                    <connections>
+                        <outlet property="account1BalanceAfterTransaction" destination="5AD-dU-tPU" id="ESf-3C-rT1"/>
+                        <outlet property="account1BalanceBeforeTransaction" destination="cKJ-N0-27z" id="4or-rX-KVV"/>
+                        <outlet property="transactionId" destination="Q80-Mt-JXs" id="CEe-g8-aa1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sh1-ge-303" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.7391304347827" y="760.71428571428567"/>
+        </scene>
+        <!--Smart Contract Controller-->
+        <scene sceneID="R7m-56-ldS">
+            <objects>
+                <viewController id="FN4-FL-Ypk" customClass="SmartContractController" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kdG-zR-Rxj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYt-Q8-FAM">
+                                <rect key="frame" x="10" y="107" width="371" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="contractaccount"/>
+                                <connections>
+                                    <action selector="contractAccountAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="Ecd-cd-AUi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCc-5o-AhX">
+                                <rect key="frame" x="10" y="362" width="371" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="accountdelegation"/>
+                                <connections>
+                                    <action selector="accountDelegateAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="Rmq-sO-skb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-nE-SPF">
+                                <rect key="frame" x="20" y="315" width="361" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Split Contract"/>
+                                <connections>
+                                    <action selector="contractAccountAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="iyN-lH-om2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-1S-noR">
+                                <rect key="frame" x="10" y="572" width="371" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Account Delegation"/>
+                                <connections>
+                                    <action selector="accountDelegateAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="tOz-ps-c0L"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zma-e1-riN">
+                                <rect key="frame" x="10" y="699" width="371" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Jv-Gm-6Kc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="y96-g4-X9D"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="zma-e1-riN" id="i6K-Lv-CGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEA-Sb-cL5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886.9565217391305" y="817.63392857142856"/>
+        </scene>
+        <!--Accounts And Transactions Controller-->
+        <scene sceneID="DUE-v5-ZQL">
+            <objects>
+                <viewController id="TLn-tw-ch3" customClass="AccountsAndTransactionsController" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mAL-pU-i5b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec2-Dx-hdg">
+                                <rect key="frame" x="10" y="118" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkR-aC-ufR">
+                                <rect key="frame" x="10" y="172" width="67" height="30"/>
+                                <state key="normal" title="Get Block"/>
+                                <connections>
+                                    <action selector="getBlockInfo:" destination="TLn-tw-ch3" eventType="touchUpInside" id="t11-cW-LBV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJR-wc-j0i">
+                                <rect key="frame" x="10" y="210" width="135" height="30"/>
+                                <state key="normal" title="Generate Account 1"/>
+                                <connections>
+                                    <action selector="generateAccount1:" destination="TLn-tw-ch3" eventType="touchUpInside" id="hc3-DH-1va"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeB-fb-5eC">
+                                <rect key="frame" x="155" y="210" width="98" height="30"/>
+                                <state key="normal" title="Funds Needed"/>
+                                <connections>
+                                    <action selector="account1FundsNeededAction:" destination="TLn-tw-ch3" eventType="touchUpInside" id="kHL-g3-mGL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERP-G7-ovg">
+                                <rect key="frame" x="263" y="210" width="151" height="30"/>
+                                <state key="normal" title="Get Account1 Balance"/>
+                                <connections>
+                                    <action selector="account1GetAccountBalanceButton:" destination="TLn-tw-ch3" eventType="touchUpInside" id="vnD-67-KXf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i5-K9-V2v">
+                                <rect key="frame" x="10" y="245" width="137" height="30"/>
+                                <state key="normal" title="Generate Account 2"/>
+                                <connections>
+                                    <action selector="generateAccount2:" destination="TLn-tw-ch3" eventType="touchUpInside" id="uPl-SD-buM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCl-2R-3vh">
+                                <rect key="frame" x="8" y="283" width="137" height="30"/>
+                                <state key="normal" title="Generate Account 3"/>
+                                <connections>
+                                    <action selector="generateAccount3:" destination="TLn-tw-ch3" eventType="touchUpInside" id="Qaf-L2-pAv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVI-2x-kr8">
+                                <rect key="frame" x="10" y="364" width="394" height="30"/>
+                                <state key="normal" title="Transaction from Account 1 to 2">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="transferFromAccount1ToAccount2:" destination="TLn-tw-ch3" eventType="touchUpInside" id="gGo-QX-tzn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KG1-eK-utJ">
+                                <rect key="frame" x="45" y="397" width="359" height="30"/>
+                                <state key="normal" title=" Create Multisig Address">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="createMultisigAddress:" destination="TLn-tw-ch3" eventType="touchUpInside" id="Q4W-MV-1gq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSY-Dl-rP9">
+                                <rect key="frame" x="45" y="433" width="359" height="30"/>
+                                <state key="normal" title="Senf from Multisig to Account 2">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendFromMultisigAddressToAccount2:" destination="TLn-tw-ch3" eventType="touchUpInside" id="mbU-FE-2HV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prJ-ka-DBx">
+                                <rect key="frame" x="157" y="244" width="217" height="30"/>
+                                <connections>
+                                    <action selector="account2FundsNeededAction:" destination="TLn-tw-ch3" eventType="touchUpInside" id="87A-6v-36j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTa-N1-od1">
+                                <rect key="frame" x="155" y="282" width="30" height="30"/>
+                                <connections>
+                                    <action selector="account3FundsNeededAction:" destination="TLn-tw-ch3" eventType="touchUpInside" id="r3x-3m-ocb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyY-ng-AAP">
+                                <rect key="frame" x="384" y="245" width="30" height="30"/>
+                                <connections>
+                                    <action selector="account2GetAccountBalanceButton:" destination="TLn-tw-ch3" eventType="touchUpInside" id="bQ4-Rl-dxd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIL-ub-Cyd">
+                                <rect key="frame" x="193" y="283" width="221" height="30"/>
+                                <connections>
+                                    <action selector="account3GetAccountBalanceBAction:" destination="TLn-tw-ch3" eventType="touchUpInside" id="0k5-a2-znQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-QL-baY" customClass="AutoLayoutButton" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target">
+                                <rect key="frame" x="10" y="549" width="394" height="34"/>
+                                <state key="normal" title="Info text">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="copyInfoLabelTextAction:" destination="TLn-tw-ch3" eventType="touchUpInside" id="Kae-Pm-bpr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dmU-PC-fIU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ERP-G7-ovg" firstAttribute="top" secondItem="dkR-aC-ufR" secondAttribute="bottom" constant="8" symbolic="YES" id="3pB-rp-NGf"/>
+                            <constraint firstItem="nTa-N1-od1" firstAttribute="leading" secondItem="bCl-2R-3vh" secondAttribute="trailing" constant="10" id="7r9-Pw-91s"/>
+                            <constraint firstItem="mSY-Dl-rP9" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="45" id="912-VZ-Pmq"/>
+                            <constraint firstItem="3i5-K9-V2v" firstAttribute="top" secondItem="QJR-wc-j0i" secondAttribute="bottom" constant="5" id="Bk9-Cf-cPV"/>
+                            <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="ERP-G7-ovg" secondAttribute="trailing" id="EHx-FH-bRr"/>
+                            <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="mSY-Dl-rP9" secondAttribute="trailing" constant="10" id="EPP-M1-8TN"/>
+                            <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="YIL-ub-Cyd" secondAttribute="trailing" id="EoP-sA-0pb"/>
+                            <constraint firstItem="bCl-2R-3vh" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="8" id="Ifm-vG-DdN"/>
+                            <constraint firstItem="YIL-ub-Cyd" firstAttribute="top" secondItem="KyY-ng-AAP" secondAttribute="bottom" constant="8" symbolic="YES" id="KuJ-pa-cYh"/>
+                            <constraint firstItem="dkR-aC-ufR" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="10" id="M7j-yi-mO2"/>
+                            <constraint firstItem="ERP-G7-ovg" firstAttribute="leading" secondItem="UeB-fb-5eC" secondAttribute="trailing" constant="10" id="Nv6-zz-va3"/>
+                            <constraint firstItem="UeB-fb-5eC" firstAttribute="leading" secondItem="QJR-wc-j0i" secondAttribute="trailing" constant="10" id="OfB-P3-alK"/>
+                            <constraint firstItem="dkR-aC-ufR" firstAttribute="leading" secondItem="3i5-K9-V2v" secondAttribute="leading" id="PL7-g2-jcI"/>
+                            <constraint firstItem="prJ-ka-DBx" firstAttribute="top" secondItem="UeB-fb-5eC" secondAttribute="bottom" constant="4" id="R1J-OB-zko"/>
+                            <constraint firstItem="QJR-wc-j0i" firstAttribute="top" secondItem="dkR-aC-ufR" secondAttribute="bottom" constant="8" symbolic="YES" id="RqY-rH-4tF"/>
+                            <constraint firstItem="KyY-ng-AAP" firstAttribute="top" secondItem="ERP-G7-ovg" secondAttribute="bottom" constant="5" id="Rsc-Yy-ExZ"/>
+                            <constraint firstAttribute="trailing" secondItem="KyY-ng-AAP" secondAttribute="trailing" id="W6p-LC-17f"/>
+                            <constraint firstItem="KG1-eK-utJ" firstAttribute="top" secondItem="tVI-2x-kr8" secondAttribute="bottom" constant="3" id="XC4-4w-kyI"/>
+                            <constraint firstItem="dkR-aC-ufR" firstAttribute="leading" secondItem="ec2-Dx-hdg" secondAttribute="leading" id="YWS-Ni-NP8"/>
+                            <constraint firstItem="dkR-aC-ufR" firstAttribute="leading" secondItem="QJR-wc-j0i" secondAttribute="leading" id="cFi-Y2-VeN"/>
+                            <constraint firstItem="prJ-ka-DBx" firstAttribute="leading" secondItem="3i5-K9-V2v" secondAttribute="trailing" constant="10" id="clB-YA-Mcu"/>
+                            <constraint firstItem="nTa-N1-od1" firstAttribute="top" secondItem="prJ-ka-DBx" secondAttribute="bottom" constant="8" symbolic="YES" id="cvV-QN-ewD"/>
+                            <constraint firstItem="Mbu-QL-baY" firstAttribute="top" secondItem="mSY-Dl-rP9" secondAttribute="bottom" constant="86" id="dFE-Uy-rpy"/>
+                            <constraint firstItem="tVI-2x-kr8" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="10" id="ecg-gU-Su1"/>
+                            <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="tVI-2x-kr8" secondAttribute="trailing" constant="10" id="gp1-i8-DpG"/>
+                            <constraint firstItem="bCl-2R-3vh" firstAttribute="top" secondItem="3i5-K9-V2v" secondAttribute="bottom" constant="8" symbolic="YES" id="gy1-FE-ZeZ"/>
+                            <constraint firstItem="tVI-2x-kr8" firstAttribute="top" secondItem="bCl-2R-3vh" secondAttribute="bottom" constant="51" id="hoC-XT-DHH"/>
+                            <constraint firstItem="KG1-eK-utJ" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="45" id="jZa-DR-151"/>
+                            <constraint firstItem="mSY-Dl-rP9" firstAttribute="top" secondItem="KG1-eK-utJ" secondAttribute="bottom" constant="6" id="jnK-OZ-ehN"/>
+                            <constraint firstItem="YIL-ub-Cyd" firstAttribute="leading" secondItem="nTa-N1-od1" secondAttribute="trailing" constant="8" symbolic="YES" id="mlo-QE-cJO"/>
+                            <constraint firstItem="dkR-aC-ufR" firstAttribute="top" secondItem="mAL-pU-i5b" secondAttribute="top" constant="172" id="n1S-fb-4m3"/>
+                            <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="Mbu-QL-baY" secondAttribute="trailing" constant="10" id="nML-WX-odc"/>
+                            <constraint firstItem="dkR-aC-ufR" firstAttribute="top" secondItem="ec2-Dx-hdg" secondAttribute="bottom" constant="33.5" id="ppY-vN-J4K"/>
+                            <constraint firstItem="YIL-ub-Cyd" firstAttribute="leading" secondItem="nTa-N1-od1" secondAttribute="trailing" constant="8" symbolic="YES" id="rU7-U9-7sH"/>
+                            <constraint firstItem="UeB-fb-5eC" firstAttribute="top" secondItem="dkR-aC-ufR" secondAttribute="bottom" constant="8" symbolic="YES" id="ttu-0n-ll4"/>
+                            <constraint firstItem="Mbu-QL-baY" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="10" id="uBl-Vn-EUB"/>
+                            <constraint firstItem="KyY-ng-AAP" firstAttribute="leading" secondItem="prJ-ka-DBx" secondAttribute="trailing" constant="10" id="v4S-Js-VcI"/>
+                            <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="KG1-eK-utJ" secondAttribute="trailing" constant="10" id="vkl-GR-6el"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Lm-aG-Pjf"/>
+                    <connections>
+                        <outlet property="account1FundsNeededButton" destination="UeB-fb-5eC" id="7OM-bX-Z1Y"/>
+                        <outlet property="account1GetAccountBalanceButton" destination="ERP-G7-ovg" id="0ZU-wD-frV"/>
+                        <outlet property="account2FundsNeededButton" destination="prJ-ka-DBx" id="2iE-qY-ymY"/>
+                        <outlet property="account2GetAccountBalanceButton" destination="KyY-ng-AAP" id="zHD-0W-lAs"/>
+                        <outlet property="account3FundsNeededButton" destination="nTa-N1-od1" id="UYO-2z-h2q"/>
+                        <outlet property="account3GetAccountBalanceButton" destination="YIL-ub-Cyd" id="CVl-gt-bOw"/>
+                        <outlet property="generateAccount1Button" destination="QJR-wc-j0i" id="9RW-cH-h1d"/>
+                        <outlet property="generateAccount2Button" destination="3i5-K9-V2v" id="vOi-tP-XRr"/>
+                        <outlet property="generateAccount3Button" destination="bCl-2R-3vh" id="dlV-NI-cto"/>
+                        <outlet property="infoLabelText" destination="Mbu-QL-baY" id="3KN-uA-3c7"/>
+                        <outlet property="multisigAddressButton" destination="KG1-eK-utJ" id="Umo-OO-ppB"/>
+                        <outlet property="networkInfoLabel" destination="ec2-Dx-hdg" id="4vi-PX-whh"/>
+                        <outlet property="sendMultisigTokensButton" destination="mSY-Dl-rP9" id="egd-bi-gNx"/>
+                        <outlet property="transactionFromAccount1to2" destination="tVI-2x-kr8" id="G9L-kM-QNc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVJ-jN-CoF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2205.7971014492755" y="71.651785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rL4-C6-qz5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OKh-HB-ICF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Umh-yZ-5Sn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pZh-gw-HDe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WHI-s6-5KW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313.04347826086956" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="accountdelegation" width="680" height="243"/>
+        <image name="changeManager" width="655" height="234"/>
+        <image name="circle.dashed" catalog="system" width="128" height="121"/>
+        <image name="circle.dashed.inset.fill" catalog="system" width="128" height="121"/>
+        <image name="contractaccount" width="680" height="243"/>
+        <image name="createAssetImage" width="1360" height="486"/>
+        <image name="destroyAccountImage" width="680" height="243"/>
+        <image name="freezeAsset" width="680" height="243"/>
+        <image name="homeaccounttransfers" width="600" height="600"/>
+        <image name="homeasa" width="600" height="600"/>
+        <image name="homeasclayer1" width="600" height="600"/>
+        <image name="homeatomictransfers" width="600" height="600"/>
+        <image name="homenodeandnetworksettings" width="1200" height="600"/>
+        <image name="optinasset" width="680" height="243"/>
+        <image name="revokeAccountImage" width="680" height="243"/>
+        <image name="transferAssetImage" width="680" height="243"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

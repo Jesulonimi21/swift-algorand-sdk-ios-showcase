@@ -1,0 +1,817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		096FEAE6363CDB468E351EC2 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18A009FB406BAF432B1D9D /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */; };
+		6748856EDE94164D25E282BD /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		695AAA0C25FBCD2D00706B69 /* AccountsAndTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695AAA0B25FBCD2D00706B69 /* AccountsAndTransactionsController.swift */; };
+		69621FED260671460031F645 /* SmartContractController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69621FEC260671460031F645 /* SmartContractController.swift */; };
+		696B5D8925FB625400B33A94 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696B5D8825FB625400B33A94 /* Config.swift */; };
+		69817FE325FACAA100391D77 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596E25B424AB510430A4D3E6 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */; };
+		69817FE825FACF4700391D77 /* NodeAndNetworkSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69817FE725FACF4700391D77 /* NodeAndNetworkSettingsController.swift */; };
+		6996423625FF8A2000A7B884 /* AutoLayoutUiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6996423525FF8A2000A7B884 /* AutoLayoutUiButton.swift */; };
+		69A86BD826020E0A0054052D /* AlgorandAssetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A86BD726020E0A0054052D /* AlgorandAssetsController.swift */; };
+		69A8B00F25F0E7D100509B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8B00E25F0E7D100509B2A /* AppDelegate.swift */; };
+		69A8B01125F0E7D100509B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8B01025F0E7D100509B2A /* SceneDelegate.swift */; };
+		69A8B01325F0E7D100509B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8B01225F0E7D100509B2A /* ViewController.swift */; };
+		69A8B01625F0E7D100509B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A8B01425F0E7D100509B2A /* Main.storyboard */; };
+		69A8B01825F0E7D400509B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A8B01725F0E7D400509B2A /* Assets.xcassets */; };
+		69A8B01B25F0E7D400509B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A8B01925F0E7D400509B2A /* LaunchScreen.storyboard */; };
+		69A8B02625F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8B02525F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseTests.swift */; };
+		69A8B03125F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8B03025F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift */; };
+		69A8B04325F0E8AD00509B2A /* swift-algorand-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 69A8B04225F0E8AD00509B2A /* swift-algorand-sdk */; };
+		69CBBC982604ADC900A8DF9D /* AtomicTransferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CBBC972604ADC900A8DF9D /* AtomicTransferController.swift */; };
+		7E1EC4465D66F62717C50BF9 /* Pods_swift_algorand_sdk_ios_showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C825A343509CD7370298CD7D /* Pods_swift_algorand_sdk_ios_showcase.framework */; };
+		B1544303411AC408B933327B /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596E25B424AB510430A4D3E6 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */; };
+		F8078A6DE2CC8496AF65B0F1 /* Pods_swift_algorand_sdk_ios_showcaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5D0894D21BFA2439EF4D9F /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69A8B02225F0E7D400509B2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A8B00325F0E7D100509B2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69A8B00A25F0E7D100509B2A;
+			remoteInfo = "swift-algorand-sdk-ios-showcase";
+		};
+		69A8B02D25F0E7D400509B2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A8B00325F0E7D100509B2A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69A8B00A25F0E7D100509B2A;
+			remoteInfo = "swift-algorand-sdk-ios-showcase";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F5D0894D21BFA2439EF4D9F /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_algorand_sdk_ios_showcaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		405609C4E5FC05E36E345F65 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4542F893A3A97D387AF37082 /* Pods-swift-algorand-sdk-ios-showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcase.release.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase.release.xcconfig"; sourceTree = "<group>"; };
+		596E25B424AB510430A4D3E6 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		695AAA0B25FBCD2D00706B69 /* AccountsAndTransactionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsAndTransactionsController.swift; sourceTree = "<group>"; };
+		69621FEC260671460031F645 /* SmartContractController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContractController.swift; sourceTree = "<group>"; };
+		696B5D8825FB625400B33A94 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		69817FE725FACF4700391D77 /* NodeAndNetworkSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeAndNetworkSettingsController.swift; sourceTree = "<group>"; };
+		6996423525FF8A2000A7B884 /* AutoLayoutUiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutUiButton.swift; sourceTree = "<group>"; };
+		69A86BD726020E0A0054052D /* AlgorandAssetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorandAssetsController.swift; sourceTree = "<group>"; };
+		69A8B00B25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-algorand-sdk-ios-showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A8B00E25F0E7D100509B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69A8B01025F0E7D100509B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		69A8B01225F0E7D100509B2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		69A8B01525F0E7D100509B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69A8B01725F0E7D400509B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69A8B01A25F0E7D400509B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69A8B01C25F0E7D400509B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69A8B02125F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-algorand-sdk-ios-showcaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A8B02525F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_algorand_sdk_ios_showcaseTests.swift; sourceTree = "<group>"; };
+		69A8B02725F0E7D400509B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69A8B02C25F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-algorand-sdk-ios-showcaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A8B03025F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_algorand_sdk_ios_showcaseUITests.swift; sourceTree = "<group>"; };
+		69A8B03225F0E7D400509B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69CBBC972604ADC900A8DF9D /* AtomicTransferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicTransferController.swift; sourceTree = "<group>"; };
+		80D1D3DA806B25B09EF578AC /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B1703CAABC26EFC94D7A446 /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		C825A343509CD7370298CD7D /* Pods_swift_algorand_sdk_ios_showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_algorand_sdk_ios_showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98717179674AE6E115090A9 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC49E2F561E8E7B36C14ACE2 /* Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig"; sourceTree = "<group>"; };
+		FD18A009FB406BAF432B1D9D /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69A8B00825F0E7D100509B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A8B04325F0E8AD00509B2A /* swift-algorand-sdk in Frameworks */,
+				7E1EC4465D66F62717C50BF9 /* Pods_swift_algorand_sdk_ios_showcase.framework in Frameworks */,
+				69817FE325FACAA100391D77 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A8B01E25F0E7D400509B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8078A6DE2CC8496AF65B0F1 /* Pods_swift_algorand_sdk_ios_showcaseTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A8B02925F0E7D400509B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6748856EDE94164D25E282BD /* (null) in Frameworks */,
+				B1544303411AC408B933327B /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */,
+				096FEAE6363CDB468E351EC2 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69817FE225FAC9FA00391D77 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				596E25B424AB510430A4D3E6 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		69A8B00225F0E7D100509B2A = {
+			isa = PBXGroup;
+			children = (
+				69A8B00D25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase */,
+				69A8B02425F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseTests */,
+				69A8B02F25F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseUITests */,
+				69A8B00C25F0E7D100509B2A /* Products */,
+				DA02E55775A566FA15D80BB9 /* Pods */,
+				D600D82157627847B170BE9E /* Frameworks */,
+				69817FE225FAC9FA00391D77 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		69A8B00C25F0E7D100509B2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69A8B00B25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase.app */,
+				69A8B02125F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseTests.xctest */,
+				69A8B02C25F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69A8B00D25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase */ = {
+			isa = PBXGroup;
+			children = (
+				69A8B00E25F0E7D100509B2A /* AppDelegate.swift */,
+				69817FE725FACF4700391D77 /* NodeAndNetworkSettingsController.swift */,
+				69A8B01025F0E7D100509B2A /* SceneDelegate.swift */,
+				69A8B01225F0E7D100509B2A /* ViewController.swift */,
+				69A8B01425F0E7D100509B2A /* Main.storyboard */,
+				69A8B01725F0E7D400509B2A /* Assets.xcassets */,
+				69A8B01925F0E7D400509B2A /* LaunchScreen.storyboard */,
+				69A8B01C25F0E7D400509B2A /* Info.plist */,
+				696B5D8825FB625400B33A94 /* Config.swift */,
+				695AAA0B25FBCD2D00706B69 /* AccountsAndTransactionsController.swift */,
+				6996423525FF8A2000A7B884 /* AutoLayoutUiButton.swift */,
+				69A86BD726020E0A0054052D /* AlgorandAssetsController.swift */,
+				69CBBC972604ADC900A8DF9D /* AtomicTransferController.swift */,
+				69621FEC260671460031F645 /* SmartContractController.swift */,
+			);
+			path = "swift-algorand-sdk-ios-showcase";
+			sourceTree = "<group>";
+		};
+		69A8B02425F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				69A8B02525F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseTests.swift */,
+				69A8B02725F0E7D400509B2A /* Info.plist */,
+			);
+			path = "swift-algorand-sdk-ios-showcaseTests";
+			sourceTree = "<group>";
+		};
+		69A8B02F25F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				69A8B03025F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift */,
+				69A8B03225F0E7D400509B2A /* Info.plist */,
+			);
+			path = "swift-algorand-sdk-ios-showcaseUITests";
+			sourceTree = "<group>";
+		};
+		D600D82157627847B170BE9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C825A343509CD7370298CD7D /* Pods_swift_algorand_sdk_ios_showcase.framework */,
+				0F5D0894D21BFA2439EF4D9F /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */,
+				FD18A009FB406BAF432B1D9D /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA02E55775A566FA15D80BB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC49E2F561E8E7B36C14ACE2 /* Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig */,
+				4542F893A3A97D387AF37082 /* Pods-swift-algorand-sdk-ios-showcase.release.xcconfig */,
+				D98717179674AE6E115090A9 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig */,
+				405609C4E5FC05E36E345F65 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig */,
+				80D1D3DA806B25B09EF578AC /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */,
+				8B1703CAABC26EFC94D7A446 /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69A8B00A25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A8B03525F0E7D400509B2A /* Build configuration list for PBXNativeTarget "swift-algorand-sdk-ios-showcase" */;
+			buildPhases = (
+				31E5EF7FCF07309141ABB00B /* [CP] Check Pods Manifest.lock */,
+				69A8B00725F0E7D100509B2A /* Sources */,
+				69A8B00825F0E7D100509B2A /* Frameworks */,
+				69A8B00925F0E7D100509B2A /* Resources */,
+				36CD406AAE24F00FD5901267 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "swift-algorand-sdk-ios-showcase";
+			packageProductDependencies = (
+				69A8B04225F0E8AD00509B2A /* swift-algorand-sdk */,
+			);
+			productName = "swift-algorand-sdk-ios-showcase";
+			productReference = 69A8B00B25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69A8B02025F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A8B03825F0E7D400509B2A /* Build configuration list for PBXNativeTarget "swift-algorand-sdk-ios-showcaseTests" */;
+			buildPhases = (
+				3AC57E7809E65769A28E60C0 /* [CP] Check Pods Manifest.lock */,
+				69A8B01D25F0E7D400509B2A /* Sources */,
+				69A8B01E25F0E7D400509B2A /* Frameworks */,
+				69A8B01F25F0E7D400509B2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69A8B02325F0E7D400509B2A /* PBXTargetDependency */,
+			);
+			name = "swift-algorand-sdk-ios-showcaseTests";
+			productName = "swift-algorand-sdk-ios-showcaseTests";
+			productReference = 69A8B02125F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		69A8B02B25F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A8B03B25F0E7D400509B2A /* Build configuration list for PBXNativeTarget "swift-algorand-sdk-ios-showcaseUITests" */;
+			buildPhases = (
+				F6DB4F8BBDF06F0C30CDF5D8 /* [CP] Check Pods Manifest.lock */,
+				69A8B02825F0E7D400509B2A /* Sources */,
+				69A8B02925F0E7D400509B2A /* Frameworks */,
+				69A8B02A25F0E7D400509B2A /* Resources */,
+				8FB56384E4F21F10DA4C6071 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69A8B02E25F0E7D400509B2A /* PBXTargetDependency */,
+			);
+			name = "swift-algorand-sdk-ios-showcaseUITests";
+			productName = "swift-algorand-sdk-ios-showcaseUITests";
+			productReference = 69A8B02C25F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69A8B00325F0E7D100509B2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					69A8B00A25F0E7D100509B2A = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					69A8B02025F0E7D400509B2A = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 69A8B00A25F0E7D100509B2A;
+					};
+					69A8B02B25F0E7D400509B2A = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 69A8B00A25F0E7D100509B2A;
+					};
+				};
+			};
+			buildConfigurationList = 69A8B00625F0E7D100509B2A /* Build configuration list for PBXProject "swift-algorand-sdk-ios-showcase" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69A8B00225F0E7D100509B2A;
+			packageReferences = (
+				69A8B04125F0E8AD00509B2A /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */,
+			);
+			productRefGroup = 69A8B00C25F0E7D100509B2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69A8B00A25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase */,
+				69A8B02025F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseTests */,
+				69A8B02B25F0E7D400509B2A /* swift-algorand-sdk-ios-showcaseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69A8B00925F0E7D100509B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A8B01B25F0E7D400509B2A /* LaunchScreen.storyboard in Resources */,
+				69A8B01825F0E7D400509B2A /* Assets.xcassets in Resources */,
+				69A8B01625F0E7D100509B2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A8B01F25F0E7D400509B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A8B02A25F0E7D400509B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31E5EF7FCF07309141ABB00B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-algorand-sdk-ios-showcase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36CD406AAE24F00FD5901267 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AC57E7809E65769A28E60C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-algorand-sdk-ios-showcaseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FB56384E4F21F10DA4C6071 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6DB4F8BBDF06F0C30CDF5D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69A8B00725F0E7D100509B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A86BD826020E0A0054052D /* AlgorandAssetsController.swift in Sources */,
+				69CBBC982604ADC900A8DF9D /* AtomicTransferController.swift in Sources */,
+				69A8B01325F0E7D100509B2A /* ViewController.swift in Sources */,
+				69621FED260671460031F645 /* SmartContractController.swift in Sources */,
+				696B5D8925FB625400B33A94 /* Config.swift in Sources */,
+				695AAA0C25FBCD2D00706B69 /* AccountsAndTransactionsController.swift in Sources */,
+				69817FE825FACF4700391D77 /* NodeAndNetworkSettingsController.swift in Sources */,
+				69A8B00F25F0E7D100509B2A /* AppDelegate.swift in Sources */,
+				69A8B01125F0E7D100509B2A /* SceneDelegate.swift in Sources */,
+				6996423625FF8A2000A7B884 /* AutoLayoutUiButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A8B01D25F0E7D400509B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A8B02625F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A8B02825F0E7D400509B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A8B03125F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69A8B02325F0E7D400509B2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69A8B00A25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase */;
+			targetProxy = 69A8B02225F0E7D400509B2A /* PBXContainerItemProxy */;
+		};
+		69A8B02E25F0E7D400509B2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69A8B00A25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase */;
+			targetProxy = 69A8B02D25F0E7D400509B2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69A8B01425F0E7D100509B2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A8B01525F0E7D100509B2A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69A8B01925F0E7D400509B2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A8B01A25F0E7D400509B2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69A8B03325F0E7D400509B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69A8B03425F0E7D400509B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69A8B03625F0E7D400509B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC49E2F561E8E7B36C14ACE2 /* Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swift-algorand-sdk-ios-showcase/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jesulonimi.testbundle.swift-algorand-sdk-ios-showcase";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69A8B03725F0E7D400509B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4542F893A3A97D387AF37082 /* Pods-swift-algorand-sdk-ios-showcase.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swift-algorand-sdk-ios-showcase/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jesulonimi.testbundle.swift-algorand-sdk-ios-showcase";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		69A8B03925F0E7D400509B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80D1D3DA806B25B09EF578AC /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swift-algorand-sdk-ios-showcaseTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jesulonimi.testbundle.swift-algorand-sdk-ios-showcaseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-algorand-sdk-ios-showcase.app/swift-algorand-sdk-ios-showcase";
+			};
+			name = Debug;
+		};
+		69A8B03A25F0E7D400509B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B1703CAABC26EFC94D7A446 /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swift-algorand-sdk-ios-showcaseTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jesulonimi.testbundle.swift-algorand-sdk-ios-showcaseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift-algorand-sdk-ios-showcase.app/swift-algorand-sdk-ios-showcase";
+			};
+			name = Release;
+		};
+		69A8B03C25F0E7D400509B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D98717179674AE6E115090A9 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swift-algorand-sdk-ios-showcaseUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jesulonimi.testbundle.swift-algorand-sdk-ios-showcaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "swift-algorand-sdk-ios-showcase";
+			};
+			name = Debug;
+		};
+		69A8B03D25F0E7D400509B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 405609C4E5FC05E36E345F65 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "swift-algorand-sdk-ios-showcaseUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jesulonimi.testbundle.swift-algorand-sdk-ios-showcaseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "swift-algorand-sdk-ios-showcase";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69A8B00625F0E7D100509B2A /* Build configuration list for PBXProject "swift-algorand-sdk-ios-showcase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A8B03325F0E7D400509B2A /* Debug */,
+				69A8B03425F0E7D400509B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A8B03525F0E7D400509B2A /* Build configuration list for PBXNativeTarget "swift-algorand-sdk-ios-showcase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A8B03625F0E7D400509B2A /* Debug */,
+				69A8B03725F0E7D400509B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A8B03825F0E7D400509B2A /* Build configuration list for PBXNativeTarget "swift-algorand-sdk-ios-showcaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A8B03925F0E7D400509B2A /* Debug */,
+				69A8B03A25F0E7D400509B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A8B03B25F0E7D400509B2A /* Build configuration list for PBXNativeTarget "swift-algorand-sdk-ios-showcaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A8B03C25F0E7D400509B2A /* Debug */,
+				69A8B03D25F0E7D400509B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		69A8B04125F0E8AD00509B2A /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jesulonimi21/Swift-Algorand-Sdk.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		69A8B04225F0E8AD00509B2A /* swift-algorand-sdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69A8B04125F0E8AD00509B2A /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */;
+			productName = "swift-algorand-sdk";
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 69A8B00325F0E7D100509B2A /* Project object */;
+}

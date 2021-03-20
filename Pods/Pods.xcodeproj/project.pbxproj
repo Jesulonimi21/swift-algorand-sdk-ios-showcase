@@ -1,0 +1,1159 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0103832BFC73B0924C855639FCC9E81F /* Pods-swift-algorand-sdk-ios-showcaseTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 663AE64F910F072004BA4B6F214B02DF /* Pods-swift-algorand-sdk-ios-showcaseTests-dummy.m */; };
+		43DD7057C283F8116FD2D56D7734EB97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		46076EBE819798CF04114E4BA095090B /* DLRadioButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EF8FB4EF329CECE6D388386233E3A /* DLRadioButton-dummy.m */; };
+		510040F07CF6C8A622839FCD1CE126C3 /* LTHRadioButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5B6E6B10C1F654815C8135A90B32397 /* LTHRadioButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		532D5801E494C65ACB020EA795A6277D /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B1498DF222D0845DE2A7EB32E7DD165 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A949CFF8D97C58D425D408815979752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5BB5FC1AF6C3D7182E1A068E88656116 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5951996E0595E80CEC480F1408569E62 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-dummy.m */; };
+		800069BADBECBAB5F0614ED1D926AC23 /* Pods-swift-algorand-sdk-ios-showcase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94486E121A43C9F0BBBC0DEE751995FF /* Pods-swift-algorand-sdk-ios-showcase-dummy.m */; };
+		8638D2836611B2F400AFE50D55FD215B /* Pods-swift-algorand-sdk-ios-showcaseTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EACC635191FA77411211BBCE5BF8B1D /* Pods-swift-algorand-sdk-ios-showcaseTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D75E1244AF444493DA1AE00B30923BB /* LTHRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DBBCD11544F92C41018E031B9E7661 /* LTHRadioButton.swift */; };
+		9621251F99E5C334E250D62BDFE22C8B /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABEA17DC240899553D4BD8FC5B4E081 /* DLRadioButton.m */; };
+		A0C741EA558DAB4ED3130C8D7AFDBC83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		AFC2FBB4946C0D6E201CAA72BE680A7D /* Pods-swift-algorand-sdk-ios-showcase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1882B5A4BA811918DCC801FEF2716189 /* Pods-swift-algorand-sdk-ios-showcase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5219FA0606BFEE8F3BD0FA75BC65151 /* DLRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 093AE75A62B8C551B801A4EDB1C965AE /* DLRadioButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF6138F76F4279629D74FEBFD63E94CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E29E7C160A42C37D9E557396D6450E4D /* DLRadioButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 685DF5D77C3C42CA6C33A812CBD216BA /* DLRadioButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6229EFFB5CF43D68861A7ACB38D70E5 /* LTHRadioButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0053340F8E2BBBC55169AD28F4045C20 /* LTHRadioButton-dummy.m */; };
+		EFE19F319FCF3E7BC7D60EDE66CBB392 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		277C90681B15408908FC8915DA3DD4AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BED8F38B6D4A3AD6DFF85D18F9F09435;
+			remoteInfo = DLRadioButton;
+		};
+		315E4781A9401E0476728C1CB5BFD696 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB6589BA961B6D177A92436AC1859598;
+			remoteInfo = LTHRadioButton;
+		};
+		4E95FA1256B4F9FEC40A977EDAA82E33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BED8F38B6D4A3AD6DFF85D18F9F09435;
+			remoteInfo = DLRadioButton;
+		};
+		7E74DA05C71156A6D45614F3E2728D58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB8F8A2AB4FAEE68CE09DB8FB092E897;
+			remoteInfo = "Pods-swift-algorand-sdk-ios-showcase";
+		};
+		EA4C389C9E564071D73D7C9783A387D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB6589BA961B6D177A92436AC1859598;
+			remoteInfo = LTHRadioButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0053340F8E2BBBC55169AD28F4045C20 /* LTHRadioButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LTHRadioButton-dummy.m"; sourceTree = "<group>"; };
+		005EF8FB4EF329CECE6D388386233E3A /* DLRadioButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DLRadioButton-dummy.m"; sourceTree = "<group>"; };
+		078487B68737D9080B6083DE283921EF /* DLRadioButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLRadioButton.release.xcconfig; sourceTree = "<group>"; };
+		08DBBCD11544F92C41018E031B9E7661 /* LTHRadioButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LTHRadioButton.swift; path = source/LTHRadioButton.swift; sourceTree = "<group>"; };
+		093AE75A62B8C551B801A4EDB1C965AE /* DLRadioButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = DLRadioButton/DLRadioButton.h; sourceTree = "<group>"; };
+		0D9C20B5436F5E0E92B3EB9037EB31A9 /* Pods-swift-algorand-sdk-ios-showcase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swift-algorand-sdk-ios-showcase.modulemap"; sourceTree = "<group>"; };
+		1882B5A4BA811918DCC801FEF2716189 /* Pods-swift-algorand-sdk-ios-showcase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swift-algorand-sdk-ios-showcase-umbrella.h"; sourceTree = "<group>"; };
+		23CC06D764D3EAB1B490D2618D449492 /* DLRadioButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DLRadioButton.modulemap; sourceTree = "<group>"; };
+		26C40307E5315DCD7D9CF5112F47E28E /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_swift_algorand_sdk_ios_showcaseTests.framework; path = "Pods-swift-algorand-sdk-ios-showcaseTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EACC635191FA77411211BBCE5BF8B1D /* Pods-swift-algorand-sdk-ios-showcaseTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swift-algorand-sdk-ios-showcaseTests-umbrella.h"; sourceTree = "<group>"; };
+		307730EDB77B1A4DB6CB79B60676B156 /* LTHRadioButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTHRadioButton-prefix.pch"; sourceTree = "<group>"; };
+		3E26BA03994713FBEB9C3406695782F1 /* DLRadioButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DLRadioButton.framework; path = DLRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C998457637D7D06D7CA885B23C2E86 /* DLRadioButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLRadioButton.debug.xcconfig; sourceTree = "<group>"; };
+		45B683DC702130F9D481AAB1E335599D /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-frameworks.sh"; sourceTree = "<group>"; };
+		501DEE5CD7B9BD850779CBF235EA9606 /* Pods-swift-algorand-sdk-ios-showcaseTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-algorand-sdk-ios-showcaseTests-Info.plist"; sourceTree = "<group>"; };
+		56B93B5BA600A684618EEEC631A0A937 /* Pods-swift-algorand-sdk-ios-showcaseTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-algorand-sdk-ios-showcaseTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5951996E0595E80CEC480F1408569E62 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-dummy.m"; sourceTree = "<group>"; };
+		663AE64F910F072004BA4B6F214B02DF /* Pods-swift-algorand-sdk-ios-showcaseTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swift-algorand-sdk-ios-showcaseTests-dummy.m"; sourceTree = "<group>"; };
+		685DF5D77C3C42CA6C33A812CBD216BA /* DLRadioButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-umbrella.h"; sourceTree = "<group>"; };
+		6F01DFAE4E1B941CD57E01AA8F52B068 /* Pods-swift-algorand-sdk-ios-showcaseTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swift-algorand-sdk-ios-showcaseTests.modulemap"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7502C246930DAB7B35A23C3A8802B50B /* Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig"; sourceTree = "<group>"; };
+		77D8F872DD772940F8787BB642224100 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		855980444C2EC817DFADAAE137A159F6 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-Info.plist"; sourceTree = "<group>"; };
+		8B1498DF222D0845DE2A7EB32E7DD165 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-umbrella.h"; sourceTree = "<group>"; };
+		90601BFA05B8CC5971FC9FEE42BCA58A /* Pods-swift-algorand-sdk-ios-showcase-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-swift-algorand-sdk-ios-showcase-frameworks.sh"; sourceTree = "<group>"; };
+		9396EB115099A79F4FF565D23073C7CF /* DLRadioButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DLRadioButton-Info.plist"; sourceTree = "<group>"; };
+		94486E121A43C9F0BBBC0DEE751995FF /* Pods-swift-algorand-sdk-ios-showcase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swift-algorand-sdk-ios-showcase-dummy.m"; sourceTree = "<group>"; };
+		9ABEA17DC240899553D4BD8FC5B4E081 /* DLRadioButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = DLRadioButton/DLRadioButton.m; sourceTree = "<group>"; };
+		9BB929BF3A2915AC8769C89877F9B13F /* Pods-swift-algorand-sdk-ios-showcase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-algorand-sdk-ios-showcase-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DC291B094C410DB0587F19457DC2675 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A1CA5EFBD3E9E4173B2823D6E7987EFF /* Pods-swift-algorand-sdk-ios-showcase-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swift-algorand-sdk-ios-showcase-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A84DEDCB898ABE4CC22B83D70ED6168F /* LTHRadioButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LTHRadioButton.release.xcconfig; sourceTree = "<group>"; };
+		AAD8C0FB365418EF7032C69395FBE9AB /* LTHRadioButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LTHRadioButton-Info.plist"; sourceTree = "<group>"; };
+		B06827ABB62C817713DFB7080FC44C72 /* Pods-swift-algorand-sdk-ios-showcaseTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swift-algorand-sdk-ios-showcaseTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B29883B925E1FB91CAB8EC34C915AA82 /* DLRadioButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-prefix.pch"; sourceTree = "<group>"; };
+		BCB3458DA2AAC73BE98D575970109487 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C1CF7D4B9915CF456964D74E086C7C0E /* Pods_swift_algorand_sdk_ios_showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_swift_algorand_sdk_ios_showcase.framework; path = "Pods-swift-algorand-sdk-ios-showcase.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5B6E6B10C1F654815C8135A90B32397 /* LTHRadioButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LTHRadioButton-umbrella.h"; sourceTree = "<group>"; };
+		CCCE533AD74CD92DBD3D140D7D6A006B /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CCDF3C3611599C54D95C5F7D2CE4CB36 /* LTHRadioButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LTHRadioButton.framework; path = LTHRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E0F0BC26217B7CB8A369924122AD4D /* Pods-swift-algorand-sdk-ios-showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-algorand-sdk-ios-showcase.release.xcconfig"; sourceTree = "<group>"; };
+		D9BED66E1F56EE0806FA3F7D819C63EF /* LTHRadioButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LTHRadioButton.modulemap; sourceTree = "<group>"; };
+		DB520B496FE1420042B17306A8C82979 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DBE8F3874BE693FB4DE0AFDE2E19CC3C /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.modulemap"; sourceTree = "<group>"; };
+		DF67CA34EBF0EC388B42D160AC43A4B7 /* Pods-swift-algorand-sdk-ios-showcase-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-algorand-sdk-ios-showcase-acknowledgements.plist"; sourceTree = "<group>"; };
+		E3436ED6D68D0F71CC93FDEF96B6545B /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		EA35749023DB7F9D8098A27BC9D01022 /* LTHRadioButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LTHRadioButton.debug.xcconfig; sourceTree = "<group>"; };
+		ECCE5682E473D13A7481F9B70E092F6E /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework; path = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C415CDF1ED4FF878C18630756564B13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A949CFF8D97C58D425D408815979752 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93495F341ECBBD05D905D15AC73BDF65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43DD7057C283F8116FD2D56D7734EB97 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7D42EFA6754EB798F0030B9B2B08640 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C741EA558DAB4ED3130C8D7AFDBC83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED18584BABFA01D04097F02C9B5DBAD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF6138F76F4279629D74FEBFD63E94CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F61FD3F8C5561DA4F33C0A1F5351A935 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFE19F319FCF3E7BC7D60EDE66CBB392 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7524D8E004EFE456D1416A4C1A173073 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E26BA03994713FBEB9C3406695782F1 /* DLRadioButton.framework */,
+				CCDF3C3611599C54D95C5F7D2CE4CB36 /* LTHRadioButton.framework */,
+				C1CF7D4B9915CF456964D74E086C7C0E /* Pods_swift_algorand_sdk_ios_showcase.framework */,
+				ECCE5682E473D13A7481F9B70E092F6E /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */,
+				26C40307E5315DCD7D9CF5112F47E28E /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E83497F70880EDE4C0E0DF95B36DA32 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBC90902B05E5DDA19849A4152A86238 /* Pods-swift-algorand-sdk-ios-showcase */,
+				C73C9CF715C6F87740E36119D5652D98 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests */,
+				FB8AFD4D3653FFDC1CB4F3167F8E21D2 /* Pods-swift-algorand-sdk-ios-showcaseTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A85D62A13EC7BA4BB5E895904E266ED2 /* LTHRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				08DBBCD11544F92C41018E031B9E7661 /* LTHRadioButton.swift */,
+				D59E320F4C97E51F90C284E2338C7304 /* Support Files */,
+			);
+			name = LTHRadioButton;
+			path = LTHRadioButton;
+			sourceTree = "<group>";
+		};
+		C73C9CF715C6F87740E36119D5652D98 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DBE8F3874BE693FB4DE0AFDE2E19CC3C /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.modulemap */,
+				DB520B496FE1420042B17306A8C82979 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-acknowledgements.markdown */,
+				77D8F872DD772940F8787BB642224100 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-acknowledgements.plist */,
+				5951996E0595E80CEC480F1408569E62 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-dummy.m */,
+				45B683DC702130F9D481AAB1E335599D /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-frameworks.sh */,
+				855980444C2EC817DFADAAE137A159F6 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-Info.plist */,
+				8B1498DF222D0845DE2A7EB32E7DD165 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-umbrella.h */,
+				BCB3458DA2AAC73BE98D575970109487 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig */,
+				9DC291B094C410DB0587F19457DC2675 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig */,
+			);
+			name = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests";
+			path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				E6D6F812DABFE188CDDCCFA8D959EBF5 /* Pods */,
+				7524D8E004EFE456D1416A4C1A173073 /* Products */,
+				7E83497F70880EDE4C0E0DF95B36DA32 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D59E320F4C97E51F90C284E2338C7304 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9BED66E1F56EE0806FA3F7D819C63EF /* LTHRadioButton.modulemap */,
+				0053340F8E2BBBC55169AD28F4045C20 /* LTHRadioButton-dummy.m */,
+				AAD8C0FB365418EF7032C69395FBE9AB /* LTHRadioButton-Info.plist */,
+				307730EDB77B1A4DB6CB79B60676B156 /* LTHRadioButton-prefix.pch */,
+				C5B6E6B10C1F654815C8135A90B32397 /* LTHRadioButton-umbrella.h */,
+				EA35749023DB7F9D8098A27BC9D01022 /* LTHRadioButton.debug.xcconfig */,
+				A84DEDCB898ABE4CC22B83D70ED6168F /* LTHRadioButton.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LTHRadioButton";
+			sourceTree = "<group>";
+		};
+		D7620A414ABBC1DE4946A3EABD6004D1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				23CC06D764D3EAB1B490D2618D449492 /* DLRadioButton.modulemap */,
+				005EF8FB4EF329CECE6D388386233E3A /* DLRadioButton-dummy.m */,
+				9396EB115099A79F4FF565D23073C7CF /* DLRadioButton-Info.plist */,
+				B29883B925E1FB91CAB8EC34C915AA82 /* DLRadioButton-prefix.pch */,
+				685DF5D77C3C42CA6C33A812CBD216BA /* DLRadioButton-umbrella.h */,
+				42C998457637D7D06D7CA885B23C2E86 /* DLRadioButton.debug.xcconfig */,
+				078487B68737D9080B6083DE283921EF /* DLRadioButton.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DLRadioButton";
+			sourceTree = "<group>";
+		};
+		DBC90902B05E5DDA19849A4152A86238 /* Pods-swift-algorand-sdk-ios-showcase */ = {
+			isa = PBXGroup;
+			children = (
+				0D9C20B5436F5E0E92B3EB9037EB31A9 /* Pods-swift-algorand-sdk-ios-showcase.modulemap */,
+				A1CA5EFBD3E9E4173B2823D6E7987EFF /* Pods-swift-algorand-sdk-ios-showcase-acknowledgements.markdown */,
+				DF67CA34EBF0EC388B42D160AC43A4B7 /* Pods-swift-algorand-sdk-ios-showcase-acknowledgements.plist */,
+				94486E121A43C9F0BBBC0DEE751995FF /* Pods-swift-algorand-sdk-ios-showcase-dummy.m */,
+				90601BFA05B8CC5971FC9FEE42BCA58A /* Pods-swift-algorand-sdk-ios-showcase-frameworks.sh */,
+				9BB929BF3A2915AC8769C89877F9B13F /* Pods-swift-algorand-sdk-ios-showcase-Info.plist */,
+				1882B5A4BA811918DCC801FEF2716189 /* Pods-swift-algorand-sdk-ios-showcase-umbrella.h */,
+				7502C246930DAB7B35A23C3A8802B50B /* Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig */,
+				D2E0F0BC26217B7CB8A369924122AD4D /* Pods-swift-algorand-sdk-ios-showcase.release.xcconfig */,
+			);
+			name = "Pods-swift-algorand-sdk-ios-showcase";
+			path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase";
+			sourceTree = "<group>";
+		};
+		E6D6F812DABFE188CDDCCFA8D959EBF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC2518EA43975993ECCB2CF49C779493 /* DLRadioButton */,
+				A85D62A13EC7BA4BB5E895904E266ED2 /* LTHRadioButton */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB8AFD4D3653FFDC1CB4F3167F8E21D2 /* Pods-swift-algorand-sdk-ios-showcaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				6F01DFAE4E1B941CD57E01AA8F52B068 /* Pods-swift-algorand-sdk-ios-showcaseTests.modulemap */,
+				B06827ABB62C817713DFB7080FC44C72 /* Pods-swift-algorand-sdk-ios-showcaseTests-acknowledgements.markdown */,
+				56B93B5BA600A684618EEEC631A0A937 /* Pods-swift-algorand-sdk-ios-showcaseTests-acknowledgements.plist */,
+				663AE64F910F072004BA4B6F214B02DF /* Pods-swift-algorand-sdk-ios-showcaseTests-dummy.m */,
+				501DEE5CD7B9BD850779CBF235EA9606 /* Pods-swift-algorand-sdk-ios-showcaseTests-Info.plist */,
+				2EACC635191FA77411211BBCE5BF8B1D /* Pods-swift-algorand-sdk-ios-showcaseTests-umbrella.h */,
+				CCCE533AD74CD92DBD3D140D7D6A006B /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */,
+				E3436ED6D68D0F71CC93FDEF96B6545B /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */,
+			);
+			name = "Pods-swift-algorand-sdk-ios-showcaseTests";
+			path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests";
+			sourceTree = "<group>";
+		};
+		FC2518EA43975993ECCB2CF49C779493 /* DLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				093AE75A62B8C551B801A4EDB1C965AE /* DLRadioButton.h */,
+				9ABEA17DC240899553D4BD8FC5B4E081 /* DLRadioButton.m */,
+				D7620A414ABBC1DE4946A3EABD6004D1 /* Support Files */,
+			);
+			name = DLRadioButton;
+			path = DLRadioButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		042E21698549CC2D939AEF644300EA18 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29E7C160A42C37D9E557396D6450E4D /* DLRadioButton-umbrella.h in Headers */,
+				C5219FA0606BFEE8F3BD0FA75BC65151 /* DLRadioButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4726ECCFEF2211136377737EF292F66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8638D2836611B2F400AFE50D55FD215B /* Pods-swift-algorand-sdk-ios-showcaseTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4F34D569687FB3F477F1081E09FE8D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				510040F07CF6C8A622839FCD1CE126C3 /* LTHRadioButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0D0C3EA01C913BBE9F5F6FB957FA8D4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFC2FBB4946C0D6E201CAA72BE680A7D /* Pods-swift-algorand-sdk-ios-showcase-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70FCEC7A9F60CA567B13ACF7B3FB3FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532D5801E494C65ACB020EA795A6277D /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		179A3EFAEA50CB8C5954D366B7C2BA50 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E48326D74050146F27301D2DC0A4F7B /* Build configuration list for PBXNativeTarget "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests" */;
+			buildPhases = (
+				F70FCEC7A9F60CA567B13ACF7B3FB3FA /* Headers */,
+				D8FCDAA8AEA9B8524922A602C5788F7D /* Sources */,
+				4C415CDF1ED4FF878C18630756564B13 /* Frameworks */,
+				AE7089CA440AEA7A7F9893408748869F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B804C465CFF815601AD64F2048543341 /* PBXTargetDependency */,
+				A5EB092F0FCF75ADF30B2EDA48E477AC /* PBXTargetDependency */,
+			);
+			name = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests";
+			productName = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests";
+			productReference = ECCE5682E473D13A7481F9B70E092F6E /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		84C7991C2E52EAC2A9DE74E12D3E141B /* Pods-swift-algorand-sdk-ios-showcaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C209240B4FC79E0B27CBC13A9056C47C /* Build configuration list for PBXNativeTarget "Pods-swift-algorand-sdk-ios-showcaseTests" */;
+			buildPhases = (
+				A4726ECCFEF2211136377737EF292F66 /* Headers */,
+				867120A17236CC313463C3E96758EE65 /* Sources */,
+				A7D42EFA6754EB798F0030B9B2B08640 /* Frameworks */,
+				FBA7532F24A213A10A58FF77045A6A46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB395B904721FB36BF83EB97ECDC38EF /* PBXTargetDependency */,
+			);
+			name = "Pods-swift-algorand-sdk-ios-showcaseTests";
+			productName = "Pods-swift-algorand-sdk-ios-showcaseTests";
+			productReference = 26C40307E5315DCD7D9CF5112F47E28E /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BB8F8A2AB4FAEE68CE09DB8FB092E897 /* Pods-swift-algorand-sdk-ios-showcase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532EE1DFD61FD4AA535E9422C6C88436 /* Build configuration list for PBXNativeTarget "Pods-swift-algorand-sdk-ios-showcase" */;
+			buildPhases = (
+				E0D0C3EA01C913BBE9F5F6FB957FA8D4 /* Headers */,
+				277858DE1C07BFF68054DE1C5505EE8D /* Sources */,
+				ED18584BABFA01D04097F02C9B5DBAD4 /* Frameworks */,
+				BE9F3B8D513F8A285F93E29F6804DA77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CE13A210E551393A19A94A5F0AE918A /* PBXTargetDependency */,
+				C43BE430F427C82C323D3DCF3941EE1C /* PBXTargetDependency */,
+			);
+			name = "Pods-swift-algorand-sdk-ios-showcase";
+			productName = "Pods-swift-algorand-sdk-ios-showcase";
+			productReference = C1CF7D4B9915CF456964D74E086C7C0E /* Pods_swift_algorand_sdk_ios_showcase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BED8F38B6D4A3AD6DFF85D18F9F09435 /* DLRadioButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87AB35F442A65AB7A3F31FE027C26974 /* Build configuration list for PBXNativeTarget "DLRadioButton" */;
+			buildPhases = (
+				042E21698549CC2D939AEF644300EA18 /* Headers */,
+				491106F648A199B7352F838E2B5B107D /* Sources */,
+				93495F341ECBBD05D905D15AC73BDF65 /* Frameworks */,
+				8961E51E48F32A896073C1461708CB0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DLRadioButton;
+			productName = DLRadioButton;
+			productReference = 3E26BA03994713FBEB9C3406695782F1 /* DLRadioButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB6589BA961B6D177A92436AC1859598 /* LTHRadioButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17789A6D221ACAE6D2FF29090A545FE4 /* Build configuration list for PBXNativeTarget "LTHRadioButton" */;
+			buildPhases = (
+				A4F34D569687FB3F477F1081E09FE8D5 /* Headers */,
+				4B1989A0EC27294867E04A622433AE43 /* Sources */,
+				F61FD3F8C5561DA4F33C0A1F5351A935 /* Frameworks */,
+				5D8924035B666650F9F9EF8FA9A70A71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LTHRadioButton;
+			productName = LTHRadioButton;
+			productReference = CCDF3C3611599C54D95C5F7D2CE4CB36 /* LTHRadioButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 7524D8E004EFE456D1416A4C1A173073 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BED8F38B6D4A3AD6DFF85D18F9F09435 /* DLRadioButton */,
+				FB6589BA961B6D177A92436AC1859598 /* LTHRadioButton */,
+				BB8F8A2AB4FAEE68CE09DB8FB092E897 /* Pods-swift-algorand-sdk-ios-showcase */,
+				179A3EFAEA50CB8C5954D366B7C2BA50 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests */,
+				84C7991C2E52EAC2A9DE74E12D3E141B /* Pods-swift-algorand-sdk-ios-showcaseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D8924035B666650F9F9EF8FA9A70A71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8961E51E48F32A896073C1461708CB0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE7089CA440AEA7A7F9893408748869F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE9F3B8D513F8A285F93E29F6804DA77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBA7532F24A213A10A58FF77045A6A46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		277858DE1C07BFF68054DE1C5505EE8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				800069BADBECBAB5F0614ED1D926AC23 /* Pods-swift-algorand-sdk-ios-showcase-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		491106F648A199B7352F838E2B5B107D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46076EBE819798CF04114E4BA095090B /* DLRadioButton-dummy.m in Sources */,
+				9621251F99E5C334E250D62BDFE22C8B /* DLRadioButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B1989A0EC27294867E04A622433AE43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6229EFFB5CF43D68861A7ACB38D70E5 /* LTHRadioButton-dummy.m in Sources */,
+				8D75E1244AF444493DA1AE00B30923BB /* LTHRadioButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		867120A17236CC313463C3E96758EE65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0103832BFC73B0924C855639FCC9E81F /* Pods-swift-algorand-sdk-ios-showcaseTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8FCDAA8AEA9B8524922A602C5788F7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB5FC1AF6C3D7182E1A068E88656116 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CE13A210E551393A19A94A5F0AE918A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DLRadioButton;
+			target = BED8F38B6D4A3AD6DFF85D18F9F09435 /* DLRadioButton */;
+			targetProxy = 4E95FA1256B4F9FEC40A977EDAA82E33 /* PBXContainerItemProxy */;
+		};
+		A5EB092F0FCF75ADF30B2EDA48E477AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LTHRadioButton;
+			target = FB6589BA961B6D177A92436AC1859598 /* LTHRadioButton */;
+			targetProxy = EA4C389C9E564071D73D7C9783A387D1 /* PBXContainerItemProxy */;
+		};
+		B804C465CFF815601AD64F2048543341 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DLRadioButton;
+			target = BED8F38B6D4A3AD6DFF85D18F9F09435 /* DLRadioButton */;
+			targetProxy = 277C90681B15408908FC8915DA3DD4AE /* PBXContainerItemProxy */;
+		};
+		C43BE430F427C82C323D3DCF3941EE1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LTHRadioButton;
+			target = FB6589BA961B6D177A92436AC1859598 /* LTHRadioButton */;
+			targetProxy = 315E4781A9401E0476728C1CB5BFD696 /* PBXContainerItemProxy */;
+		};
+		DB395B904721FB36BF83EB97ECDC38EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-swift-algorand-sdk-ios-showcase";
+			target = BB8F8A2AB4FAEE68CE09DB8FB092E897 /* Pods-swift-algorand-sdk-ios-showcase */;
+			targetProxy = 7E74DA05C71156A6D45614F3E2728D58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4C70CA0739B4506717A26242D6D8003A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7502C246930DAB7B35A23C3A8802B50B /* Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4CF44F10404193D4EFE421092801BB5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3436ED6D68D0F71CC93FDEF96B6545B /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		56778AB9638E4EE10CBC7EF1681C2AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42C998457637D7D06D7CA885B23C2E86 /* DLRadioButton.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/DLRadioButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = DLRadioButton;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		746BC8C3F06A416D6C6CF5BEEF124F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2E0F0BC26217B7CB8A369924122AD4D /* Pods-swift-algorand-sdk-ios-showcase.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		792A96CCD9A400139ED63E76681FCE9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DC291B094C410DB0587F19457DC2675 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D441247E19056CDBAA2ACDE2EC9A5C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA35749023DB7F9D8098A27BC9D01022 /* LTHRadioButton.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LTHRadioButton/LTHRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LTHRadioButton/LTHRadioButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LTHRadioButton/LTHRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = LTHRadioButton;
+				PRODUCT_NAME = LTHRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8827FF1691766147EA2D59870225376C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A84DEDCB898ABE4CC22B83D70ED6168F /* LTHRadioButton.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LTHRadioButton/LTHRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LTHRadioButton/LTHRadioButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LTHRadioButton/LTHRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = LTHRadioButton;
+				PRODUCT_NAME = LTHRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8F1042417082C0DD6122C9AFA37E1A91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCB3458DA2AAC73BE98D575970109487 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		99CE4C4C4DFB5812F6E8D91A66198333 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCCE533AD74CD92DBD3D140D7D6A006B /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AEFF88FDB387939B46E0336D9F6E581C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078487B68737D9080B6083DE283921EF /* DLRadioButton.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/DLRadioButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = DLRadioButton;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17789A6D221ACAE6D2FF29090A545FE4 /* Build configuration list for PBXNativeTarget "LTHRadioButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D441247E19056CDBAA2ACDE2EC9A5C6 /* Debug */,
+				8827FF1691766147EA2D59870225376C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E48326D74050146F27301D2DC0A4F7B /* Build configuration list for PBXNativeTarget "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F1042417082C0DD6122C9AFA37E1A91 /* Debug */,
+				792A96CCD9A400139ED63E76681FCE9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		532EE1DFD61FD4AA535E9422C6C88436 /* Build configuration list for PBXNativeTarget "Pods-swift-algorand-sdk-ios-showcase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C70CA0739B4506717A26242D6D8003A /* Debug */,
+				746BC8C3F06A416D6C6CF5BEEF124F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87AB35F442A65AB7A3F31FE027C26974 /* Build configuration list for PBXNativeTarget "DLRadioButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56778AB9638E4EE10CBC7EF1681C2AD8 /* Debug */,
+				AEFF88FDB387939B46E0336D9F6E581C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C209240B4FC79E0B27CBC13A9056C47C /* Build configuration list for PBXNativeTarget "Pods-swift-algorand-sdk-ios-showcaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99CE4C4C4DFB5812F6E8D91A66198333 /* Debug */,
+				4CF44F10404193D4EFE421092801BB5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
