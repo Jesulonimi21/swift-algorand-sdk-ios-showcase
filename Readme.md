@@ -56,7 +56,8 @@ Note: Please make sure you have placed a value for the `Config.PURESTAKE_API_KEY
 ## Accounts and Transactions
 Please open the `AccountsAndTransactionsController.swift` file, you can click on the Get Block Button and you'll see the loading indicator and after, you'll see information on the Current Block in the scrollable text area.
 <center>
- <img src="./AccountsAndTransacrtionState1.png" style="width:200px">
+ <img src="./AccountsAndTransacrtionState1.png" width=
+ "200px">
 </center>
 The methods for this can be found below
 
@@ -100,8 +101,10 @@ if you choose the option to fund account, you'll be taken to the respective disp
 
 
 
- <img src="./AccountsAndTransactionState2.png" style="width:200px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <img src="./AccountsAndTransactionState3.png" style="width:200px">
+ <img src="./AccountsAndTransactionState2.png" width=
+ "200px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <img src="./AccountsAndTransactionState3.png" width=
+ "200px">
 
 the code to create account can be found below
 ```swift
