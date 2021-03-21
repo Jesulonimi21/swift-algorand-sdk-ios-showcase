@@ -9,7 +9,7 @@ import UIKit
 import swift_algorand_sdk
 class AccountsAndTransactionsController: UIViewController {
 
-    @IBOutlet weak var infoLabelText: UIButton!
+   
     
     @IBOutlet weak var networkInfoLabel: UILabel!
     
@@ -26,6 +26,8 @@ class AccountsAndTransactionsController: UIViewController {
     @IBOutlet weak var account2FundsNeededButton: UIButton!
     @IBOutlet weak var account1GetAccountBalanceButton: UIButton!
     @IBOutlet weak var account1FundsNeededButton: UIButton!
+
+    @IBOutlet weak var informationLabel: UITextView!
     @IBOutlet weak var sendMultisigTokensButton: UIButton!
     var multisigAddress:MultisigAddress?
     override func viewDidLoad() {
@@ -36,8 +38,8 @@ class AccountsAndTransactionsController: UIViewController {
         account1GetAccountBalanceButton.isHidden=true
         account2GetAccountBalanceButton.isHidden=true
         account3GetAccountBalanceButton.isHidden=true
-        
-        infoLabelText.titleLabel!.numberOfLines = 12;
+        informationLabel.isEditable=false
+       
 
 
       
@@ -67,10 +69,11 @@ class AccountsAndTransactionsController: UIViewController {
                     
                     self.hideLoader()
                     if(blockResponse.isSuccessful){
-                        self.infoLabelText.setTitle(blockResponse.data!.toJson(), for: .normal)
+
+                        self.informationLabel.text=blockResponse.data!.toJson()!.replacingOccurrences(of: "\\", with: "")
                     }else{
+                        self.informationLabel.text=(blockResponse.errorDescription!)
                         
-                        self.infoLabelText.setTitle(blockResponse.errorDescription!, for: .normal)
                     }
                     
                 
@@ -80,7 +83,8 @@ class AccountsAndTransactionsController: UIViewController {
               
                }else{
                 self.hideLoader()
-                self.infoLabelText.setTitle(nodeStatusResponse.errorDescription, for: .normal)
+             
+                self.informationLabel.text=nodeStatusResponse.errorDescription
                }
        
            }
@@ -90,7 +94,7 @@ class AccountsAndTransactionsController: UIViewController {
     @IBAction func generateAccount1(_ sender: Any) {
         
         var account =  try! Account()
-        infoLabelText.setTitle("Mnemonic: \(account.toMnemonic())\n Address: \(account.address.description)", for: .normal)
+        self.informationLabel.text="Mnemonic: \(account.toMnemonic()) \n Address: \(account.address.description)"
         Config.account1=account
         generateAccount1Button.setTitle("Account 1", for: .normal)
         account1FundsNeededButton.isHidden=false
@@ -101,7 +105,7 @@ class AccountsAndTransactionsController: UIViewController {
     
     @IBAction func generateAccount2(_ sender: Any) {
         var account1 = try! Account()
-        infoLabelText.setTitle("Mnemonic: \(account1.toMnemonic())\n Address: \(account1.address.description)", for: .normal)
+        self.informationLabel.text="Mnemonic: \(account1.toMnemonic())\n Address: \(account1.address.description)"
         sendMultisigTokensButton.setTitleColor(UIColor.blue, for: .normal)
         transactionFromAccount1to2.setTitleColor(UIColor.blue, for: .normal)
         multisigAddressButton.setTitleColor(UIColor.blue, for: .normal)
@@ -115,7 +119,7 @@ class AccountsAndTransactionsController: UIViewController {
     
     @IBAction func generateAccount3(_ sender: Any) {
         var account3 = try! Account()
-        infoLabelText.setTitle("Mnemonic: \(account3.toMnemonic())\n Address: \(account3.address.description)", for: .normal)
+        self.informationLabel.text="Mnemonic: \(account3.toMnemonic())\n Address: \(account3.address.description)"
         Config.account3=account3
         generateAccount3Button.setTitle("Account 3", for: .normal)
         account3FundsNeededButton.isHidden=false
@@ -130,7 +134,7 @@ class AccountsAndTransactionsController: UIViewController {
     }
     
     @IBAction func createMultisigAddress(_ sender: Any) {
-        createMultisigAddress(address1: Config.account1!.getAddress(), address2: Config.account2!.getAddress())
+        createMultisigAddress(address1: Config.account1!.getAddress(), address2: Config.account2!.getAddress(),address3: Config.account3!.getAddress())
     }
     
     @IBAction func sendFromMultisigAddressToAccount2(_ sender: Any) {
@@ -140,6 +144,15 @@ class AccountsAndTransactionsController: UIViewController {
     
     @IBAction func account1FundsNeededAction(_ sender: Any) {
         UIPasteboard.general.string=Config.account1?.address.description
+        var urlString=""
+        if(Config.currentNet==Config.TESTNET){
+           urlString="https://bank.testnet.algorand.network/"
+        }else if(Config.currentNet==Config.BETANET){
+            urlString="https://bank.betanet.algodev.network/"
+        }
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     @IBAction func account1GetAccountBalanceButton(_ sender: Any) {
@@ -147,6 +160,16 @@ class AccountsAndTransactionsController: UIViewController {
     }
     @IBAction func account2FundsNeededAction(_ sender: Any) {
         UIPasteboard.general.string=Config.account2?.address.description
+        var urlString=""
+        if(Config.currentNet==Config.TESTNET){
+           urlString="https://bank.testnet.algorand.network/"
+        }else if(Config.currentNet==Config.BETANET){
+            urlString="https://bank.betanet.algodev.network/"
+        }
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.openURL(url)
+        }
+        
     }
     @IBAction func account2GetAccountBalanceButton(_ sender: Any) {
         getAccountBalance(address: (Config.account2?.getAddress().description)!)
@@ -154,18 +177,22 @@ class AccountsAndTransactionsController: UIViewController {
     
     @IBAction func account3FundsNeededAction(_ sender: Any) {
         UIPasteboard.general.string=Config.account3?.address.description
+        var urlString=""
+        if(Config.currentNet==Config.TESTNET){
+           urlString="https://bank.testnet.algorand.network/"
+        }else if(Config.currentNet==Config.BETANET){
+            urlString="https://bank.betanet.algodev.network/"
+        }
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.openURL(url)
+        }
     }
     @IBAction func account3GetAccountBalanceBAction(_ sender: Any) {
         getAccountBalance(address: (Config.account3?.getAddress().description)!)
     }
     
     
-    @IBAction func copyInfoLabelTextAction(_ sender: UIButton) {
     
-        if let buttonTitle = sender.title(for: .normal) {
-            UIPasteboard.general.string=(buttonTitle)
-         }
-    }
     
     
     func getAccountBalance(address:String){
@@ -176,10 +203,11 @@ class AccountsAndTransactionsController: UIViewController {
             if(accountInformationResponse.isSuccessful){
                 
                       
-                self.infoLabelText.setTitle("\(accountInformationResponse.data!.amount!) micro algos", for: .normal)
+                self.informationLabel.text="\(accountInformationResponse.data!.amount!) micro algos"
+                UIPasteboard.general.string=("\(accountInformationResponse.data!.amount!) micro algos")
                   }else{
-                    self.infoLabelText.setTitle("\(accountInformationResponse.errorDescription)", for: .normal)
-                     
+                    self.informationLabel.text="\(accountInformationResponse.errorDescription)"
+                    UIPasteboard.general.string="\(accountInformationResponse.errorDescription)"
                   }
         }
     
@@ -213,10 +241,13 @@ class AccountsAndTransactionsController: UIViewController {
                 self.hideLoader()
                         if(response.isSuccessful){
                           
-                            self.infoLabelText.setTitle("\(response.data!.txId)", for: .normal)
+                            self.informationLabel.text="\(response.data!.txId)"
+                            UIPasteboard.general.string="\(response.data!.txId)"
+                            
                         }else{
                            
-                            self.infoLabelText.setTitle(response.errorDescription, for: .normal)
+                            self.informationLabel.text=response.errorDescription!
+                            UIPasteboard.general.string=response.errorDescription!
                       
                         }
         
@@ -225,12 +256,14 @@ class AccountsAndTransactionsController: UIViewController {
     
     }
     
-    func createMultisigAddress(address1:Address,address2:Address){
+    func createMultisigAddress(address1:Address,address2:Address,address3:Address){
         var ed25519i = Ed25519PublicKey(bytes:address1.bytes!)
         var ed25519ii=Ed25519PublicKey(bytes:address2.bytes!)
+        var ed25519iii=Ed25519PublicKey(bytes:address3.bytes!)
     
-        self.multisigAddress = try! MultisigAddress(version: 1, threshold: 2, publicKeys: [ed25519ii,ed25519i])
-        self.infoLabelText.setTitle(multisigAddress!.toString(), for: .normal)
+        self.multisigAddress = try! MultisigAddress(version: 1, threshold: 2, publicKeys: [ed25519ii,ed25519i,ed25519iii])
+        self.informationLabel.text=multisigAddress!.toString()
+        UIPasteboard.general.string=multisigAddress!.toString()
     }
     
     func sendMultisigTransaction(account1:Account,account2:Account,receiverAddress:Address){
@@ -239,7 +272,8 @@ class AccountsAndTransactionsController: UIViewController {
             if(!(paramResponse.isSuccessful)){
                 print(paramResponse.errorDescription);
                 self.hideLoader()
-                self.infoLabelText.setTitle("\(paramResponse.errorDescription)", for: .normal)
+                self.informationLabel.text="\(paramResponse.errorDescription!)"
+                UIPasteboard.general.string="\(paramResponse.errorDescription!)"
                 return;
             }
     
@@ -263,10 +297,12 @@ class AccountsAndTransactionsController: UIViewController {
                 self.hideLoader()
                 if(response.isSuccessful){
                 
-                    self.infoLabelText.setTitle("\(response.data!.txId)", for: .normal)
+                    self.informationLabel.text="\(response.data!.txId)"
+                    UIPasteboard.general.string="\(response.data!.txId)"
+                    
                 }else{
-                  
-                    self.infoLabelText.setTitle("\(response.errorDescription)", for: .normal)
+                    self.informationLabel.text=="\(response.errorDescription!)"
+                    UIPasteboard.general.string="\(response.errorDescription!)"
                 }
     
             }

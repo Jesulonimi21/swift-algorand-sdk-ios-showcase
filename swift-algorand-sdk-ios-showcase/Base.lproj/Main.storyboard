@@ -447,39 +447,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-06-511">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-06-511">
                                 <rect key="frame" x="53" y="107" width="303" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="moU-fN-jWK"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="homeatomictransfers"/>
                                 <connections>
                                     <action selector="transferFromAccount1to2And3:" destination="dgU-Na-JVj" eventType="touchUpInside" id="0VH-Vu-8pG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mQ-z5-USn">
-                                <rect key="frame" x="109" y="300" width="196" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mQ-z5-USn">
+                                <rect key="frame" x="109" y="321" width="196" height="30"/>
                                 <state key="normal" title="Account 1 to both A2 and A3"/>
                                 <connections>
                                     <action selector="transferFromAccount1to2And3:" destination="dgU-Na-JVj" eventType="touchUpInside" id="IG7-J2-Af7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q80-Mt-JXs">
-                                <rect key="frame" x="20" y="423" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q80-Mt-JXs">
+                                <rect key="frame" x="20" y="437" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AD-dU-tPU">
-                                <rect key="frame" x="20" y="469" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-N0-27z">
+                                <rect key="frame" x="-10" y="397" width="414" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-N0-27z">
-                                <rect key="frame" x="20" y="376" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AD-dU-tPU">
+                                <rect key="frame" x="17" y="477" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -487,6 +485,22 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dUO-Da-GHR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dUO-Da-GHR" firstAttribute="trailing" secondItem="cKJ-N0-27z" secondAttribute="trailing" constant="10" id="1GY-Td-aJK"/>
+                            <constraint firstItem="5AD-dU-tPU" firstAttribute="top" secondItem="Q80-Mt-JXs" secondAttribute="bottom" constant="40" id="737-Ss-fN2"/>
+                            <constraint firstItem="Q80-Mt-JXs" firstAttribute="top" secondItem="cKJ-N0-27z" secondAttribute="bottom" constant="40" id="7FV-lI-3eA"/>
+                            <constraint firstItem="Jam-06-511" firstAttribute="centerX" secondItem="5AD-dU-tPU" secondAttribute="centerX" id="De5-2l-Mto"/>
+                            <constraint firstItem="cKJ-N0-27z" firstAttribute="top" secondItem="3mQ-z5-USn" secondAttribute="bottom" constant="46" id="KSV-cz-5U5"/>
+                            <constraint firstItem="3mQ-z5-USn" firstAttribute="centerX" secondItem="Q80-Mt-JXs" secondAttribute="centerX" id="OEX-ZG-yU8"/>
+                            <constraint firstItem="Q80-Mt-JXs" firstAttribute="leading" secondItem="dUO-Da-GHR" secondAttribute="leading" constant="20" id="SiM-k4-2TN"/>
+                            <constraint firstItem="3mQ-z5-USn" firstAttribute="top" secondItem="Jam-06-511" secondAttribute="bottom" constant="29" id="Yxo-Su-ZhK"/>
+                            <constraint firstItem="dUO-Da-GHR" firstAttribute="leading" secondItem="cKJ-N0-27z" secondAttribute="leading" constant="10" id="eKn-lH-Pwe"/>
+                            <constraint firstItem="Jam-06-511" firstAttribute="leading" secondItem="dUO-Da-GHR" secondAttribute="leading" constant="53" id="m9A-eE-Uf8"/>
+                            <constraint firstItem="dUO-Da-GHR" firstAttribute="trailing" secondItem="Q80-Mt-JXs" secondAttribute="trailing" constant="20" id="o4x-b9-sNF"/>
+                            <constraint firstItem="dUO-Da-GHR" firstAttribute="trailing" secondItem="5AD-dU-tPU" secondAttribute="trailing" constant="23" id="qOh-5e-dQD"/>
+                            <constraint firstItem="5AD-dU-tPU" firstAttribute="leading" secondItem="dUO-Da-GHR" secondAttribute="leading" constant="17" id="xRJ-6V-cwg"/>
+                            <constraint firstItem="dUO-Da-GHR" firstAttribute="bottom" secondItem="cKJ-N0-27z" secondAttribute="bottom" constant="465" id="y7X-hF-Ig2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1kP-xO-TbL"/>
                     <connections>
@@ -666,15 +680,14 @@
                                     <action selector="account3GetAccountBalanceBAction:" destination="TLn-tw-ch3" eventType="touchUpInside" id="0k5-a2-znQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-QL-baY" customClass="AutoLayoutButton" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target">
-                                <rect key="frame" x="10" y="549" width="394" height="34"/>
-                                <state key="normal" title="Info text">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="copyInfoLabelTextAction:" destination="TLn-tw-ch3" eventType="touchUpInside" id="Kae-Pm-bpr"/>
-                                </connections>
-                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="087-tr-IDa">
+                                <rect key="frame" x="45" y="530" width="329" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dmU-PC-fIU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -701,7 +714,6 @@
                             <constraint firstItem="dkR-aC-ufR" firstAttribute="leading" secondItem="QJR-wc-j0i" secondAttribute="leading" id="cFi-Y2-VeN"/>
                             <constraint firstItem="prJ-ka-DBx" firstAttribute="leading" secondItem="3i5-K9-V2v" secondAttribute="trailing" constant="10" id="clB-YA-Mcu"/>
                             <constraint firstItem="nTa-N1-od1" firstAttribute="top" secondItem="prJ-ka-DBx" secondAttribute="bottom" constant="8" symbolic="YES" id="cvV-QN-ewD"/>
-                            <constraint firstItem="Mbu-QL-baY" firstAttribute="top" secondItem="mSY-Dl-rP9" secondAttribute="bottom" constant="86" id="dFE-Uy-rpy"/>
                             <constraint firstItem="tVI-2x-kr8" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="10" id="ecg-gU-Su1"/>
                             <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="tVI-2x-kr8" secondAttribute="trailing" constant="10" id="gp1-i8-DpG"/>
                             <constraint firstItem="bCl-2R-3vh" firstAttribute="top" secondItem="3i5-K9-V2v" secondAttribute="bottom" constant="8" symbolic="YES" id="gy1-FE-ZeZ"/>
@@ -710,11 +722,9 @@
                             <constraint firstItem="mSY-Dl-rP9" firstAttribute="top" secondItem="KG1-eK-utJ" secondAttribute="bottom" constant="6" id="jnK-OZ-ehN"/>
                             <constraint firstItem="YIL-ub-Cyd" firstAttribute="leading" secondItem="nTa-N1-od1" secondAttribute="trailing" constant="8" symbolic="YES" id="mlo-QE-cJO"/>
                             <constraint firstItem="dkR-aC-ufR" firstAttribute="top" secondItem="mAL-pU-i5b" secondAttribute="top" constant="172" id="n1S-fb-4m3"/>
-                            <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="Mbu-QL-baY" secondAttribute="trailing" constant="10" id="nML-WX-odc"/>
                             <constraint firstItem="dkR-aC-ufR" firstAttribute="top" secondItem="ec2-Dx-hdg" secondAttribute="bottom" constant="33.5" id="ppY-vN-J4K"/>
                             <constraint firstItem="YIL-ub-Cyd" firstAttribute="leading" secondItem="nTa-N1-od1" secondAttribute="trailing" constant="8" symbolic="YES" id="rU7-U9-7sH"/>
                             <constraint firstItem="UeB-fb-5eC" firstAttribute="top" secondItem="dkR-aC-ufR" secondAttribute="bottom" constant="8" symbolic="YES" id="ttu-0n-ll4"/>
-                            <constraint firstItem="Mbu-QL-baY" firstAttribute="leading" secondItem="dmU-PC-fIU" secondAttribute="leading" constant="10" id="uBl-Vn-EUB"/>
                             <constraint firstItem="KyY-ng-AAP" firstAttribute="leading" secondItem="prJ-ka-DBx" secondAttribute="trailing" constant="10" id="v4S-Js-VcI"/>
                             <constraint firstItem="dmU-PC-fIU" firstAttribute="trailing" secondItem="KG1-eK-utJ" secondAttribute="trailing" constant="10" id="vkl-GR-6el"/>
                         </constraints>
@@ -730,7 +740,7 @@
                         <outlet property="generateAccount1Button" destination="QJR-wc-j0i" id="9RW-cH-h1d"/>
                         <outlet property="generateAccount2Button" destination="3i5-K9-V2v" id="vOi-tP-XRr"/>
                         <outlet property="generateAccount3Button" destination="bCl-2R-3vh" id="dlV-NI-cto"/>
-                        <outlet property="infoLabelText" destination="Mbu-QL-baY" id="3KN-uA-3c7"/>
+                        <outlet property="informationLabel" destination="087-tr-IDa" id="TbF-QL-RID"/>
                         <outlet property="multisigAddressButton" destination="KG1-eK-utJ" id="Umo-OO-ppB"/>
                         <outlet property="networkInfoLabel" destination="ec2-Dx-hdg" id="4vi-PX-whh"/>
                         <outlet property="sendMultisigTokensButton" destination="mSY-Dl-rP9" id="egd-bi-gNx"/>
