@@ -28,6 +28,9 @@ All the code for this page can be found in the `NodeAndNetworkSettingsController
 <center>
  <img src="./NodeAndNetworkSettingsScreen.png" style="width:200px">
 </center>
+<center>
+![Node And Network settings](./NodeAndNetworkSettingsScreen.png){: style="width:200px"}
+</center>
 Lets look at the code that is  run when purestake is clicked for example
 
 ```swift
