@@ -1,5 +1,5 @@
 ## Build Algorand IOS Apps with the Swift Algorand SDK
-### This solution shows you hoe to develop an ios app with the swift algorand sdk bu utilising the swift programming language, this is all thanks to the swift algorand sdk which has made Algorand more acccessible to  millions of native I0S and swift developers all over the world.
+### This solution shows you how to develop an ios app with the swift algorand sdk bu utilising the swift programming language, this is all thanks to the [swift algorand sdk](https://github.com/Jesulonimi21/Swift-Algorand-Sdk) which has made Algorand more acccessible to  millions of native I0S and swift developers all over the world.
 
 ## Table Of Contents
 1. [Setup](#setup)
