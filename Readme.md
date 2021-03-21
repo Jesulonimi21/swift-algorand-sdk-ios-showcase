@@ -25,11 +25,11 @@ After that, you are good to go and can decide to run the app as you please.By de
 The Node and Network settings screen allows you to select the network and node  that the app will use for the configuration of the AlgodClient in other classes(Screens), this ends up changing the value of the static `algodClient` variable in the `Config.swift` file.
 All the code for this page can be found in the `NodeAndNetworkSettingsController.swift` file.
 
-<!-- <center>
- <img src="./NodeAndNetworkSettingsScreen.png" style="width:200px">
-</center> -->
+<center>
+ <img src="./NodeAndNetworkSettingsScreen.png" width=
+ "200px">
+</center>
 
-![](./NodeAndNetworkSettingsScreen.png =200x)
 
 
 Lets look at the code that is  run when purestake is clicked for example
