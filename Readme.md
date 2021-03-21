@@ -25,10 +25,10 @@ After that, you are good to go and can decide to run the app as you please.By de
 The Node and Network settings screen allows you to select the network and node  that the app will use for the configuration of the AlgodClient in other classes(Screens), this ends up changing the value of the static `algodClient` variable in the `Config.swift` file.
 All the code for this page can be found in the `NodeAndNetworkSettingsController.swift` file.
 
-<center>
+<div style="text-align:center">
  <img src="./NodeAndNetworkSettingsScreen.png" width=
  "200px">
-</center>
+</div>
 
 
 
@@ -55,10 +55,10 @@ Note: Please make sure you have placed a value for the `Config.PURESTAKE_API_KEY
 
 ## Accounts and Transactions
 Please open the `AccountsAndTransactionsController.swift` file, you can click on the Get Block Button and you'll see the loading indicator and after, you'll see information on the Current Block in the scrollable text area.
-<center>
+<div style="text-align:center">
  <img src="./AccountsAndTransacrtionState1.png" width=
  "200px">
-</center>
+</div>
 The methods for this can be found below
 
 ```swift
@@ -95,17 +95,17 @@ The methods for this can be found below
 ```
 The code above is pretty simple, we first of all initialize the `algodClient`, show a loader and then we proceed to get its status by calling the `getStatus` method, so we can get the last round and pass it to the query for getting the Block with the `getBlock` method.Finally we check if there was an error and update textView and hide the loader
 
-## Create And Fund Account
+## Create and Fund Accounts
 You can decide to create Three accounts, `Generate Account Button` and you'll see the option to fund an account or get its account balance,
 if you choose the option to fund account, you'll be taken to the respective dispenser page for [testnet](https://bank.testnet.algorand.network/) or [betanet](https://bank.betanet.algodev.network/) and automatically, the address for the respective account is copied to the clipboard so it can be pasted in the input field of the dispenser, after funding the account, you can click the Get account Balance button to confirm the amount in the account
 
 
-
+<div style="text-align:center">
  <img src="./AccountsAndTransactionState2.png" width=
  "200px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <img src="./AccountsAndTransactionState3.png" width=
  "200px">
-
+</div>
 the code to create account can be found below
 ```swift
     @IBAction func generateAccount1(_ sender: Any) { 
