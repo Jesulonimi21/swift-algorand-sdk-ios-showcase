@@ -16,6 +16,7 @@ class AtomicTransferController: UIViewController {
         super.viewDidLoad()
         self.getAccountBalance(address: Config.account1!.address.description){amount in
             self.account1BalanceBeforeTransaction.text="Account1 Balance Before Transaction: \(amount)"
+   
         }
 
         // Do any additional setup after loading the view.
@@ -35,10 +36,11 @@ class AtomicTransferController: UIViewController {
     @IBAction func transferFromAccount1to2And3(_ sender: Any) {
         showLoader()
         createtransactions(sender: Config.account1!, receiver1: Config.account2!.address, receiver2: Config.account3!.address,algodClient: Config.algodClient!){ txId in
-            self.hideLoader()
+           
             self.transactionId.text=txId
             UIPasteboard.general.string=txId
             self.waitForTransaction(algodClient: Config.algodClient!, txId: txId){confirmedRound in
+                self.hideLoader()
                 self.getAccountBalance(address: Config.account1!.address.description){amount in
                     self.account1BalanceAfterTransaction.text="Account1 Balance After Transaction: \(amount)"
                 }
@@ -50,10 +52,12 @@ class AtomicTransferController: UIViewController {
     }
     
     func getAccountBalance(address:String, functionToCall: @escaping (String)->Void){
-        showLoader()
+//        self.showLoader()
         Config.algodClient!.accountInformation(address: address).execute(){accountInformationResponse in
-            self.hideLoader()
+//            self.hideLoader()
+        
             if(accountInformationResponse.isSuccessful){
+                print("\(accountInformationResponse.data!.amount!)")
                 functionToCall("\(accountInformationResponse.data!.amount!)")
                   }else{
                     functionToCall("\(accountInformationResponse.errorDescription)")
@@ -90,14 +94,14 @@ class AtomicTransferController: UIViewController {
            return;
        }
             var tx1 = Transaction.paymentTransactionBuilder().setSender(sender.address)
-             .amount(10)
+             .amount(10000000)
              .receiver(receiver1)
              .note("Swift Algo sdk is cool".bytes)
              .suggestedParams(params: paramResponse.data!)
              .build()
  
             var tx2 = Transaction.paymentTransactionBuilder().setSender(sender.getAddress())
-              .amount(11)
+              .amount(11000000)
               .receiver(receiver2)
               .note("Swift Algo sdk is cool".bytes)
               .suggestedParams(params: paramResponse.data!)
@@ -146,12 +150,12 @@ class AtomicTransferController: UIViewController {
         loadingIndicator.startAnimating();
 
         alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
     public func hideLoader(){
-        dismiss(animated: false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
 }

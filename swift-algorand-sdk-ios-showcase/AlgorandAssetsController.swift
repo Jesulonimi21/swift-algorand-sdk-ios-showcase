@@ -63,7 +63,7 @@ class AlgorandAssetsController: UIViewController {
     
     @IBAction func transferFromAccount1to3(_ sender: Any) {
         showLoader()
-        transferAsa(algodClient: Config.algodClient!, sender: Config.account2!, receiver: Config.account2!.address, amount: 10, assetIndex: assetIndex!){txId in
+        transferAsa(algodClient: Config.algodClient!, sender: Config.account2!, receiver: Config.account2!.address, amount: 10000000, assetIndex: assetIndex!){txId in
             self.hideLoader()
             self.infoLabel.text=txId
             UIPasteboard.general.string=txId
@@ -94,7 +94,7 @@ class AlgorandAssetsController: UIViewController {
     
     @IBAction func destroyAccount1Clicked(_ sender: Any) {
         showLoader()
-        destroyAsa(algodClient: Config.algodClient!, manager: Config.account1!, assetIndex: assetIndex!){txId in
+        destroyAsa(algodClient: Config.algodClient!, creator: Config.account1!, assetIndex: assetIndex!){txId in
             self.hideLoader()
             self.infoLabel.text=txId
             UIPasteboard.general.string=txId
@@ -303,19 +303,19 @@ class AlgorandAssetsController: UIViewController {
             }
         }
     }
-    func destroyAsa(algodClient:AlgodClient,manager:Account,assetIndex:Int64,functionToCall:@escaping (String)->Void){
+    func destroyAsa(algodClient:AlgodClient,creator:Account,assetIndex:Int64,functionToCall:@escaping (String)->Void){
         algodClient.transactionParams().execute(){paramResponse in
             if(!(paramResponse.isSuccessful)){
                 print(paramResponse.errorDescription);
                 return;
             }
             var tx = Transaction.assetDestroyTransactionBuilder()
-                .setSender(manager.getAddress())
+                .setSender(creator.getAddress())
                 .assetIndex(assetIndex: assetIndex)
                 .suggestedParams(params: paramResponse.data!)
                           .build();
 
-            var signedTrans=manager.signTransaction(tx: tx)
+            var signedTrans=creator.signTransaction(tx: tx)
             var encodedTx:[Int8]=CustomEncoder.encodeToMsgPack(signedTrans)
             algodClient.rawTransaction().rawtxn(rawtaxn: encodedTx).execute(){
                response in

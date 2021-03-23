@@ -1,5 +1,5 @@
 ## Build Algorand IOS Apps with the Swift Algorand SDK
-### This solution shows you how to develop an ios app with the swift algorand sdk bu utilising the swift programming language, this is all thanks to the [swift algorand sdk](https://github.com/Jesulonimi21/Swift-Algorand-Sdk) which has made Algorand more acccessible to  millions of native I0S and swift developers all over the world.
+This solution shows you how to develop an ios app with the swift algorand sdk bu utilising the swift programming language, this is all thanks to the [swift algorand sdk](https://github.com/Jesulonimi21/Swift-Algorand-Sdk) which has made Algorand more acccessible to  millions of native I0S and swift developers all over the world.
 
 ## Table Of Contents
 1. [Setup](#setup)
@@ -241,3 +241,340 @@ The transaction is conducted using the multisig address as the sender and then s
 
 
 ## ASA
+Next, you can click on the `Algorand Standard Assets` , this will take you to the page below:
+ <div style="text-align:center">
+ <img src="./AlgorandStandardAssetsScreen.png" width=
+ "200px">
+</div>
+
+The order in  which we will go through on this page is to click on `Create Asset`  then `Configure Manager Role` then `Opt in Account3` then `Transfer From Acccount1 to 3`,then `Freeze Account3` then `Revoke Account3`  then `Destroy on Account1`
+
+**Create Asset:** You can click `Create Asset` and you should see the progress bar loading until the transaction completes, once the transaction completes, you should be able to see the Asset Id aat the top and the transaction id at the bottom right of the screen like below:
+
+
+ <div style="text-align:center">
+ <img src="./AlgorandStandardAssetScreenState2.png" width=
+ "200px">
+</div>
+
+The code for this can be found in the `AlgorandAssetsController.swift` file, it is handled by the `createASA` function which can be found below: 
+
+```swift
+ func createASA( algodClient:AlgodClient,creator:Account,assetTotal:Int64,assetDecimals:Int64,assetUnitName:String,assetName:String,url:String,manager:Address,reserve:Address,freeze:Address,clawback:Address,defaultFrozen:Bool,functionToCall:@escaping (Int64?)->Void){
+        algodClient.transactionParams().execute(){paramResponse in
+            if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                return;
+            }
+     var tx = Transaction.assetCreateTransactionBuilder()
+        .setSender(creator.getAddress())
+                          .setAssetTotal(assetTotal: assetTotal)
+                          .setAssetDecimals(assetDecimals:  assetDecimals)
+                          .assetUnitName(assetUnitName: assetUnitName)
+                          .assetName(assetName:  assetName)
+                            .url(url: url)
+                            .manager(manager: manager)
+                            .reserve(reserve: reserve)
+                            .freeze(freeze: freeze)
+                          .defaultFrozen(defaultFrozen:  defaultFrozen)
+                .clawback(clawback: clawback)
+        .suggestedParams(params: paramResponse.data!).build()
+         
+            var signedTransaction=creator.signTransaction(tx: tx)
+            var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+            var dataToSend=Data(CustomEncoder.convertToUInt8Array(input: encodedTrans))
+       
+            algodClient.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+               response in
+                if(response.isSuccessful){
+                    print(response.data!.txId)
+                    self.infoLabel.text=response.data!.txId
+                    self.waitForTransaction(txId:response.data!.txId,funcToCall: functionToCall)
+                  
+                }else{
+                    print(response.errorDescription)
+                    self.infoLabel.text=response.errorDescription
+                }
+            }
+
+        }
+
+    }   
+```
+we simply create the transaction by calling in the `assetCreateTransactionBuilder` on the `Transaction`  class, we pass in account2 as the creator, manager, reserve, clawback and freeze, we also pass in parameters for the `assetTotal`, `unitName` and `defaultFrozen`, we then sign the transaction with the `creator` and send it to the network, we wait for the transaction to be confirmed by calling the `self.waitForTransaction` method before proceeding.
+```swift
+ 
+    func waitForTransaction(txId:String, funcToCall: @escaping (Int64?)->Void) {
+        var confirmedRound: Int64?=0
+        var assetIndex:Int64?=0
+        algodClient!.pendingTransactionInformation(txId:txId).execute(){
+            pendingTransactionResponse in
+                if(pendingTransactionResponse.isSuccessful){
+                    confirmedRound=pendingTransactionResponse.data!.confirmedRound
+                    assetIndex=pendingTransactionResponse.data!.assetIndex
+                    if(confirmedRound != nil && confirmedRound! > 0){
+                       funcToCall(assetIndex)
+                    }else{
+                        try!  self.waitForTransaction(txId: txId,funcToCall: funcToCall)
+                    }
+                }else{
+                    print(pendingTransactionResponse.errorDescription!)
+                    funcToCall(nil)
+                }
+    }
+}
+```
+
+**Configure Manager:** Now, we can proceed to change the manager to Account1, this is done by calling the `assetConfigureTransactionBuilder()` and then calling then chaining other methods responsible for the necessary configuration, the code that does this can be found below, please note that you have to pass in the asset index of the already created asset and then sign the transaction by `account2` (the present manager):
+```swift
+ func  changeAsaManager(algodClient:AlgodClient,previousManager:Account,assetIndex:Int64,manager:Address,reserve:Address,freeze:Address,clawback:Address,functionToCall:@escaping (String?)->Void){
+        
+        algodClient.transactionParams().execute(){paramResponse in
+            if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                return;
+            }
+            var tx = Transaction.assetConfigureTransactionBuilder().reserve(reserve: previousManager.address).freeze(freeze: previousManager.address).clawback(clawback: previousManager.address).assetIndex(assetIndex: assetIndex).setSender(previousManager.getAddress())
+            .manager(manager: manager)
+                .suggestedParams(params: paramResponse.data!)
+                      .build();
+       
+       
+            var signedTransaction=previousManager.signTransaction(tx: tx)
+          
+            var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+            var dataToSend=Data(CustomEncoder.convertToUInt8Array(input: encodedTrans))
+            algodClient.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+               response in
+                if(response.isSuccessful){
+                    functionToCall(response.data!.txId)
+                    
+                }else{
+                    functionToCall(response.errorDescription)
+                }
+    
+            }
+    
+        }
+    
+    }
+```
+
+**Opt-In:**  Now, we will proceed to opting in `account3` to our created ASA, this sends 0 amount of the createc asset to `account3`, for this to work, `account3` has to be the signer of this transaction, the code for this can be found below:
+```swift
+  func optInToAsa(algodClient:AlgodClient,acceptingAccount:Account,assetIndex:Int64,functionToCall:@escaping (String)->Void){
+    
+        algodClient.transactionParams().execute(){paramResponse in
+            if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                return;
+            }
+            var tx = Transaction.assetAcceptTransactionBuilder()
+                .acceptingAccount(acceptingAccount: acceptingAccount.getAddress())
+                .assetIndex(assetIndex: assetIndex)
+                .suggestedParams(params: paramResponse.data!)
+                .build();
+    
+            var txMessagePack:[Int8]=CustomEncoder.encodeToMsgPack(tx)
+            var signedTrans=acceptingAccount.signTransaction(tx: tx)
+            var encodedTx:[Int8]=CustomEncoder.encodeToMsgPack(signedTrans)
+            algodClient.rawTransaction().rawtxn(rawtaxn: encodedTx).execute(){
+               response in
+                if(response.isSuccessful){
+                    functionToCall(response.data!.txId)
+                }else{
+                    functionToCall(response.errorDescription!)
+                }
+    
+            }}   
+    }
+```
+The function above simply receives the `account`, the `assetIndex` and the `callBack`, calls the `assetAcceptTransactionBuilder` on the `Transaction` class and chains the  `acceptingAccount` and the  `assetIndex` method while passing in theor respective values and then callling the `callBack` with the transaction id.
+
+**Transfer Asset:** We will transfer our 10 tokens of our asset from `account2` to `account3`, this can be done by clicking on the `Transfer to Account3` button. The code for this can be found below
+```swift
+ func transferAsa(algodClient:AlgodClient,sender:Account,receiver:Address,amount:Int64,assetIndex:Int64, functionToCall:@escaping (String)->Void){
+
+        algodClient.transactionParams().execute(){paramResponse in
+            if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                return;
+            }
+
+            var tx = Transaction.assetTransferTransactionBuilder().setSender(sender.getAddress()).assetReceiver(assetReceiver:receiver)
+                .assetAmount(assetAmount:amount).assetIndex(assetIndex:assetIndex).suggestedParams(params:paramResponse.data!).build();
+
+            var signedTrans=sender.signTransaction(tx: tx)
+            
+            var encodedTx:[Int8]=CustomEncoder.encodeToMsgPack(signedTrans)
+            algodClient.rawTransaction().rawtxn(rawtaxn: encodedTx).execute(){
+               response in
+                if(response.isSuccessful){
+                    functionToCall(response.data!.txId)
+                }else{
+                    functionToCall(response.errorDescription!)
+                }
+
+            }
+        }
+
+    }
+```
+The function above calls the `assetTransferTransactionBuilder` method on the `Transaction` class and chains the necessary methods with the method call to transfer the asset, the sender signs the transaction and sends it to the network.
+
+**Freeze Asset:** Next, we will see how to freeze an asset by clicking on the `Freeze Asset` button, we will freeze the assets in `account3`, the freeze transaction is created by calling `assetFreezeTransactionBuilder` on the `Transaction` class and chaining the `freezeTarget` which signifies the account to freeze and the `freezeState` which signifies if to freeze or unfreeze the account, while passing in their respective parameters. The signer of this transaction has to be the `manager` which is `account1`
+The code responsible for this can be found below:
+```swift
+    
+    func freezeASA(algodClient:AlgodClient,freezeTarget:Address,manager:Account,assetIndex:Int64,freezeState:Bool, functionToCall:@escaping (String)->Void){
+    
+        algodClient.transactionParams().execute(){paramResponse in
+            if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                return;
+            }
+    
+            var tx=Transaction.assetFreezeTransactionBuilder().setSender(manager.getAddress()).freezeTarget(freezeTarget:freezeTarget)
+                .freezeState(freezeState:freezeState).assetIndex(assetIndex: assetIndex).suggestedParams(params: paramResponse.data!).build();
+            var signedTrans=manager.signTransaction(tx: tx)
+            var encodedTx:[Int8]=CustomEncoder.encodeToMsgPack(signedTrans)
+            algodClient.rawTransaction().rawtxn(rawtaxn: encodedTx).execute(){
+               response in
+                if(response.isSuccessful){
+                    functionToCall(response.data!.txId)
+                }else{
+                    functionToCall(response.errorDescription!)
+                }
+    
+            }
+        }
+    }
+```
+
+**Revoke Asset:** We will now revoke the assets sent to account3 earlier, we do this by calling the `assetClawbackTransactionBuilder` method `Transaction` class  and pass in the address of `account3` to the chained `assetClawbackFrom`, method and  the address of `account1` to the chained `assetReceiver` method  while chaining the remaining methods for `assetAmount` and `assetIndex`. The created transaction has to be signed by the manager which is `account2`, the code for this can be found below: 
+
+```swift
+func revokeAsa(algodClient:AlgodClient,manager:Account,clawBackFromAddress:Address,clawBackToAddress:Address,assetAmount:Int64,assetIndex:Int64, functionToCall:@escaping (String)->Void){
+        algodClient.transactionParams().execute(){paramResponse in
+            if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                return;
+            }
+
+            var tx = Transaction.assetClawbackTransactionBuilder().setSender(manager.getAddress())
+                .assetClawbackFrom(assetClawbackFrom:clawBackFromAddress).assetReceiver(assetReceiver: clawBackToAddress).assetAmount(assetAmount: assetAmount)
+                .assetIndex(assetIndex:assetIndex).suggestedParams(params: paramResponse.data!).build()
+            var signedTrans=manager.signTransaction(tx: tx)
+            var encodedTx:[Int8]=CustomEncoder.encodeToMsgPack(signedTrans)
+            algodClient.rawTransaction().rawtxn(rawtaxn: encodedTx).execute(){
+               response in
+                if(response.isSuccessful){
+                    functionToCall(response.data!.txId)
+                }else{
+                    functionToCall(response.errorDescription!)
+                }
+
+            }
+        }
+    }
+```
+
+**Destroy Asset:** We can now the destroy the asset by clicking on the `Destroy On Account1` For us to do this, the `Creator` of the asset has to have all the units of the asset in its account and also sign the transaction, the code for this can be found below:
+
+```swift
+
+    func destroyAsa(algodClient:AlgodClient,manager:Account,assetIndex:Int64,functionToCall:@escaping (String)->Void){
+        algodClient.transactionParams().execute(){paramResponse in
+            if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                return;
+            }
+            var tx = Transaction.assetDestroyTransactionBuilder()
+                .setSender(manager.getAddress())
+                .assetIndex(assetIndex: assetIndex)
+                .suggestedParams(params: paramResponse.data!)
+                          .build();
+
+            var signedTrans=manager.signTransaction(tx: tx)
+            var encodedTx:[Int8]=CustomEncoder.encodeToMsgPack(signedTrans)
+            algodClient.rawTransaction().rawtxn(rawtaxn: encodedTx).execute(){
+               response in
+                if(response.isSuccessful){
+                    functionToCall(response.data!.txId)
+                }else{
+                    functionToCall(response.errorDescription!)
+                }
+
+            }}
+
+    }
+```
+We simply call `assetDestroyTransactionBuilder` on the `Transaction` class while chaining the necessary methods on it and then proceed to sign the transaction with the `creator` account.
+
+
+## Atomic Transfer
+Atomic transfers are used to send more than one transaction to the network at a time such that if any of the transactions fail, all the transactions fail, we will do this by sending 10 and 15 algo respectively to `account1` and `account2` from `account3`
+
+<div style="text-align:center">
+ <img src="./AtomicTransferFinalState.png" width=
+ "200px">
+</div>
+The code responsible for this can be found below
+
+```swift
+func createtransactions(sender:Account,receiver1:Address,receiver2:Address,algodClient:AlgodClient,functionToCall: @escaping (String)->Void){
+        algodClient.transactionParams().execute(){ paramResponse in
+           if(!(paramResponse.isSuccessful)){
+           print(paramResponse.errorDescription);
+           return;
+       }
+            var tx1 = Transaction.paymentTransactionBuilder().setSender(sender.address)
+             .amount(10000000)
+             .receiver(receiver1)
+             .note("Swift Algo sdk is cool".bytes)
+             .suggestedParams(params: paramResponse.data!)
+             .build()
+ 
+            var tx2 = Transaction.paymentTransactionBuilder().setSender(sender.getAddress())
+              .amount(11000000)
+              .receiver(receiver2)
+              .note("Swift Algo sdk is cool".bytes)
+              .suggestedParams(params: paramResponse.data!)
+              .build()
+            var transactions=[tx1,tx2]
+            var gid = try! TxGroup.computeGroupID(txns: transactions)
+            var signedTransactions:[SignedTransaction?]=Array(repeating: nil, count: transactions.count)
+            for i in 0..<transactions.count{
+                transactions[i].assignGroupID(gid: gid)
+                signedTransactions[i]=sender.signTransaction(tx: transactions[i])
+            }
+            self.makeAtomicTransfer(signedTransactions: signedTransactions, algodClient: algodClient,functionToCall: functionToCall)
+            
+        }
+    }
+```
+We simply create the two payment transactions in the function above and comput their `Group Id`, this is what identifies both transactions as belonging to the same group when sent to the network
+we then sign both transactions and send them to the `makeAtomicTransfer` function.
+
+```swift
+public func makeAtomicTransfer(signedTransactions:[SignedTransaction?],algodClient:AlgodClient,functionToCall: @escaping (String)->Void){
+        var encodedTrans:[Int8]=Array()
+        for i in 0..<signedTransactions.count{
+            encodedTrans = encodedTrans+CustomEncoder.encodeToMsgPack(signedTransactions[i])
+        }
+              
+    
+                algodClient.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+                   response in
+                    if(response.isSuccessful){
+                        functionToCall(response.data!.txId)
+                    }else{
+                        functionToCall(response.errorDescription!)
+                    }
+    
+                }
+    }
+```
+the  `makeAtomicTransfer` function simply computes the messagepack of both signed transactions and sends them to the network. the `waitForTransactions` method is used to wait till the transaction has been confirmed by the network.
+
+## Algorand Smart Contract
