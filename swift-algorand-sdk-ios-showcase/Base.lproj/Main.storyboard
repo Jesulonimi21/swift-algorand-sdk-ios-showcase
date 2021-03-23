@@ -529,44 +529,45 @@
                                     <action selector="contractAccountAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="Ecd-cd-AUi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCc-5o-AhX">
-                                <rect key="frame" x="10" y="362" width="371" height="172"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="accountdelegation"/>
-                                <connections>
-                                    <action selector="accountDelegateAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="Rmq-sO-skb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-nE-SPF">
-                                <rect key="frame" x="20" y="315" width="361" height="30"/>
+                                <rect key="frame" x="10" y="315" width="371" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Split Contract"/>
+                                <state key="normal" title="Generate Split Contract Address"/>
                                 <connections>
-                                    <action selector="contractAccountAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="iyN-lH-om2"/>
+                                    <action selector="generateSplitContractAddress:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="wBU-x2-HHC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-1S-noR">
-                                <rect key="frame" x="10" y="572" width="371" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c0B-aZ-mDv">
+                                <rect key="frame" x="38" y="655" width="343" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Account Delegation"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYI-eG-2v7">
+                                <rect key="frame" x="10" y="379" width="371" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Fund Contract Address"/>
                                 <connections>
-                                    <action selector="accountDelegateAction:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="tOz-ps-c0L"/>
+                                    <action selector="fundSplitContactAddress:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="qmP-Ua-8BP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zma-e1-riN">
-                                <rect key="frame" x="10" y="699" width="371" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk2-bt-cws">
+                                <rect key="frame" x="9" y="435" width="371" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Run Split Program"/>
+                                <connections>
+                                    <action selector="runSplitProgram:" destination="FN4-FL-Ypk" eventType="touchUpInside" id="MhS-PB-jdo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Jv-Gm-6Kc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="y96-g4-X9D"/>
                     <connections>
-                        <outlet property="infoLabel" destination="zma-e1-riN" id="i6K-Lv-CGI"/>
+                        <outlet property="infoLabel" destination="c0B-aZ-mDv" id="ApZ-ik-AKS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEA-Sb-cL5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -771,7 +772,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="accountdelegation" width="680" height="243"/>
         <image name="changeManager" width="655" height="234"/>
         <image name="circle.dashed" catalog="system" width="128" height="121"/>
         <image name="circle.dashed.inset.fill" catalog="system" width="128" height="121"/>

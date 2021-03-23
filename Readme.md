@@ -19,7 +19,26 @@ Make sure you have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12
 ```bash
 pod install
 ```
-After that, you are good to go and can decide to run the app as you please.By default, you are connected to the Hackathon testnet node , this is so that the app can be tested smoothly without having to expose tokens or running a custom node.
+After that, you are good to go and can decide to run the app as you please.You can open the app by opening `swift-algorand-sdk-ios-showcase.xcworkspace` in xcode
+By default, you are connected to the Hackathon testnet node , this is so that the app can be tested smoothly without having to expose tokens or running a custom node.
+
+# Application Structure
+If you opened the `swift-algorand-sdk-ios-showcase.xcworkspace` file in Xcode, you should have a file structure similar to the image below:
+<div style="text-align:center">
+ <img src="./ApplicationStructure.png" width=
+ "200px">
+</div>
+
+The files we will be working with are those in `swift-algorand-sdk-ios-showcase` folder, i have toggled it down to reveal the files within it in the image above. The major purpose of the app is to show how to use the swift sdk so Architectural Patterns are not used for the purpose of simplicity.
+
+The app has a main page which acts as the primary navigation and an image of it can be found below:
+<div style="text-align:center">
+ <img src="./homeScreen.png" width=
+ "200px">
+</div>
+
+The page above is responsible for taking you to the respective pages that we write the bulk of the code in this app, each screen can be tested independently because of the provision of default values in the `Config.swift` file although this values are changed as you go through the app.
+
 
 # Node And Network Settings
 The Node and Network settings screen allows you to select the network and node  that the app will use for the configuration of the AlgodClient in other classes(Screens), this ends up changing the value of the static `algodClient` variable in the `Config.swift` file.
@@ -578,3 +597,86 @@ public func makeAtomicTransfer(signedTransactions:[SignedTransaction?],algodClie
 the  `makeAtomicTransfer` function simply computes the messagepack of both signed transactions and sends them to the network. the `waitForTransactions` method is used to wait till the transaction has been confirmed by the network.
 
 ## Algorand Smart Contract
+Algorand Smart Contracts (ASC1) are small programs written in an assembly-like language that can be used as a replacement for signatures within a transaction. The language of Algorand Smart Contracts is named Transaction Execution Approval Language or TEAL. 
+We will use the [Split Template](https://developer.algorand.org/docs/reference/teal/templates/split/) to see how this works. Templates are prebuilt TEAL programs that allow parameters to be injected into them from the SDKs that configure the contract.
+
+<div style="text-align:center">
+ <img src="./AlgoransdSmartContractControllerState1.png" width=
+ "200px">
+</div>
+
+The code for the screen above can be found in `SmartContractController.swift` file, you can click on the `Generate Split Contract Address Button`, this will generate a Split contract address having `account1` as the `owner` and `account2` as `receiver1` and `account3` as `receiver2`, the adddress is automatically copied to the clipboard and is shown in a text at the bottom of the screen.
+Clicking on the Fund Account will take you to the appropriate dispenser allowing you to fund the contract address.
+The code for Generating the split address can be found below 
+
+```swift
+ @IBAction func generateSplitContractAddress(_ sender: Any) {
+        var owner =  Config.account1!.getAddress()
+        var receiver1 =  Config.account2!.getAddress()
+        var receiver2 =  Config.account3!.getAddress()
+                   // Addition Inputs to the Template
+            var expiryRound = 5000000;
+            var maxFee = 2000;
+            var minPay = 3000;
+            var ratn = 3;
+            var ratd = 7;
+           
+    
+        
+             split=try! Split.MakeSplit(owner: owner, receiver1: receiver1, receiver2: receiver2, rat1: ratn, rat2: ratd, expiryRound: expiryRound, minPay: minPay, maxFee: maxFee)
+        print(split!.address.description)
+        infoLabel.text="Contract Address: \(split!.address.description)"
+    }
+```
+
+
+
+<div style="text-align:center">
+ <img src="./SmartContractControllerState2.png" width=
+ "200px">
+</div>
+
+Clicking on the `Run Split Program` button to run the split program runs the program by passing in the amount to the contract, creating the respective transactions for the program and sending it  as an atomic transaction to the network, and waiting for the transaction to be confirmed.It further shows the transaction id and the confirmed round in a text at the bottom of the screen.
+The code responsible for this can be found below:
+```swift
+func runSplitProgram(algodClient:AlgodClient) throws{
+        showLoader()
+        if let split=self.split{
+        var contractProgram=split.program
+    
+            algodClient.transactionParams().execute(){ paramResponse in
+                if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                    self.hideLoader()
+                return;
+                }
+                var loadedContract =  ContractTemplate(prog: contractProgram);
+                      var transactions = try! Split.GetSplitTransactions(
+                        contract: loadedContract,
+                        amount: 50000,
+                        firstValid:paramResponse.data!.lastRound!,
+                        lastValid: paramResponse.data!.lastRound!+500,
+                        feePerByte: 1,
+                        genesisHash: Digest(paramResponse.data!.genesisHash));
+                algodClient.rawTransaction().rawtxn(rawtaxn: transactions).execute(){
+                   response in
+                    if(response.isSuccessful){
+                        print(response.data!.txId)
+                        self.infoLabel.text="Transaction Id: \(response.data!.txId)"
+                        UIPasteboard.general.string=response.data!.txId
+                        self.waitForTransaction(algodClient: algodClient, txId: response.data!.txId){confirmedRound in
+                            self.infoLabel.text="Transaction Id: \(response.data!.txId) \nConfirmed Round: \(confirmedRound!)  "
+                            self.hideLoader()
+                        }
+                    }else{
+                        print(response.errorDescription)
+                        self.infoLabel.text=response.errorDescription!
+                        self.hideLoader()           
+                    }
+            }
+            }
+        }
+    }
+```
+## Conclusion
+This solutions contains a lot of information you will need while trying to use the swift sdk, although this has been done soecifically in the IOS environment,the code should work fine in any other swift environment. We reviewed the basics of getting a block and creating an account. Also, we covered Transactions and MultiSig transactions. Then we looked at another set of transactions for Algorand Standard Assets including SDK methods that Create, Change, Opt-In, Transfer, Freeze, Clawback, and Destroy Assets. Atomic transfers and Algorand Smart Contracts were also covered. Have fun building your next app, using Algorand!
