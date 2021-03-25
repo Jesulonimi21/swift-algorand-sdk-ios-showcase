@@ -9,7 +9,8 @@ import UIKit
 import swift_algorand_sdk
 class AlgorandAssetsController: UIViewController {
 
-    @IBOutlet weak var infoLabel: UILabel!
+  
+    @IBOutlet weak var infoLabel: UITextView!
     @IBOutlet weak var assetIDLabel: UIButton!
     @IBOutlet weak var networkLabel: UILabel!
     var assetIndex:Int64?=nil
@@ -40,66 +41,85 @@ class AlgorandAssetsController: UIViewController {
     }
     
     @IBAction func configureManagerRoleClicked(_ sender: Any) {
-        showLoader()
-        changeAsaManager(algodClient: Config.algodClient!, previousManager:  Config.account2!, assetIndex: assetIndex!, manager:  Config.account1!.address, reserve: Config.account2!.address, freeze: Config.account2!.address, clawback: Config.account2!.address){ txId in
-            self.hideLoader()
-            print(txId)
-            self.infoLabel.text=txId
-            UIPasteboard.general.string=txId
-            
+        if let assetIndex=self.assetIndex{
+            showLoader()
+            changeAsaManager(algodClient: Config.algodClient!, previousManager:  Config.account2!, assetIndex: assetIndex, manager:  Config.account1!.address, reserve: Config.account2!.address, freeze: Config.account2!.address, clawback: Config.account2!.address){ txId in
+                self.hideLoader()
+                print(txId)
+                self.infoLabel.text=txId
+                UIPasteboard.general.string=txId
+                
+            }
         }
+    
     }
     
     @IBAction func optIntoAccount3Clicked(_ sender: Any) {
-        showLoader()
-        optInToAsa(algodClient: Config.algodClient!, acceptingAccount: Config.account3!, assetIndex: assetIndex!){ txId in
-            self.hideLoader()
-            self.infoLabel.text=txId
-            UIPasteboard.general.string=txId
-            
+        if let assetIndex=self.assetIndex{
+            showLoader()
+            optInToAsa(algodClient: Config.algodClient!, acceptingAccount: Config.account3!, assetIndex: assetIndex){ txId in
+                self.hideLoader()
+                self.infoLabel.text=txId
+                UIPasteboard.general.string=txId
+                
+            }
         }
+      
     }
     
     
     @IBAction func transferFromAccount1to3(_ sender: Any) {
-        showLoader()
-        transferAsa(algodClient: Config.algodClient!, sender: Config.account2!, receiver: Config.account2!.address, amount: 10000000, assetIndex: assetIndex!){txId in
-            self.hideLoader()
-            self.infoLabel.text=txId
-            UIPasteboard.general.string=txId
+        if let assetIndex=self.assetIndex{
+            showLoader()
+            transferAsa(algodClient: Config.algodClient!, sender: Config.account2!, receiver: Config.account2!.address, amount: 10000000, assetIndex: assetIndex){txId in
+                self.hideLoader()
+                self.infoLabel.text=txId
+                UIPasteboard.general.string=txId
+            }
         }
+        
+       
     }
     
     
     @IBAction func freezeAccount3(_ sender: Any) {
-        showLoader()
-        freezeASA(algodClient: algodClient!, freezeTarget: Config.account3!.address, manager: Config.account2!,assetIndex: assetIndex!,freezeState: true){ txId in
-            self.hideLoader()
-            self.infoLabel.text=txId
-            UIPasteboard.general.string=txId
+        if let assetIndex=assetIndex{
+            showLoader()
+            freezeASA(algodClient: algodClient!, freezeTarget: Config.account3!.address, manager: Config.account2!,assetIndex: assetIndex,freezeState: true){ txId in
+                self.hideLoader()
+                self.infoLabel.text=txId
+                UIPasteboard.general.string=txId
+            }
         }
+     
     }
     
     
     @IBAction func revokeAccount3Clicked(_ sender: Any) {
-        showLoader()
-        revokeAsa(algodClient: Config.algodClient!, manager: Config.account2!, clawBackFromAddress: Config.account3!.address, clawBackToAddress: Config.account2!.address, assetAmount: 10, assetIndex: assetIndex!){txId in
-            self.hideLoader()
-            self.infoLabel.text=txId
-            UIPasteboard.general.string=txId
-            
+        if let assetIndex=assetIndex{
+            showLoader()
+            revokeAsa(algodClient: Config.algodClient!, manager: Config.account2!, clawBackFromAddress: Config.account3!.address, clawBackToAddress: Config.account2!.address, assetAmount: 10, assetIndex: assetIndex){txId in
+                self.hideLoader()
+                self.infoLabel.text=txId
+                UIPasteboard.general.string=txId
+                
+            }
         }
+       
     }
     
     
     @IBAction func destroyAccount1Clicked(_ sender: Any) {
-        showLoader()
-        destroyAsa(algodClient: Config.algodClient!, creator: Config.account1!, assetIndex: assetIndex!){txId in
-            self.hideLoader()
-            self.infoLabel.text=txId
-            UIPasteboard.general.string=txId
-            
-    }
+        if let assetIndex=assetIndex{
+            showLoader()
+            destroyAsa(algodClient: Config.algodClient!, creator: Config.account1!, assetIndex: assetIndex){txId in
+                self.hideLoader()
+                self.infoLabel.text=txId
+                UIPasteboard.general.string=txId
+                
+        }
+        }
+      
     }
     
   

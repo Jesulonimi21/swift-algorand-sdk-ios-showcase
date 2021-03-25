@@ -27,6 +27,7 @@ class AccountsAndTransactionsController: UIViewController {
     @IBOutlet weak var account1GetAccountBalanceButton: UIButton!
     @IBOutlet weak var account1FundsNeededButton: UIButton!
 
+    @IBOutlet weak var fundMultisigButton: UIButton!
     @IBOutlet weak var informationLabel: UITextView!
     @IBOutlet weak var sendMultisigTokensButton: UIButton!
     var multisigAddress:MultisigAddress?
@@ -134,7 +135,8 @@ class AccountsAndTransactionsController: UIViewController {
     }
     
     @IBAction func createMultisigAddress(_ sender: Any) {
-        createMultisigAddress(address1: Config.account1!.getAddress(), address2: Config.account2!.getAddress(),address3: Config.account3!.getAddress())
+        Config.multisigAddress =   createMultisigAddress(address1: Config.account1!.getAddress(), address2: Config.account2!.getAddress(),address3: Config.account3!.getAddress())
+        fundMultisigButton.setTitleColor(UIColor.blue, for: .normal)
     }
     
     @IBAction func sendFromMultisigAddressToAccount2(_ sender: Any) {
@@ -192,6 +194,21 @@ class AccountsAndTransactionsController: UIViewController {
     }
     
     
+    @IBAction func fundMultisigAddress(_ sender: Any) {
+        if let multisigAddress=Config.multisigAddress?.toString(){
+            UIPasteboard.general.string=multisigAddress
+            var urlString=""
+            if(Config.currentNet==Config.TESTNET){
+               urlString="https://bank.testnet.algorand.network/"
+            }else if(Config.currentNet==Config.BETANET){
+                urlString="https://bank.betanet.algodev.network/"
+            }
+            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
+        }
+     
+    }
     
     
     
@@ -256,7 +273,7 @@ class AccountsAndTransactionsController: UIViewController {
     
     }
     
-    func createMultisigAddress(address1:Address,address2:Address,address3:Address){
+    func createMultisigAddress(address1:Address,address2:Address,address3:Address)->MultisigAddress{
         var ed25519i = Ed25519PublicKey(bytes:address1.bytes!)
         var ed25519ii=Ed25519PublicKey(bytes:address2.bytes!)
         var ed25519iii=Ed25519PublicKey(bytes:address3.bytes!)
@@ -264,6 +281,7 @@ class AccountsAndTransactionsController: UIViewController {
         self.multisigAddress = try! MultisigAddress(version: 1, threshold: 2, publicKeys: [ed25519ii,ed25519i,ed25519iii])
         self.informationLabel.text=multisigAddress!.toString()
         UIPasteboard.general.string=multisigAddress!.toString()
+        return multisigAddress!
     }
     
     func sendMultisigTransaction(account1:Account,account2:Account,receiverAddress:Address){
@@ -310,6 +328,29 @@ class AccountsAndTransactionsController: UIViewController {
     
         
     }
+    
+    
+    func waitForTransaction(algodClient:AlgodClient, txId:String, funcToCall: @escaping (Int64?)->Void) {
+        var confirmedRound: Int64?=0
+        var assetIndex:Int64?=0
+        algodClient.pendingTransactionInformation(txId:txId).execute(){
+            pendingTransactionResponse in
+                if(pendingTransactionResponse.isSuccessful){
+                    confirmedRound=pendingTransactionResponse.data!.confirmedRound
+                    
+                    if(confirmedRound != nil && confirmedRound! > 0){
+                       funcToCall(confirmedRound)
+                    }else{
+                        try!  self.waitForTransaction(algodClient:algodClient, txId: txId,funcToCall: funcToCall)
+                    }
+                }else{
+                    print(pendingTransactionResponse.errorDescription!)
+                    funcToCall(nil)
+                    confirmedRound=12000;
+                }
+    }
+}
+    
     
     public func showLoader(){
         let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
