@@ -15,11 +15,7 @@ This solution shows you how to develop an ios app with the swift algorand sdk bu
 11. [Conclusion](#conclusion)
 
 # Setup
-Make sure you have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, preferrably from the apple store, this tutorial uses Xcode 12.4  which is the latest at the time, you can then proceed to clone the project from this [repo](https://github.com/Jesulonimi21/swift-algorand-sdk-ios-showcase), after cloning it, all you need to do is open its root directory in terminal and run the code below to install its dependencies:
-```bash
-pod install
-```
-After that, you are good to go and can decide to run the app as you please.You can open the app by opening `swift-algorand-sdk-ios-showcase.xcworkspace` in xcode
+Make sure you have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, preferrably from the apple store, this tutorial uses Xcode 12.4  which is the latest at the time, you can then proceed to clone the project from this [repo](https://github.com/Jesulonimi21/swift-algorand-sdk-ios-showcase), after cloning it, all you need to do is open the project in xcode by going to its root directory and opening the  `swift-algorand-sdk-ios-showcase.xcworkspace` file in xcode, wait for it to download the necessary dependencies, set the build environment to iphone12 and click on the run button.
 By default, you are connected to the Hackathon testnet node , this is so that the app can be tested smoothly without having to expose tokens or running a custom node.
 
 # Application Structure
@@ -115,7 +111,7 @@ The methods for this can be found below
 The code above is pretty simple, we first of all initialize the `algodClient`, show a loader and then we proceed to get its status by calling the `getStatus` method, so we can get the last round and pass it to the query for getting the Block with the `getBlock` method.Finally we check if there was an error and update textView and hide the loader
 
 ## Create and Fund Accounts
-You can decide to create Three accounts, `Generate Account Button` and you'll see the option to fund an account or get its account balance,
+You can decide to create Three accounts,  click on the `Generate Account Button` and you'll see the option to fund an account or get its account balance,
 if you choose the option to fund account, you'll be taken to the respective dispenser page for [testnet](https://bank.testnet.algorand.network/) or [betanet](https://bank.betanet.algodev.network/) and automatically, the address for the respective account is copied to the clipboard so it can be pasted in the input field of the dispenser, after funding the account, you can click the Get account Balance button to confirm the amount in the account
 
 

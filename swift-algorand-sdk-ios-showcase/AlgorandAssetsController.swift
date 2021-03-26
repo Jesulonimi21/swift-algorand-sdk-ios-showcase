@@ -71,7 +71,7 @@ class AlgorandAssetsController: UIViewController {
     @IBAction func transferFromAccount1to3(_ sender: Any) {
         if let assetIndex=self.assetIndex{
             showLoader()
-            transferAsa(algodClient: Config.algodClient!, sender: Config.account2!, receiver: Config.account2!.address, amount: 10000000, assetIndex: assetIndex){txId in
+            transferAsa(algodClient: Config.algodClient!, sender: Config.account2!, receiver: Config.account2!.address, amount: 1, assetIndex: assetIndex){txId in
                 self.hideLoader()
                 self.infoLabel.text=txId
                 UIPasteboard.general.string=txId
