@@ -660,7 +660,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSY-Dl-rP9">
                                 <rect key="frame" x="45" y="479" width="359" height="30"/>
-                                <state key="normal" title="Senf from Multisig to Account 2">
+                                <state key="normal" title="Send from Multisig to Account 2">
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
                                 <connections>

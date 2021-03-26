@@ -676,3 +676,5 @@ func runSplitProgram(algodClient:AlgodClient) throws{
 ```
 ## Conclusion
 This solutions contains a lot of information you will need while trying to use the swift sdk, although this has been done soecifically in the IOS environment,the code should work fine in any other swift environment. We reviewed the basics of getting a block and creating an account. Also, we covered Transactions and MultiSig transactions. Then we looked at another set of transactions for Algorand Standard Assets including SDK methods that Create, Change, Opt-In, Transfer, Freeze, Clawback, and Destroy Assets. Atomic transfers and Algorand Smart Contracts were also covered. Have fun building your next app, using Algorand!
+
+https://youtu.be/CAw0l9dWvhE
