@@ -1,5 +1,4 @@
-## Build Algorand IOS Apps with the Swift Algorand SDK
-This solution shows you how to develop an ios app with the swift algorand sdk bu utilising the swift programming language, this is all thanks to the [swift algorand sdk](https://github.com/Jesulonimi21/Swift-Algorand-Sdk) which has made Algorand more acccessible to  millions of native I0S and swift developers all over the world.
+This solution shows you how to develop an ios app with the swift algorand sdk by utilising the Swift programming language, this is all thanks to the [Swift Algorand SDK](https://github.com/Jesulonimi21/Swift-Algorand-Sdk) which has made Algorand more accessible to millions of native I0S and swift developers all over the world.
 
 ## Table Of Contents
 1. [Setup](#setup)
@@ -15,39 +14,34 @@ This solution shows you how to develop an ios app with the swift algorand sdk bu
 11. [Conclusion](#conclusion)
 
 # Setup
-Make sure you have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, preferrably from the apple store, this tutorial uses Xcode 12.4  which is the latest at the time, you can then proceed to clone the project from this [repo](https://github.com/Jesulonimi21/swift-algorand-sdk-ios-showcase), after cloning it, all you need to do is open the project in xcode by going to its root directory and opening the  `swift-algorand-sdk-ios-showcase.xcworkspace` file in xcode, wait for it to download the necessary dependencies, set the build environment to iphone12 and click on the run button.
-By default, you are connected to the Hackathon testnet node , this is so that the app can be tested smoothly without having to expose tokens or running a custom node.
+Make sure you have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, preferably from the apple store, this tutorial uses Xcode 12.4 which is the latest at the time, you can then proceed to clone the project from this [repo](https://github.com/Jesulonimi21/swift-algorand-sdk-ios-showcase), after cloning it, all you need to do is open the project in Xcode by going to its root directory and opening the `swift-algorand-sdk-ios-showcase.xcworkspace` file in Xcode, wait for it to download the necessary dependencies, set the Build environment to iphone12 and click on the run button.
+By default, you are connected to the Hackathon testnet node, this is so that the app can be tested smoothly without having to expose tokens or running a custom node.
 
 # Application Structure
 If you opened the `swift-algorand-sdk-ios-showcase.xcworkspace` file in Xcode, you should have a file structure similar to the image below:
-<div style="text-align:center">
- <img src="./ApplicationStructure.png" width=
- "200px">
-</div>
 
-The files we will be working with are those in `swift-algorand-sdk-ios-showcase` folder, i have toggled it down to reveal the files within it in the image above. The major purpose of the app is to show how to use the swift sdk so Architectural Patterns are not used for the purpose of simplicity.
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/ApplicationStructure.png){:style="width:200px"}
+
+The files we will be working with are those in the `swift-algorand-sdk-ios-showcase` folder, I have toggled it down to reveal the files within it in the image above. The major purpose of the app is to show how to use the swift SDK so Architectural Patterns are not used for the purpose of simplicity.
 
 The app has a main page which acts as the primary navigation and an image of it can be found below:
-<div style="text-align:center">
- <img src="./homeScreen.png" width=
- "200px">
-</div>
 
-The page above is responsible for taking you to the respective pages that we write the bulk of the code in this app, each screen can be tested independently because of the provision of default values in the `Config.swift` file although this values are changed as you go through the app.
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/homeScreen.png){:style="width:200px"}
+
+The page above is responsible for taking you to the respective pages that we write the bulk of the code in this app, each screen can be tested independently because of the provision of default values in the `Config.swift` file although these values are changed as you go through the app.
+
 
 
 # Node And Network Settings
-The Node and Network settings screen allows you to select the network and node  that the app will use for the configuration of the AlgodClient in other classes(Screens), this ends up changing the value of the static `algodClient` variable in the `Config.swift` file.
+The Node and Network settings screen allow you to select the network and node that the app will use for the configuration of the AlgodClient in other classes(Screens), which ends up changing the value of the static `algodClient` variable in the `Config.swift` file.
 All the code for this page can be found in the `NodeAndNetworkSettingsController.swift` file.
 
-<div style="text-align:center">
- <img src="./NodeAndNetworkSettingsScreen.png" width=
- "200px">
-</div>
 
 
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/NodeAndNetworkSettingsScreen.png){:style="width:200px"}
 
-Lets look at the code that is  run when purestake is clicked for example
+
+Let's look at the code that is  run when purestake is clicked for example
 
 ```swift
 @IBAction func selectPurestakeNode(_ sender: DLRadioButton) {
@@ -70,11 +64,14 @@ Note: Please make sure you have placed a value for the `Config.PURESTAKE_API_KEY
 
 ## Accounts and Transactions
 Please open the `AccountsAndTransactionsController.swift` file, you can click on the Get Block Button and you'll see the loading indicator and after, you'll see information on the Current Block in the scrollable text area.
-<div style="text-align:center">
- <img src="./AccountsAndTransacrtionState1.png" width=
- "200px">
-</div>
-The methods for this can be found below
+
+
+
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/AccountsAndTransacrtionState1.png){:style="width:200px"}
+
+
+
+The method responsible for the bulk of this can be found below
 
 ```swift
  @IBAction func getBlockInfo(_ sender: Any) {
@@ -108,19 +105,17 @@ The methods for this can be found below
            }
     }
 ```
-The code above is pretty simple, we first of all initialize the `algodClient`, show a loader and then we proceed to get its status by calling the `getStatus` method, so we can get the last round and pass it to the query for getting the Block with the `getBlock` method.Finally we check if there was an error and update textView and hide the loader
+The code above is pretty simple. We, first of all, initialize the `algodClient`, show a loader and then we proceed to get its status by calling the `getStatus` method, so we can get the last round and pass it to the query for getting the Block with the `getBlock` method. Finally, we check if there was an error and update textView and hide the loader
 
 ## Create and Fund Accounts
-You can decide to create Three accounts,  click on the `Generate Account Button` and you'll see the option to fund an account or get its account balance,
+You can decide to create Three accounts, `Generate Account Button` and you'll see the option to fund an account or get its account balance,
 if you choose the option to fund account, you'll be taken to the respective dispenser page for [testnet](https://bank.testnet.algorand.network/) or [betanet](https://bank.betanet.algodev.network/) and automatically, the address for the respective account is copied to the clipboard so it can be pasted in the input field of the dispenser, after funding the account, you can click the Get account Balance button to confirm the amount in the account
 
 
-<div style="text-align:center">
- <img src="./AccountsAndTransactionState2.png" width=
- "200px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <img src="./AccountsAndTransactionState3.png" width=
- "200px">
-</div>
+
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/AccountsAndTransactionState2.png){:style="width:200px"}
+
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/AccountsAndTransactionState3.png){:style="width:200px"}
 the code to create account can be found below
 ```swift
     @IBAction func generateAccount1(_ sender: Any) { 
@@ -138,7 +133,7 @@ Feel free to check out the code for Checking Account Balance and Funding the acc
 
 
 ## Transactions
-Now, we can proceed to allow the transfer of funds from account 1 to 2, the `Transfer From Account 1 to 2` button should no longer be greyed out after generating account 1 and 2, you can clivk on it to transfer funds from account 1 to 2, after the funds have been transferred, you should be able to see the transaction id in the info text and if you clicked on `Get Account2 Balance`, you should see the account balance
+Now, we can proceed to allow the transfer of funds from account 1 to 2, the `Transfer From Account 1 to 2` button should no longer be greyed out after generating account 1 and 2, you can click on it to transfer funds from account 1 to 2, after the funds have been transferred, you should be able to see the transaction id in the info text and if you clicked on `Get Account2 Balance`, you should see the account balance
 
 ```swift
   func transferFunds(sender:Account,receiverAddress:Address){
@@ -184,11 +179,11 @@ Now, we can proceed to allow the transfer of funds from account 1 to 2, the `Tra
     
     }
 ```
-The `transferFunds` function  builds a transaction by calling the `TransactionPaymentBuilder`, and calling methods for amount, note, suggestedParams on it, it then signs the transaction using the account its function receives and sends a messagepack of the signed transaction to the algorand network and updates the information label below with the transaction id if it was successfull or with the error if it wasnt
+The `transferFunds` function  builds a transaction by calling the `TransactionPaymentBuilder`, and calling methods for amount, note, suggestedParams on it, it then signs the transaction using the account its function receives and sends a messagepack of the signed transaction to the Algorand network and updates the information label below with the transaction id if it was successful or with the error if it wasn't
 
 
 ## Multisig Transaction
-You can click on the `Create Multisig Address button`, this will create a multisig address  and place the multisig address on the clipboard so it can be pasted in the dispenser to fund the multisig address. 
+You can click on the `Create Multisig Address button`, this will create a multisig address and place the multisig address on the clipboard so it can be pasted in the dispenser to fund the multisig address. 
 The code to fund the multisig address can be found below
 
 ```swift
@@ -202,9 +197,9 @@ The code to fund the multisig address can be found below
         UIPasteboard.general.string=multisigAddress!.toString()
     }
 ```
-It simply gets the ed25519 public key for each address and passes  an array of them  to the `MultisigAddress` constructor to create the multisig address, it uses a version of 1 and threshold of 2. The threshold represents the number of valid signers that must provide signatures for the transaction to be successfull.
+It simply gets the ed25519 public key for each address and passes an array of them to the `MultisigAddress` constructor to create the multisig address, it uses a version of 1 and a threshold of 2. The threshold represents the number of valid signers that must provide signatures for the transaction to be successful.
 
-After funding the multisig adddress by recharging it in the explorer, you can go ahead to click on the `Send From Multisig to Accoun 2 ` button and this should send 1 algo to account 2 displaying the transaction id in the info text at the bottom of the string, the transaction id is automatically copied to the clipboard so this can be inspected.
+After funding the multisig address by recharging it in the explorer, you can go ahead to click on the `Send From Multisig to Account 2 ` button and this should send 1 algo to account 2 displaying the transaction id in the info text at the bottom of the string, the transaction id is automatically copied to the clipboard so this can be inspected.
 The code for this can be found below
 ```swift
 func sendMultisigTransaction(account1:Account,account2:Account,receiverAddress:Address){
@@ -255,22 +250,25 @@ func sendMultisigTransaction(account1:Account,account2:Account,receiverAddress:A
 The transaction is conducted using the multisig address as the sender and then signed by `account1` and the `SignedTransaction` object is signed again by `account2` using the `appendMultisigTransaction` method, and then the signed transaction returned is sent to the network. The transaction id is displayed in the information text field and also copied to the clipboard so it can be inspected in the [explorer](https://testnet.algoexplorer.io/) 
 
 
+
 ## ASA
 Next, you can click on the `Algorand Standard Assets` , this will take you to the page below:
- <div style="text-align:center">
- <img src="./AlgorandStandardAssetsScreen.png" width=
- "200px">
-</div>
 
-The order in  which we will go through on this page is to click on `Create Asset`  then `Configure Manager Role` then `Opt in Account3` then `Transfer From Acccount1 to 3`,then `Freeze Account3` then `Revoke Account3`  then `Destroy on Account1`
-
-**Create Asset:** You can click `Create Asset` and you should see the progress bar loading until the transaction completes, once the transaction completes, you should be able to see the Asset Id aat the top and the transaction id at the bottom right of the screen like below:
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/AlgorandStandardAssetsScreen.png){:style="width:200px"}
 
 
- <div style="text-align:center">
- <img src="./AlgorandStandardAssetScreenState2.png" width=
- "200px">
-</div>
+
+The order in  which we will go through on this page is to click on `Create Asset`  then `Configure Manager Role` then `Opt-in Account3` then `Transfer From Acccount1 to 3`, then `Freeze Account3` then `Revoke Account3`  then `Destroy on Account1`
+
+**Create Asset:** You can click `Create Asset` and you should see the progress bar loading until the transaction completes, once the transaction completes, you should be able to see the Asset Id at the top and the transaction id at the bottom right of the screen like below:
+
+
+
+
+
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/AlgorandStandardAssetScreenState2.png){:style="width:200px"}
+
+
 
 The code for this can be found in the `AlgorandAssetsController.swift` file, it is handled by the `createASA` function which can be found below: 
 
@@ -404,7 +402,7 @@ we simply create the transaction by calling in the `assetCreateTransactionBuilde
             }}   
     }
 ```
-The function above simply receives the `account`, the `assetIndex` and the `callBack`, calls the `assetAcceptTransactionBuilder` on the `Transaction` class and chains the  `acceptingAccount` and the  `assetIndex` method while passing in theor respective values and then callling the `callBack` with the transaction id.
+The function above simply receives the `account`, the `assetIndex` and the `callBack`, calls the `assetAcceptTransactionBuilder` on the `Transaction` class and chains the  `acceptingAccount` and the  `assetIndex` method while passing in their respective values and then calling the `callBack` with the transaction id.
 
 **Transfer Asset:** We will transfer our 10 tokens of our asset from `account2` to `account3`, this can be done by clicking on the `Transfer to Account3` button. The code for this can be found below
 ```swift
@@ -437,7 +435,7 @@ The function above simply receives the `account`, the `assetIndex` and the `call
 ```
 The function above calls the `assetTransferTransactionBuilder` method on the `Transaction` class and chains the necessary methods with the method call to transfer the asset, the sender signs the transaction and sends it to the network.
 
-**Freeze Asset:** Next, we will see how to freeze an asset by clicking on the `Freeze Asset` button, we will freeze the assets in `account3`, the freeze transaction is created by calling `assetFreezeTransactionBuilder` on the `Transaction` class and chaining the `freezeTarget` which signifies the account to freeze and the `freezeState` which signifies if to freeze or unfreeze the account, while passing in their respective parameters. The signer of this transaction has to be the `manager` which is `account1`
+**Freeze Asset:** Next, we will see how to freeze an asset by clicking on the `Freeze Asset` button, we will freeze the assets in `account3`, the freeze transaction is created by calling `assetFreezeTransactionBuilder` on the `Transaction` class and chaining the `freezeTarget` which signifies the account to freeze and the `freezeState` which signifies if to freeze or unfreeze the account while passing in their respective parameters. The signer of this transaction has to be the `manager` which is `account1`
 The code responsible for this can be found below:
 ```swift
     
@@ -494,7 +492,7 @@ func revokeAsa(algodClient:AlgodClient,manager:Account,clawBackFromAddress:Addre
     }
 ```
 
-**Destroy Asset:** We can now the destroy the asset by clicking on the `Destroy On Account1` For us to do this, the `Creator` of the asset has to have all the units of the asset in its account and also sign the transaction, the code for this can be found below:
+**Destroy Asset:** We can now destroy the asset by clicking on the `Destroy On Account1` For us to do this, the `Creator` of the asset has to have all the units of the asset in its account and also sign the transaction, the code for this can be found below:
 
 ```swift
 
@@ -530,10 +528,9 @@ We simply call `assetDestroyTransactionBuilder` on the `Transaction` class while
 ## Atomic Transfer
 Atomic transfers are used to send more than one transaction to the network at a time such that if any of the transactions fail, all the transactions fail, we will do this by sending 10 and 15 algo respectively to `account1` and `account2` from `account3`
 
-<div style="text-align:center">
- <img src="./AtomicTransferFinalState.png" width=
- "200px">
-</div>
+
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/AtomicTransferFinalState.png){:style="width:200px"}
+
 The code responsible for this can be found below
 
 ```swift
@@ -592,16 +589,14 @@ public func makeAtomicTransfer(signedTransactions:[SignedTransaction?],algodClie
 ```
 the  `makeAtomicTransfer` function simply computes the messagepack of both signed transactions and sends them to the network. the `waitForTransactions` method is used to wait till the transaction has been confirmed by the network.
 
+
 ## Algorand Smart Contract
 Algorand Smart Contracts (ASC1) are small programs written in an assembly-like language that can be used as a replacement for signatures within a transaction. The language of Algorand Smart Contracts is named Transaction Execution Approval Language or TEAL. 
 We will use the [Split Template](https://developer.algorand.org/docs/reference/teal/templates/split/) to see how this works. Templates are prebuilt TEAL programs that allow parameters to be injected into them from the SDKs that configure the contract.
 
-<div style="text-align:center">
- <img src="./AlgoransdSmartContractControllerState1.png" width=
- "200px">
-</div>
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/AlgoransdSmartContractControllerState1.png){:style="width:200px"}
 
-The code for the screen above can be found in `SmartContractController.swift` file, you can click on the `Generate Split Contract Address Button`, this will generate a Split contract address having `account1` as the `owner` and `account2` as `receiver1` and `account3` as `receiver2`, the adddress is automatically copied to the clipboard and is shown in a text at the bottom of the screen.
+The code for the screen above can be found in `SmartContractController.swift` file, you can click on the `Generate Split Contract Address Button`, this will generate a Split contract address having `account1` as the `owner` and `account2` as `receiver1` and `account3` as `receiver2`, the address is automatically copied to the clipboard and is shown in a text at the bottom of the screen.
 Clicking on the Fund Account will take you to the appropriate dispenser allowing you to fund the contract address.
 The code for Generating the split address can be found below 
 
@@ -627,12 +622,9 @@ The code for Generating the split address can be found below
 
 
 
-<div style="text-align:center">
- <img src="./SmartContractControllerState2.png" width=
- "200px">
-</div>
+![](https://raw.githubusercontent.com/Jesulonimi21/swift-algorand-sdk-ios-showcase/main/SmartContractControllerState2.png){:style="width:200px"}
 
-Clicking on the `Run Split Program` button to run the split program runs the program by passing in the amount to the contract, creating the respective transactions for the program and sending it  as an atomic transaction to the network, and waiting for the transaction to be confirmed.It further shows the transaction id and the confirmed round in a text at the bottom of the screen.
+Clicking on the `Run Split Program` button to run the split program runs the program by passing in the amount to the contract, creating the respective transactions for the program and sending it as an atomic transaction to the network, and waiting for the transaction to be confirmed.It further shows the transaction id and the confirmed round in a text at the bottom of the screen.
 The code responsible for this can be found below:
 ```swift
 func runSplitProgram(algodClient:AlgodClient) throws{
@@ -675,6 +667,6 @@ func runSplitProgram(algodClient:AlgodClient) throws{
     }
 ```
 ## Conclusion
-This solutions contains a lot of information you will need while trying to use the swift sdk, although this has been done soecifically in the IOS environment,the code should work fine in any other swift environment. We reviewed the basics of getting a block and creating an account. Also, we covered Transactions and MultiSig transactions. Then we looked at another set of transactions for Algorand Standard Assets including SDK methods that Create, Change, Opt-In, Transfer, Freeze, Clawback, and Destroy Assets. Atomic transfers and Algorand Smart Contracts were also covered. Have fun building your next app, using Algorand!
+This solution contains a lot of information you will need while trying to use the swift SDK, although this has been done specifically in the IOS environment, the code should work fine in any other swift environment. We reviewed the basics of getting a block and creating an account. Also, we covered Transactions and MultiSig transactions. Then we looked at another set of transactions for Algorand Standard Assets including SDK methods that Create, Change, Opt-In, Transfer, Freeze, Clawback, and Destroy Assets. Atomic transfers and Algorand Smart Contracts were also covered. Have fun building your next app, using Algorand!
 
 https://youtu.be/CAw0l9dWvhE
