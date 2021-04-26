@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "eaf6e622dd41b07b251d8f01752eab31bc811493",
-          "version": "5.4.1"
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/Flight-School/MessagePack",
         "state": {
           "branch": null,
-          "revision": "688d9c83e4e87070835fd45016e869e4e03e7319",
-          "version": "1.2.3"
+          "revision": "bbc5ab6362db234f2051e73e67296ebf5c3d2042",
+          "version": "1.2.4"
         }
       },
       {
@@ -41,9 +41,9 @@
         "package": "swift-algorand-sdk",
         "repositoryURL": "https://github.com/Jesulonimi21/Swift-Algorand-Sdk.git",
         "state": {
-          "branch": "main",
-          "revision": "5d88ee80888edda8743882905ba8b8c86227d547",
-          "version": null
+          "branch": null,
+          "revision": "42a9ae711d7758711206cac2822dc12ee1c4b046",
+          "version": "0.0.1"
         }
       }
     ]
