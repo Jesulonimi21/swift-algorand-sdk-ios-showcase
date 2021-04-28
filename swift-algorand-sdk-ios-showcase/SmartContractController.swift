@@ -45,9 +45,9 @@ class SmartContractController: UIViewController {
             UIPasteboard.general.string=split.address.description
             var urlString=""
             if(Config.currentNet==Config.TESTNET){
-               urlString="https://bank.testnet.algorand.network/"
+               urlString="https://bank.testnet.algorand.network/?account=\(split.address.description)"
             }else if(Config.currentNet==Config.BETANET){
-                urlString="https://bank.betanet.algodev.network/"
+                urlString="https://bank.betanet.algodev.network/?account=\(split.address.description)"
             }
             if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.openURL(url)
