@@ -111,5 +111,8 @@ class ViewController: UIViewController {
     @IBAction func moveToRekeyController(_ sender: Any) {
         performSegue(withIdentifier: "moveToRekeyScreen", sender: nil)
     }
+    @IBAction func moveToIndexerController(_ sender: Any) {
+        performSegue(withIdentifier: "moveToIndexerController", sender: nil)
+    }
 }
 

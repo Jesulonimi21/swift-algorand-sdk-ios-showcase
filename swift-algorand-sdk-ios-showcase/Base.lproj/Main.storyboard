@@ -131,6 +131,9 @@
                                 <rect key="frame" x="11" y="628" width="196" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="indexer"/>
+                                <connections>
+                                    <action selector="moveToIndexerController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dmz-S9-RfQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -145,11 +148,97 @@
                         <segue destination="dgU-Na-JVj" kind="show" identifier="moveToAtomicTransferScreen" id="wSk-3J-Oio"/>
                         <segue destination="FN4-FL-Ypk" kind="show" identifier="moveToSmartContractController" id="YbF-gn-rCE"/>
                         <segue destination="jEB-fY-JB3" kind="show" identifier="moveToRekeyScreen" id="aOB-cb-9ay"/>
+                        <segue destination="Hqi-cn-yZf" kind="show" identifier="moveToIndexerController" id="1dp-Zb-DGe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="597.10144927536237" y="71.651785714285708"/>
+        </scene>
+        <!--Indexer View Controller-->
+        <scene sceneID="huv-FN-0GL">
+            <objects>
+                <viewController id="Hqi-cn-yZf" customClass="IndexerViewController" customModule="swift_algorand_sdk_ios_showcase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oES-IN-81s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ig-Cb-NsN">
+                                <rect key="frame" x="185" y="128" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Health"/>
+                                <connections>
+                                    <action selector="lookUpHealthInfo:" destination="Hqi-cn-yZf" eventType="touchUpInside" id="Gyg-sF-UNH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBw-iY-kLV">
+                                <rect key="frame" x="151" y="166" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lookup Account"/>
+                                <connections>
+                                    <action selector="lookUPAccountInfo:" destination="Hqi-cn-yZf" eventType="touchUpInside" id="RLS-Ye-nd0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av3-db-6rC">
+                                <rect key="frame" x="108" y="204" width="199" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lookup AccountTransactions"/>
+                                <connections>
+                                    <action selector="lookUpAccountTransactions:" destination="Hqi-cn-yZf" eventType="touchUpInside" id="a2J-dK-USV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2e-w7-bQp">
+                                <rect key="frame" x="130" y="242" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SearchForApplications"/>
+                                <connections>
+                                    <action selector="searchForApplications:" destination="Hqi-cn-yZf" eventType="touchUpInside" id="cLe-78-8LZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhF-Kf-0sz">
+                                <rect key="frame" x="126" y="280" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lookup ApplicationById"/>
+                                <connections>
+                                    <action selector="lookupApplicationById:" destination="Hqi-cn-yZf" eventType="touchUpInside" id="Sth-Wu-pzc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEQ-It-oyL">
+                                <rect key="frame" x="145" y="318" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search For Assets"/>
+                                <connections>
+                                    <action selector="searchForAssets:" destination="Hqi-cn-yZf" eventType="touchUpInside" id="qpA-H1-pdC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb8-6J-lWW">
+                                <rect key="frame" x="139" y="356" width="139" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lookup Assets By Id"/>
+                                <connections>
+                                    <action selector="lookupAssetsById:" destination="Hqi-cn-yZf" eventType="touchUpInside" id="X7a-7a-D4x"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="saC-l9-aLf">
+                                <rect key="frame" x="44" y="519" width="329" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sB4-pD-DuS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A3d-SD-MRL"/>
+                    <connections>
+                        <outlet property="infoText" destination="saC-l9-aLf" id="Zu3-oJ-tbn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKn-XV-deh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-628" y="790"/>
         </scene>
         <!--Algorand Assets Controller-->
         <scene sceneID="OZI-Gq-HbS">

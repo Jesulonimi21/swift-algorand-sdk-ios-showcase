@@ -12,7 +12,8 @@ This solution shows you how to develop an ios app with the swift algorand sdk by
 8. [ASA](#asa)
 9. [Atomic Transfer](#atomic-transfer)
 10. [Algorand Smart Contract](#algorand-smart-contract)
-11. [Conclusion](#conclusion)
+11. [Rekey Transaction](#rekey-transaction)
+12. [Conclusion](#conclusion)
 
 # Setup
 Make sure you have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, preferably from the apple store, this tutorial uses Xcode 12.4 which is the latest at the time, you can then proceed to clone the project from this [repo](https://github.com/Jesulonimi21/swift-algorand-sdk-ios-showcase), after cloning it, all you need to do is open the project in Xcode by going to its root directory and opening the `swift-algorand-sdk-ios-showcase.xcworkspace` file in Xcode, wait for it to download the necessary dependencies, set the Build environment to iphone12 and click on the run button.
@@ -866,7 +867,172 @@ For the code above, the mahjor things to note is that account3's address is stil
 
   For more information on rekeying, feel free to check out this tutorial [here](https://developer.algorand.org/tutorials/generating-and-securing-vanity-address-using-rekeying/)
 
+## Indexer
+The Algorand Indexer is a feature that enables searching the blockchain for transactions, assets, accounts, and blocks with various criteria. The following code for various queries can be found in IndexerViewController.swift file in the following event handlers. There are many examples and filters on index searches, these are just a few below. Details can be found [here](https://developer.algorand.org/docs/features/indexer/).
+
+The code to instanciate the Indexer Deamon looks similar to this below. Here we are using [Purestake API Indexer](https://developer.purestake.io/code-samples) service.
+```swift
+indexerClient=IndexerClient(host: Config.PURESTAKE_INDEXER_API_ADDRESS, port: Config.PURESTAKE_API_PORT, token: Config.PURESTAKE_API_KEY)
+indexerClient!.set(key:"X-API-Key")
+```
+Health
+```swift
+   @IBAction func lookUpHealthInfo(_ sender: Any) {
+        indexerClient!.makeHealthCheck().execute(){ response in
+                if response.isSuccessful{
+                    print(response.data!.toJson()!)
+                    self.infoText.text = response.data!.toJson()!
+                }else{
+                    print(response.errorDescription)
+                }
+    }
+    }
+```
+Output should look similar to
+
+<div style="text-align:center">
+ <img src="./indexerHealthScreen.png" width=
+ "200px">
+</div>
  
+Lookup Account by ID
+```swift
+ @IBAction func lookUPAccountInfo(_ sender: Any) {
+        indexerClient!.lookUpAccountById(address: "LL2ZGXSHW7FJGOOVSV76RRZ6IGU5ZF4DPCHQ23G7ZLIWCB4WEMIATDBTLY").execute(){response in
+        
+                if response.isSuccessful{
+                        print("success")
+                    print(response.data!.toJson()!)
+                    self.infoText.text = response.data!.toJson()!
+                }else{
+                    print(response.errorDescription)
+                }
+    }
+    }  
+```
+Output should look similar to 
+
+<div style="text-align:center">
+ <img src="./indexerLookupAccountScreen.png" width=
+ "200px">
+</div>
+
+
+
+Lookup Account Transactions
+
+```swift
+indexerClient!.lookUpAccountTransactions(address: "LL2ZGXSHW7FJGOOVSV76RRZ6IGU5ZF4DPCHQ23G7ZLIWCB4WEMIATDBTLY").execute(){response in
+                if response.isSuccessful{
+                        print("success")
+                    print(response.data!.toJson()!)
+                    self.infoText.text = response.data!.toJson()!
+                }else{
+                    print(response.errorDescription)
+                }
+            }
+```
+Output should look similar to 
+<div style="text-align:center">
+ <img src="./indexerLookUpTransactionsScreen.png" width=
+ "200px">
+</div>
+<br /><br />
+
+
+Search For Applications
+
+```swift
+@IBAction func searchForApplications(_ sender: Any) {
+        indexerClient!.searchForApplications().execute(){ response in
+                if response.isSuccessful{
+                    print(response.data!.toJson()!)
+                    self.infoText.text = response.data!.toJson()!
+                }else{
+                    print(response.errorDescription)
+                }
+            }
+    }
+    
+```
+Outputs should look similar to 
+<div style="text-align:center">
+ <img src="./indexerSearchForApplications.png" width=
+ "200px">
+</div>
+<br /><br />
+
+Lookup Application by ID
+```swift
+   @IBAction func lookupApplicationById(_ sender: Any) {
+        indexerClient!.lookUpApplicationsById(id:12174882).execute(){ response in
+               if response.isSuccessful{
+                   print(response.data!.toJson()!)
+                self.infoText.text = response.data!.toJson()!
+               }else{
+                   print(response.errorDescription)
+               }
+           }
+    }
+```
+Outputs should look similar to 
+<div style="text-align:center">
+ <img src="./indexerLookUpApplicationById.png" width=
+ "200px">
+</div>
+<br /><br />
+
+
+Search For Assets
+```swift
+ @IBAction func searchForAssets(_ sender: Any) {
+        indexerClient!.searchForAssets().assetId(assetId:14077815).execute(){ response in
+                if response.isSuccessful{
+                    print(response.data!.toJson()!)
+                    self.infoText.text = response.data!.toJson()!
+                }else{
+                    print(response.errorDescription)
+                    print("Error");
+                }
+            }
+    }
+```
+
+Outputs should look similar to 
+<div style="text-align:center">
+ <img src="./indexerSearchForAssets.png" width=
+ "200px">
+</div>
+<br /><br />
+
+
+Lookup Asset by ID
+
+```swift
+   @IBAction func lookupAssetsById(_ sender: Any) {
+        indexerClient!.lookUpAssetById(id:14077815).execute(){response in
+
+                if response.isSuccessful{
+                        print("success")
+                    print(response.data!.toJson()!)
+                    self.infoText.text = response.data!.toJson()!
+                }else{
+                    print(response.errorDescription)
+                    print("Error");
+
+                }
+            }
+    }
+```
+
+Outputs should look similar to 
+<div style="text-align:center">
+ <img src="./indexerLookUPaSSETSbYId.png" width=
+ "200px">
+</div>
+<br /><br />
+
+
 ## Conclusion
 This solution contains a lot of information you will need while trying to use the swift SDK, although this has been done specifically in the IOS environment, the code should work fine in any other swift environment. We reviewed the basics of getting a block and creating an account. Also, we covered Transactions and MultiSig transactions. Then we looked at another set of transactions for Algorand Standard Assets including SDK methods that Create, Change, Opt-In, Transfer, Freeze, Clawback, and Destroy Assets. Atomic transfers and Algorand Smart Contracts were also covered. Have fun building your next app, using Algorand!
 
