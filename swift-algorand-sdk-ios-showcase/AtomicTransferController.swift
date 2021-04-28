@@ -93,14 +93,14 @@ class AtomicTransferController: UIViewController {
            print(paramResponse.errorDescription);
            return;
        }
-            var tx1 = Transaction.paymentTransactionBuilder().setSender(sender.address)
+            var tx1 = try! Transaction.paymentTransactionBuilder().setSender(sender.address)
              .amount(1000000)
              .receiver(receiver1)
              .note("Swift Algo sdk is cool".bytes)
              .suggestedParams(params: paramResponse.data!)
              .build()
  
-            var tx2 = Transaction.paymentTransactionBuilder().setSender(sender.getAddress())
+            var tx2 = try! Transaction.paymentTransactionBuilder().setSender(sender.getAddress())
               .amount(1100000)
               .receiver(receiver2)
               .note("Swift Algo sdk is cool".bytes)

@@ -41,9 +41,18 @@
         "package": "swift-algorand-sdk",
         "repositoryURL": "https://github.com/Jesulonimi21/Swift-Algorand-Sdk.git",
         "state": {
+          "branch": "main",
+          "revision": "dd0c3f9fad38155cd98ec5dd7ff3554007089160",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftKeccak",
+        "repositoryURL": "https://github.com/bitflying/SwiftKeccak.git",
+        "state": {
           "branch": null,
-          "revision": "42a9ae711d7758711206cac2822dc12ee1c4b046",
-          "version": "0.0.1"
+          "revision": "5fc323d4b08a8c77cbb690505445b32a3b5a8aff",
+          "version": "0.1.2"
         }
       }
     ]

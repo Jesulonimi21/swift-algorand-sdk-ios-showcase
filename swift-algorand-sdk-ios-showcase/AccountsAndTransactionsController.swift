@@ -147,10 +147,11 @@ class AccountsAndTransactionsController: UIViewController {
     @IBAction func account1FundsNeededAction(_ sender: Any) {
         UIPasteboard.general.string=Config.account1?.address.description
         var urlString=""
+        var addressString = Config.account1!.address.description
         if(Config.currentNet==Config.TESTNET){
-           urlString="https://bank.testnet.algorand.network/"
+           urlString="https://bank.testnet.algorand.network/?account=\(addressString)"
         }else if(Config.currentNet==Config.BETANET){
-            urlString="https://bank.betanet.algodev.network/"
+            urlString="https://bank.betanet.algodev.network/?account=\(addressString)"
         }
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
@@ -163,10 +164,11 @@ class AccountsAndTransactionsController: UIViewController {
     @IBAction func account2FundsNeededAction(_ sender: Any) {
         UIPasteboard.general.string=Config.account2?.address.description
         var urlString=""
+        var addressString = Config.account2!.address.description
         if(Config.currentNet==Config.TESTNET){
-           urlString="https://bank.testnet.algorand.network/"
+           urlString="https://bank.testnet.algorand.network/?account=\(addressString)"
         }else if(Config.currentNet==Config.BETANET){
-            urlString="https://bank.betanet.algodev.network/"
+            urlString="https://bank.betanet.algodev.network/?account=\(addressString)"
         }
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
@@ -179,11 +181,12 @@ class AccountsAndTransactionsController: UIViewController {
     
     @IBAction func account3FundsNeededAction(_ sender: Any) {
         UIPasteboard.general.string=Config.account3?.address.description
+        var addressString = Config.account3!.address.description
         var urlString=""
         if(Config.currentNet==Config.TESTNET){
-           urlString="https://bank.testnet.algorand.network/"
+           urlString="https://bank.testnet.algorand.network/?account=\(addressString)"
         }else if(Config.currentNet==Config.BETANET){
-            urlString="https://bank.betanet.algodev.network/"
+            urlString="https://bank.betanet.algodev.network/?account=\(addressString)"
         }
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
@@ -199,9 +202,9 @@ class AccountsAndTransactionsController: UIViewController {
             UIPasteboard.general.string=multisigAddress
             var urlString=""
             if(Config.currentNet==Config.TESTNET){
-               urlString="https://bank.testnet.algorand.network/"
+               urlString="https://bank.testnet.algorand.network/?account=\(multisigAddress)"
             }else if(Config.currentNet==Config.BETANET){
-                urlString="https://bank.betanet.algodev.network/"
+                urlString="https://bank.betanet.algodev.network/?account=\(multisigAddress)"
             }
             if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.openURL(url)
@@ -240,7 +243,7 @@ class AccountsAndTransactionsController: UIViewController {
                 }
         
         
-            var tx = Transaction.paymentTransactionBuilder().setSender(sender.address)
+            var tx = try! Transaction.paymentTransactionBuilder().setSender(sender.address)
                     .amount(1000000)
                     .receiver(receiverAddress)
                     .note("Swift Algo sdk is cool".bytes)
@@ -295,7 +298,7 @@ class AccountsAndTransactionsController: UIViewController {
                 return;
             }
     
-            var tx = Transaction.paymentTransactionBuilder()
+            var tx = try! Transaction.paymentTransactionBuilder()
                 .setSender( try! self.multisigAddress!.toAddress())
                   .amount(1000000)
                 .receiver(receiverAddress)

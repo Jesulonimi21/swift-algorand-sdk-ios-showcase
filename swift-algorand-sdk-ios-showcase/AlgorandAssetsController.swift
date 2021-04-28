@@ -129,7 +129,7 @@ class AlgorandAssetsController: UIViewController {
                 print(paramResponse.errorDescription);
                 return;
             }
-     var tx = Transaction.assetCreateTransactionBuilder()
+     var tx = try! Transaction.assetCreateTransactionBuilder()
         .setSender(creator.getAddress())
                           .setAssetTotal(assetTotal: assetTotal)
                           .setAssetDecimals(assetDecimals:  assetDecimals)
@@ -196,7 +196,7 @@ class AlgorandAssetsController: UIViewController {
                 print(paramResponse.errorDescription);
                 return;
             }
-            var tx = Transaction.assetConfigureTransactionBuilder().reserve(reserve: previousManager.address).freeze(freeze: previousManager.address).clawback(clawback: previousManager.address).assetIndex(assetIndex: assetIndex).setSender(previousManager.getAddress())
+            var tx = try! Transaction.assetConfigureTransactionBuilder().reserve(reserve: previousManager.address).freeze(freeze: previousManager.address).clawback(clawback: previousManager.address).assetIndex(assetIndex: assetIndex).setSender(previousManager.getAddress())
             .manager(manager: manager)
                 .suggestedParams(params: paramResponse.data!)
                       .build();
@@ -228,7 +228,7 @@ class AlgorandAssetsController: UIViewController {
                 print(paramResponse.errorDescription);
                 return;
             }
-            var tx = Transaction.assetAcceptTransactionBuilder()
+            var tx = try! Transaction.assetAcceptTransactionBuilder()
                 .acceptingAccount(acceptingAccount: acceptingAccount.getAddress())
                 .assetIndex(assetIndex: assetIndex)
                 .suggestedParams(params: paramResponse.data!)
@@ -257,7 +257,7 @@ class AlgorandAssetsController: UIViewController {
                 return;
             }
 
-            var tx = Transaction.assetTransferTransactionBuilder().setSender(sender.getAddress()).assetReceiver(assetReceiver:receiver)
+            var tx = try! Transaction.assetTransferTransactionBuilder().setSender(sender.getAddress()).assetReceiver(assetReceiver:receiver)
                 .assetAmount(assetAmount:amount).assetIndex(assetIndex:assetIndex).suggestedParams(params:paramResponse.data!).build();
 
             var signedTrans=sender.signTransaction(tx: tx)
@@ -284,7 +284,7 @@ class AlgorandAssetsController: UIViewController {
                 return;
             }
     
-            var tx=Transaction.assetFreezeTransactionBuilder().setSender(manager.getAddress()).freezeTarget(freezeTarget:freezeTarget)
+            var tx = try! Transaction.assetFreezeTransactionBuilder().setSender(manager.getAddress()).freezeTarget(freezeTarget:freezeTarget)
                 .freezeState(freezeState:freezeState).assetIndex(assetIndex: assetIndex).suggestedParams(params: paramResponse.data!).build();
             var signedTrans=manager.signTransaction(tx: tx)
             var encodedTx:[Int8]=CustomEncoder.encodeToMsgPack(signedTrans)
@@ -307,7 +307,7 @@ class AlgorandAssetsController: UIViewController {
                 return;
             }
 
-            var tx = Transaction.assetClawbackTransactionBuilder().setSender(manager.getAddress())
+            var tx = try! Transaction.assetClawbackTransactionBuilder().setSender(manager.getAddress())
                 .assetClawbackFrom(assetClawbackFrom:clawBackFromAddress).assetReceiver(assetReceiver: clawBackToAddress).assetAmount(assetAmount: assetAmount)
                 .assetIndex(assetIndex:assetIndex).suggestedParams(params: paramResponse.data!).build()
             var signedTrans=manager.signTransaction(tx: tx)
@@ -329,7 +329,7 @@ class AlgorandAssetsController: UIViewController {
                 print(paramResponse.errorDescription);
                 return;
             }
-            var tx = Transaction.assetDestroyTransactionBuilder()
+            var tx = try! Transaction.assetDestroyTransactionBuilder()
                 .setSender(creator.getAddress())
                 .assetIndex(assetIndex: assetIndex)
                 .suggestedParams(params: paramResponse.data!)

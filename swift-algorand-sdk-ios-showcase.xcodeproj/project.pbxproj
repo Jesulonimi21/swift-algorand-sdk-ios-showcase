@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		096FEAE6363CDB468E351EC2 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD18A009FB406BAF432B1D9D /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */; };
 		6748856EDE94164D25E282BD /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		695636162638BD3D009532EC /* swift-algorand-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 695636152638BD3D009532EC /* swift-algorand-sdk */; };
 		695AAA0C25FBCD2D00706B69 /* AccountsAndTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695AAA0B25FBCD2D00706B69 /* AccountsAndTransactionsController.swift */; };
 		69621FED260671460031F645 /* SmartContractController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69621FEC260671460031F645 /* SmartContractController.swift */; };
 		696B5D8925FB625400B33A94 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696B5D8825FB625400B33A94 /* Config.swift */; };
-		6972C7C826364CE3007D60C7 /* swift-algorand-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 6972C7C726364CE3007D60C7 /* swift-algorand-sdk */; };
 		69817FE325FACAA100391D77 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596E25B424AB510430A4D3E6 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */; };
 		69817FE825FACF4700391D77 /* NodeAndNetworkSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69817FE725FACF4700391D77 /* NodeAndNetworkSettingsController.swift */; };
 		6996423625FF8A2000A7B884 /* AutoLayoutUiButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6996423525FF8A2000A7B884 /* AutoLayoutUiButton.swift */; };
@@ -26,6 +26,7 @@
 		69A8B02625F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8B02525F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseTests.swift */; };
 		69A8B03125F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A8B03025F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift */; };
 		69CBBC982604ADC900A8DF9D /* AtomicTransferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CBBC972604ADC900A8DF9D /* AtomicTransferController.swift */; };
+		69EDD19026396F5000DD8448 /* RekeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EDD18F26396F5000DD8448 /* RekeyViewController.swift */; };
 		7E1EC4465D66F62717C50BF9 /* Pods_swift_algorand_sdk_ios_showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C825A343509CD7370298CD7D /* Pods_swift_algorand_sdk_ios_showcase.framework */; };
 		B1544303411AC408B933327B /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596E25B424AB510430A4D3E6 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */; };
 		F8078A6DE2CC8496AF65B0F1 /* Pods_swift_algorand_sdk_ios_showcaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5D0894D21BFA2439EF4D9F /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */; };
@@ -74,6 +75,7 @@
 		69A8B03025F0E7D400509B2A /* swift_algorand_sdk_ios_showcaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_algorand_sdk_ios_showcaseUITests.swift; sourceTree = "<group>"; };
 		69A8B03225F0E7D400509B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69CBBC972604ADC900A8DF9D /* AtomicTransferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicTransferController.swift; sourceTree = "<group>"; };
+		69EDD18F26396F5000DD8448 /* RekeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RekeyViewController.swift; sourceTree = "<group>"; };
 		80D1D3DA806B25B09EF578AC /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B1703CAABC26EFC94D7A446 /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		C825A343509CD7370298CD7D /* Pods_swift_algorand_sdk_ios_showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_algorand_sdk_ios_showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6972C7C826364CE3007D60C7 /* swift-algorand-sdk in Frameworks */,
+				695636162638BD3D009532EC /* swift-algorand-sdk in Frameworks */,
 				7E1EC4465D66F62717C50BF9 /* Pods_swift_algorand_sdk_ios_showcase.framework in Frameworks */,
 				69817FE325FACAA100391D77 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */,
 			);
@@ -162,6 +164,7 @@
 				69A86BD726020E0A0054052D /* AlgorandAssetsController.swift */,
 				69CBBC972604ADC900A8DF9D /* AtomicTransferController.swift */,
 				69621FEC260671460031F645 /* SmartContractController.swift */,
+				69EDD18F26396F5000DD8448 /* RekeyViewController.swift */,
 			);
 			path = "swift-algorand-sdk-ios-showcase";
 			sourceTree = "<group>";
@@ -226,7 +229,7 @@
 			);
 			name = "swift-algorand-sdk-ios-showcase";
 			packageProductDependencies = (
-				6972C7C726364CE3007D60C7 /* swift-algorand-sdk */,
+				695636152638BD3D009532EC /* swift-algorand-sdk */,
 			);
 			productName = "swift-algorand-sdk-ios-showcase";
 			productReference = 69A8B00B25F0E7D100509B2A /* swift-algorand-sdk-ios-showcase.app */;
@@ -303,7 +306,7 @@
 			);
 			mainGroup = 69A8B00225F0E7D100509B2A;
 			packageReferences = (
-				6972C7C626364CE3007D60C7 /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */,
+				695636142638BD3D009532EC /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */,
 			);
 			productRefGroup = 69A8B00C25F0E7D100509B2A /* Products */;
 			projectDirPath = "";
@@ -455,6 +458,7 @@
 				69CBBC982604ADC900A8DF9D /* AtomicTransferController.swift in Sources */,
 				69A8B01325F0E7D100509B2A /* ViewController.swift in Sources */,
 				69621FED260671460031F645 /* SmartContractController.swift in Sources */,
+				69EDD19026396F5000DD8448 /* RekeyViewController.swift in Sources */,
 				696B5D8925FB625400B33A94 /* Config.swift in Sources */,
 				695AAA0C25FBCD2D00706B69 /* AccountsAndTransactionsController.swift in Sources */,
 				69817FE825FACF4700391D77 /* NodeAndNetworkSettingsController.swift in Sources */,
@@ -795,20 +799,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6972C7C626364CE3007D60C7 /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */ = {
+		695636142638BD3D009532EC /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Jesulonimi21/Swift-Algorand-Sdk.git";
 			requirement = {
-				kind = exactVersion;
-				version = 0.0.1;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6972C7C726364CE3007D60C7 /* swift-algorand-sdk */ = {
+		695636152638BD3D009532EC /* swift-algorand-sdk */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6972C7C626364CE3007D60C7 /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */;
+			package = 695636142638BD3D009532EC /* XCRemoteSwiftPackageReference "Swift-Algorand-Sdk" */;
 			productName = "swift-algorand-sdk";
 		};
 /* End XCSwiftPackageProductDependency section */
