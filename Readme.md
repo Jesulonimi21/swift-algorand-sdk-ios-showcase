@@ -674,6 +674,199 @@ func runSplitProgram(algodClient:AlgodClient) throws{
     }
   }
 ```
+## Rekey Transaction
+[Rekeying](https://developer.algorand.org/docs/features/accounts/rekey/#overview) is a powerful protocol feature which enables an Algorand account holder to maintain a static public address while dynamically rotating the authoritative private spending key(s). This is accomplished by issuing a “rekey-to transaction” which sets the authorized address field within the account object. Future transaction authorization using the account’s public address must be provided by the spending key(s) associated with the authorized address which may be a single key address, MultiSig address or LogicSig program address. Code can be found in Rekey.xml.cs in the folloeing events.
+
+<div style="text-align:center">
+ <img src="./rekeyscreen.png" width=
+ "200px">
+</div>
+
+The RekeyViewController file contains the code for the page above, it gives us access to three buttons, which allow's the rekeying of  account3 to account1, perform a transaction from account3 with account1 being the signer, reset the rekey transactio so that account3 can sign it's transactions once again.
+Lets look at the code responsible for this:
+1. Rekey accout 3 to 1
+```swift
+  @IBAction func rekeyAccount3toAccount1(_ sender: Any) {
+        showLoader()
+        var info = ""
+        infoLabel.text = "rekeying account 3 to 1 : Confirmed Round ..."
+        
+        var account3Address = Config.account3?.address
+        var account1Address = Config.account1?.address
+        Config.algodClient!.transactionParams().execute(){ paramResponse in
+            if(!(paramResponse.isSuccessful)){
+            print(paramResponse.errorDescription);
+                self.hideLoader()
+                self.infoLabel.text = "rekeying account 3 to 1 error: \(paramResponse.errorMessage)"
+            return;
+        }
+        
+        
+            var tx = try! Transaction.paymentTransactionBuilder().setSender(account3Address!)
+                .receiver(account3Address!)
+            .amount(0)
+            .note("Swift Algo rekey transaction".bytes)
+            .suggestedParams(params: paramResponse.data!)
+            .rekey(rekeyTo: account1Address!)
+            .build()
+        
+        
+            var signedTransaction = Config.account3!.signTransaction(tx: tx)
+        
+            var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+        
+          
+        
+            Config.algodClient!.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+               response in
+                if(response.isSuccessful){
+                    print(response.data!.txId)
+                    UIPasteboard.general.string="\(response.data!.txId)"
+                    self.waitForTransaction(algodClient: Config.algodClient!, txId: response.data!.txId){ confirmedRound in
+                        self.hideLoader()
+                        print("Confirmed Round : \(confirmedRound)")
+                      
+                        if let confRound = confirmedRound{
+                            self.infoLabel.text = "rekeying account 3 to 1 : Confirmed Round \(confRound)"
+                        }
+                      
+                    }
+                }else{
+                    self.hideLoader()
+                    print(response.errorDescription)
+                    self.infoLabel.text = "rekeying account 3 to 1 error: \(response.errorMessage)"
+                    print("Failed")
+                }
+        
+            }
+        }
+    }
+
+```
+All that does the magic in the code above is for account3's address to be the sender of the transaction while account1's address is the rekeyTo Value of the transaction and then the transaction is signed by account3.
+
+2. Make Transaction with rekeyed account
+```swift
+  @IBAction func makeTransactionWithRekeyedAccount(_ sender: Any) {
+        
+        infoLabel.text = "Making transaction with rekeyed account : Confirmed Round ..."
+        
+        showLoader()
+        var account3Address = Config.account3?.address
+        var account1Address = Config.account1?.address
+        Config.algodClient!.transactionParams().execute(){ paramResponse in
+            if(!(paramResponse.isSuccessful)){
+            print(paramResponse.errorDescription);
+                self.hideLoader()
+                self.infoLabel.text = "Making transaction with rekeyed accounterror: \(paramResponse.errorMessage)"
+            return;
+        }
+        
+        
+            var tx = try! Transaction.paymentTransactionBuilder().setSender(account3Address!)
+                .receiver(account1Address!)
+            .amount(1000000)
+            .note("Swift Algo send transaction after rekey".bytes)
+            .suggestedParams(params: paramResponse.data!)
+            .build()
+        
+        
+            var signedTransaction = Config.account1!.signTransaction(tx: tx)
+        
+            var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+        
+        
+            Config.algodClient!.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+               response in
+                if(response.isSuccessful){
+                    print(response.data!.txId)
+                    UIPasteboard.general.string="\(response.data!.txId)"
+                    self.waitForTransaction(algodClient: Config.algodClient!, txId: response.data!.txId){ confirmedRound in
+                        print("Confirmed Round : \(confirmedRound)")
+                        if let confRound = confirmedRound{
+                            self.infoLabel.text = "Making transaction with rekeyed account : Confirmed Round \(confRound)"
+                        }
+                    
+                        self.hideLoader()
+                    }
+                }else{
+                    self.hideLoader()
+                    print(response.errorDescription)
+                    self.infoLabel.text = "Making transaction with rekeyed accounterror: \(response.errorMessage)"
+                    print("Failed")
+                }
+        
+            }
+        }
+        
+    }
+```
+For the code above, the mahjor things to note is that account3's address is still the sender of the transaction but the transaction is signed by account1 since account3 was rekeyed to account1
+
+3.Reset Transaction
+```swift
+  @IBAction func resetAccounts(_ sender: Any) {
+        
+        infoLabel.text = "Resetting rekeyed account : Confirmed Round ..."
+        
+        
+        showLoader()
+        var account3Address = Config.account3?.address
+        var account1Address = Config.account1?.address
+      
+        print(account3Address?.description)
+        Config.algodClient!.transactionParams().execute(){ paramResponse in
+            if(!(paramResponse.isSuccessful)){
+            print(paramResponse.errorDescription);
+                self.infoLabel.text = "Resetting rekeyed account error : \(paramResponse.errorMessage)"
+                self.hideLoader()
+            return;
+        }
+        
+        
+            var tx = try! Transaction.paymentTransactionBuilder().setSender(account3Address!)
+                .receiver(account3Address!)
+                .amount(0)
+                .note("Swift Algo reset rekey transaction".bytes)
+                .suggestedParams(params: paramResponse.data!)
+                .rekey(rekeyTo: account3Address!)
+                .build()
+        
+        
+            var signedTransaction = Config.account1!.signTransaction(tx: tx)
+        
+            var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+        
+        
+            Config.algodClient!.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+               response in
+                if(response.isSuccessful){
+                    print(response.data!.txId)
+                    UIPasteboard.general.string="\(response.data!.txId)"
+                    self.waitForTransaction(algodClient: Config.algodClient!, txId: response.data!.txId){ confirmedRound in
+                        print("Confirmed Round : \(confirmedRound)")
+                        if let confRound = confirmedRound{
+                            self.infoLabel.text = "Resetting rekeyed account : Confirmed Round: \(confRound)"
+                        }
+                        self.hideLoader()
+                    }
+                }else{
+                    print(response.errorDescription)
+                    print("Failed")
+                    self.infoLabel.text = "Resetting rekeyed account error : \(response.errorMessage)"
+                    self.hideLoader()
+                }
+        
+            }
+        }
+    }
+    
+```
+  Lastly, we reset the rekey, same process with  rekeying but we make account3 the rekeyTo address now and then sign the transaction with account1.
+
+  For more information on rekeying, feel free to check out this tutorial [here](https://developer.algorand.org/tutorials/generating-and-securing-vanity-address-using-rekeying/)
+
+ 
 ## Conclusion
 This solution contains a lot of information you will need while trying to use the swift SDK, although this has been done specifically in the IOS environment, the code should work fine in any other swift environment. We reviewed the basics of getting a block and creating an account. Also, we covered Transactions and MultiSig transactions. Then we looked at another set of transactions for Algorand Standard Assets including SDK methods that Create, Change, Opt-In, Transfer, Freeze, Clawback, and Destroy Assets. Atomic transfers and Algorand Smart Contracts were also covered. Have fun building your next app, using Algorand!
 

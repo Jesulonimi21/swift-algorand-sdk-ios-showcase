@@ -341,7 +341,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSN-Jg-fhe">
                                 <rect key="frame" x="111" y="117" width="195" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Account 1 Opts In Account 3"/>
+                                <state key="normal" title="Account 3 Opts In Account 1"/>
                                 <connections>
                                     <action selector="rekeyAccount3toAccount1:" destination="jEB-fY-JB3" eventType="touchUpInside" id="t5H-E6-cX8"/>
                                 </connections>
