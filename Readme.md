@@ -13,7 +13,8 @@ This solution shows you how to develop an ios app with the swift algorand sdk by
 9. [Atomic Transfer](#atomic-transfer)
 10. [Algorand Smart Contract](#algorand-smart-contract)
 11. [Rekey Transaction](#rekey-transaction)
-12. [Conclusion](#conclusion)
+12. [Indexer](#indexer)
+13. [Conclusion](#conclusion)
 
 # Setup
 Make sure you have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, preferably from the apple store, this tutorial uses Xcode 12.4 which is the latest at the time, you can then proceed to clone the project from this [repo](https://github.com/Jesulonimi21/swift-algorand-sdk-ios-showcase), after cloning it, all you need to do is open the project in Xcode by going to its root directory and opening the `swift-algorand-sdk-ios-showcase.xcworkspace` file in Xcode, wait for it to download the necessary dependencies, set the Build environment to iphone12 and click on the run button.
