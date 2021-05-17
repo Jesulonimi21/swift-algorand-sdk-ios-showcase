@@ -114,5 +114,17 @@ class ViewController: UIViewController {
     @IBAction func moveToIndexerController(_ sender: Any) {
         performSegue(withIdentifier: "moveToIndexerController", sender: nil)
     }
+    
+    @IBAction func moveToCompileTealController(_ sender: Any) {
+        performSegue(withIdentifier: "moveToCompileTealViewController", sender: nil)
+    }
+    
+    @IBAction func moveToDryRunDebugController(_ sender: Any) {
+        performSegue(withIdentifier: "moveToDryRunDebugViewController", sender: nil)
+    }
+    @IBAction func moveToStatefulContractsController(_ sender: Any) {
+        performSegue(withIdentifier: "moveToStatefulContractsViewController", sender: nil)
+    }
+    
 }
 
