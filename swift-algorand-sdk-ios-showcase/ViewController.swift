@@ -36,7 +36,6 @@ class ViewController: UIViewController {
 //
 //    }
     public func testPaymentTrans(){
-   
         var PURESTAKE_API_KEY="ADRySlL0NK5trzqZGAE3q1xxIqlQdSfk1nbHxTNe";
         var PURESTAKE_API_PORT="443";
         var PURESTAKE_ALGOD_API_TESTNET_ADDRESS="https://testnet-algorand.api.purestake.io/ps2";

@@ -9,7 +9,7 @@ import UIKit
 import swift_algorand_sdk
 class StatefulContractsViewController: UIViewController {
     @IBOutlet weak var infoTextView: UITextView!
-    var appId:Int64?=15871086
+    var appId:Int64?=15880953
     var algodClient:AlgodClient?
     
     override func viewDidLoad() {
@@ -73,8 +73,12 @@ class StatefulContractsViewController: UIViewController {
         applicationCallTransaction();
     }
     @IBAction func readLocalStateAction(_ sender: Any) {
+        showLoader();
+        readLocalState()
     }
     @IBAction func readGlobalStateAction(_ sender: Any) {
+        showLoader();
+        readGlobalState()
     }
     
     
@@ -108,7 +112,7 @@ class StatefulContractsViewController: UIViewController {
     public func createApplication(){
         var algodClient = Config.algodClient!;
         
-        var account1 = Config.account2!
+        var account1 = Config.account3!
         var address = account1.getAddress()
         var address2 = account1.getAddress()
         
@@ -246,6 +250,10 @@ class StatefulContractsViewController: UIViewController {
     
     
     public func applicationCallTransaction(){
+        var str = "2021-05-19 at 11:25:43"
+        var data = str.data;
+        var ingt8Arr = CustomEncoder.convertToInt8Array(input: Array(data));
+        print(ingt8Arr);
         
         var account1 =  Config.account1!
     
@@ -262,7 +270,7 @@ class StatefulContractsViewController: UIViewController {
                         .applicationId(applicationId: self.appId!)
     
                         .suggestedParams(params: paramResponse.data!)
-                        .args(args: [[1,2]])
+                        .args(args: [ingt8Arr])
                         .build()
     
                     var signedTransaction=account1.signTransaction(tx: tx)
@@ -407,8 +415,89 @@ class StatefulContractsViewController: UIViewController {
     
     
                 }
-    
-        
     }
     
+    public func readLocalState(){
+
+        var account1:Account = Config.account1!
+        
+
+        print(account1.address.description)
+        Config.algodClient!.accountInformation(address: account1.getAddress().description).execute(){accountInformationResponse in
+            
+            if(!(accountInformationResponse.isSuccessful)){
+            print(accountInformationResponse.errorDescription);
+                self.infoTextView.text = accountInformationResponse.errorDescription!
+                self.hideLoader();
+            return;
+        }
+            
+            self.hideLoader()
+            if let appsLocalState = accountInformationResponse.data?.appsLocalState{
+                self.infoTextView.text = "";
+                for i in 0..<appsLocalState.count{
+                    if appsLocalState[i].id ?? -1 == self.appId{
+                        for j in 0..<(appsLocalState[i].keyValue?.count ?? 0){
+                            
+                            print(appsLocalState[i].keyValue![j].key)
+                            print(appsLocalState[i].keyValue![j].value.bytes)
+                            print(appsLocalState[i].keyValue![j].value.type)
+                            print(appsLocalState[i].keyValue![j].value.uint)
+                            var dDat = CustomEncoder.decodeFromBase64(CustomEncoder.convertBase64ToByteArray(data1: appsLocalState[i].keyValue![j].key))
+                            print(String(data: dDat, encoding: .utf8))
+                            var  keyString = String(data: dDat, encoding: .utf8)!
+                            self.infoTextView.text += "\(keyString): \(appsLocalState[i].keyValue![j].value.bytes)  \(appsLocalState[i].keyValue![j].value.uint) \n"
+                        }
+                    }
+                    print( appsLocalState[i].id)
+                }
+            }
+            
+        }
+    }
+    
+    
+    public func readGlobalState(){
+  
+        var account1:Account = Config.account3!
+          
+        print(account1.address.description)
+        Config.algodClient!.accountInformation(address: account1.getAddress().description).execute(){accountInformationResponse in
+                if(accountInformationResponse.isSuccessful){
+                    self.hideLoader()
+                
+                          print(accountInformationResponse.data!.amount)
+                    if let createdApps = accountInformationResponse.data?.createdApps{
+                        self.infoTextView.text="";
+                        print(self.appId)
+                        print(account1.getAddress().description)
+                        for i in 0..<createdApps.count{
+                            if createdApps[i].id! == self.appId{
+                                print(self.appId)
+                                print(createdApps[i].id)
+                                for j in 0..<(createdApps[i].params?.globalState?.count ?? 0) ?? 0..<0{
+                                    print(j)
+                                     print(createdApps[i].params?.globalState![j].key)
+                                    print(createdApps[i].params?.globalState![j].value.bytes)
+                                    print(createdApps[i].params?.globalState![j].value.type)
+                                    print(createdApps[i].params?.globalState![j].value.uint)
+                                    var dDat = CustomEncoder.decodeFromBase64(CustomEncoder.convertBase64ToByteArray(data1: (createdApps[i].params?.globalState![j].key)!))
+                                    var  keyString = String(data: dDat, encoding: .utf8)!
+                                    self.infoTextView.text += "\(keyString): \(createdApps[i].params?.globalState![j].value.bytes)  \(createdApps[i].params?.globalState![j].value.uint) \n"
+                                }
+                            }
+                            print(createdApps[i].id)
+                           
+                           
+                        }
+                        
+                    }
+                      }else{
+                          print(accountInformationResponse.errorDescription!)
+                        self.infoTextView.text = accountInformationResponse.errorDescription!
+                        self.hideLoader();
+                          print("Error")
+                      }
+            }
+    }
 }
