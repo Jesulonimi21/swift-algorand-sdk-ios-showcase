@@ -9,7 +9,7 @@ import UIKit
 import swift_algorand_sdk
 class StatefulContractsViewController: UIViewController {
     @IBOutlet weak var infoTextView: UITextView!
-    var appId:Int64?=15880953
+    var appId:Int64?=15990700
     var algodClient:AlgodClient?
     
     override func viewDidLoad() {
@@ -18,7 +18,6 @@ class StatefulContractsViewController: UIViewController {
         
         algodClient = Config.algodClient
         // Do any additional setup after loading the view.
-        
     }
     
 
@@ -61,12 +60,21 @@ class StatefulContractsViewController: UIViewController {
 
     @IBAction func createAppClicked(_ sender: Any) {
         showLoader();
-        createApplication();
+        
+            var localInts:Int64 = 1;
+            var localBytes:Int64 = 1;
+            var globalInts:Int64 = 1;
+            var globalBytes:Int64 = 0;
+        var clearStateProgramSource = "stateful_clear.teal"
+        var approvalProgramSource = "stateful_approval_init.teal"
+        createApplication(localInts: localInts, localBytes: localBytes, globalBytes: globalBytes, globalInts: globalInts, account1: Config.account3!, approvalProgramSource: approvalProgramSource, clearStateProgramSource: clearStateProgramSource);
         
     }
     @IBAction func optInClicked(_ sender: Any) {
         showLoader()
-        applicationOptIn();
+        var account1 =  Config.account1!
+
+        applicationOptIn(account1: account1);
     }
     @IBAction func callAppClicked(_ sender: Any) {
         showLoader()
@@ -74,22 +82,31 @@ class StatefulContractsViewController: UIViewController {
     }
     @IBAction func readLocalStateAction(_ sender: Any) {
         showLoader();
-        readLocalState()
+        var account1:Account = Config.account1!
+        readLocalState(account1: account1,applicationId: self.appId!)
     }
     @IBAction func readGlobalStateAction(_ sender: Any) {
         showLoader();
-        readGlobalState()
+        var account1:Account = Config.account3!
+        readGlobalState(account1: account1,applicationId: self.appId!)
     }
     
     
     @IBAction func updateAppClicked(_ sender: Any) {
         showLoader()
-        updateApplication()
+        var account1 = Config.account3!
+        var localInts:Int64 = 1;
+        var localBytes:Int64 = 1;
+        var globalInts:Int64 = 1;
+        var globalBytes:Int64 = 0;
+        var clearStateProgramSource = "stateful_clear.teal"
+        var approvaProgramSource = "stateful_approval_refact.teal"
+        updateApplication(localInts: localInts, localBytes: localBytes, globalBytes: globalBytes, globalInts: globalInts, account1: account1, approvalProgramSource: approvaProgramSource, clearStateProgramSource: clearStateProgramSource,applicationId: self.appId!)
     }
     
     @IBAction func closeOutAppCLICKED(_ sender: Any) {
         showLoader();
-        closeApplication();
+        closeApplication(applicationId:  self.appId!);
     }
     
     
@@ -102,34 +119,26 @@ class StatefulContractsViewController: UIViewController {
         loadingIndicator.startAnimating();
         alert.view.addSubview(loadingIndicator)
         self.present(alert, animated: true, completion: nil)
-        
     }
     
     public func hideLoader(){
         self.dismiss(animated: false, completion: nil)
     }
     
-    public func createApplication(){
+    public func createApplication(localInts:Int64,localBytes:Int64,globalBytes:Int64,globalInts:Int64,account1:Account,approvalProgramSource:String,clearStateProgramSource:String){
         var algodClient = Config.algodClient!;
         
-        var account1 = Config.account3!
+      
         var address = account1.getAddress()
         var address2 = account1.getAddress()
-        
-    
-        var localInts:Int64 = 1;
-        var localBytes:Int64 = 1;
-        var globalInts:Int64 = 1;
-        var globalBytes:Int64 = 0;
-    
         var approvalProgram:TEALProgram?
         var clearStateProgram:TEALProgram?
-        tealCompile(resource: "stateful_clear.teal"){ clearProgResult in
+        tealCompile(resource: clearStateProgramSource){ clearProgResult in
             clearStateProgram = try? TEALProgram(base64String: clearProgResult);
             print(clearStateProgram)
             print("ClearProg result: \(clearProgResult)")
             
-            self.tealCompile(resource: "stateful_approval_init.teal"){ approvalProgResult in
+            self.tealCompile(resource: approvalProgramSource){ approvalProgResult in
                 print("Approval Prog result: \(approvalProgResult)")
                 approvalProgram = try? TEALProgram(base64String:approvalProgResult)
                 print(approvalProgram)
@@ -206,7 +215,7 @@ class StatefulContractsViewController: UIViewController {
 }
     
     
-    public func applicationOptIn(){
+    public func applicationOptIn(account1:Account){
         var account1 =  Config.account1!
         var address = account1.getAddress()
     
@@ -302,27 +311,23 @@ class StatefulContractsViewController: UIViewController {
     
     }
     
-    public func updateApplication(){
+    public func updateApplication(localInts:Int64,localBytes:Int64,globalBytes:Int64,globalInts:Int64,account1:Account,approvalProgramSource:String,clearStateProgramSource:String,applicationId:Int64){
         var algodClient = Config.algodClient!;
         
-        var account1 = Config.account2!
+        
         var address = account1.getAddress()
         var address2 = account1.getAddress()
-        
-    
-        var localInts:Int64 = 1;
-        var localBytes:Int64 = 1;
-        var globalInts:Int64 = 1;
-        var globalBytes:Int64 = 0;
+      
     
         var approvalProgram:TEALProgram?
         var clearStateProgram:TEALProgram?
-        tealCompile(resource: "stateful_clear.teal"){ clearProgResult in
+        tealCompile(resource:
+        clearStateProgramSource){ clearProgResult in
             clearStateProgram = try? TEALProgram(base64String: clearProgResult);
             print(clearStateProgram)
             print("ClearProg result: \(clearProgResult)")
             
-            self.tealCompile(resource: "stateful_approval_refact.teal"){ approvalProgResult in
+            self.tealCompile(resource: approvalProgramSource){ approvalProgResult in
                 print("Approval Prog result: \(approvalProgResult)")
                 approvalProgram = try? TEALProgram(base64String:approvalProgResult)
                 print(approvalProgram)
@@ -336,7 +341,7 @@ class StatefulContractsViewController: UIViewController {
                         .setSender(account1.getAddress())
                         .approvalProgram(approvalProgram: approvalProgram!)
                         .clearStateProgram(clearStateProgram: clearStateProgram!)
-                        .applicationId(applicationId: self.appId!)
+                        .applicationId(applicationId:applicationId)
                         .suggestedParams(params: paramResponse.data!)
                         .build()
     
@@ -371,7 +376,7 @@ class StatefulContractsViewController: UIViewController {
     
     }
     
-    public func closeApplication(){
+    public func closeApplication(applicationId:Int64){
         var account1 =  Config.account1!
     
                 algodClient!.transactionParams().execute(){ paramResponse in
@@ -384,9 +389,8 @@ class StatefulContractsViewController: UIViewController {
     
                     var tx = try! Transaction.applicationCloseTransactionBuilder()
                         .setSender(account1.getAddress())
-                        .applicationId(applicationId: self.appId!)
+                        .applicationId(applicationId:   applicationId)
                         .suggestedParams(params: paramResponse.data!)
-        
                         .build()
     
                     var signedTransaction=account1.signTransaction(tx: tx)
@@ -417,9 +421,9 @@ class StatefulContractsViewController: UIViewController {
                 }
     }
     
-    public func readLocalState(){
+    public func readLocalState(account1:Account,applicationId:Int64){
 
-        var account1:Account = Config.account1!
+     
         
 
         print(account1.address.description)
@@ -436,7 +440,7 @@ class StatefulContractsViewController: UIViewController {
             if let appsLocalState = accountInformationResponse.data?.appsLocalState{
                 self.infoTextView.text = "";
                 for i in 0..<appsLocalState.count{
-                    if appsLocalState[i].id ?? -1 == self.appId{
+                    if appsLocalState[i].id ?? -1 == applicationId{
                         for j in 0..<(appsLocalState[i].keyValue?.count ?? 0){
                             
                             print(appsLocalState[i].keyValue![j].key)
@@ -457,9 +461,9 @@ class StatefulContractsViewController: UIViewController {
     }
     
     
-    public func readGlobalState(){
+    public func readGlobalState(account1:Account,applicationId:Int64){
   
-        var account1:Account = Config.account3!
+       
           
         print(account1.address.description)
         Config.algodClient!.accountInformation(address: account1.getAddress().description).execute(){accountInformationResponse in
@@ -472,7 +476,7 @@ class StatefulContractsViewController: UIViewController {
                         print(self.appId)
                         print(account1.getAddress().description)
                         for i in 0..<createdApps.count{
-                            if createdApps[i].id! == self.appId{
+                            if createdApps[i].id! == applicationId{
                                 print(self.appId)
                                 print(createdApps[i].id)
                                 for j in 0..<(createdApps[i].params?.globalState?.count ?? 0) ?? 0..<0{

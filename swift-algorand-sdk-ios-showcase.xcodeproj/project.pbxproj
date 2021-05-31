@@ -12,10 +12,6 @@
 		6903D698265025B300B8D714 /* CompileTealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903D697265025B300B8D714 /* CompileTealViewController.swift */; };
 		6903D69D265025C800B8D714 /* DryRunDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903D69C265025C800B8D714 /* DryRunDebugViewController.swift */; };
 		6903D6A2265025E800B8D714 /* StatefulContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903D6A1265025E800B8D714 /* StatefulContractsViewController.swift */; };
-		693E443B26525668006ABB3A /* stateful_clear.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 693E443A26525668006ABB3A /* stateful_clear.teal.txt */; };
-		693E444026525672006ABB3A /* stateful_approval_refact.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 693E443F26525672006ABB3A /* stateful_approval_refact.teal.txt */; };
-		693E44452652567C006ABB3A /* stateful_approval_init.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 693E44442652567C006ABB3A /* stateful_approval_init.teal.txt */; };
-		6947562C2650690E005C5CE2 /* sample.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6947562B2650690E005C5CE2 /* sample.teal.txt */; };
 		695636162638BD3D009532EC /* swift-algorand-sdk in Frameworks */ = {isa = PBXBuildFile; productRef = 695636152638BD3D009532EC /* swift-algorand-sdk */; };
 		695AAA0C25FBCD2D00706B69 /* AccountsAndTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695AAA0B25FBCD2D00706B69 /* AccountsAndTransactionsController.swift */; };
 		69621FED260671460031F645 /* SmartContractController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69621FEC260671460031F645 /* SmartContractController.swift */; };
@@ -37,6 +33,10 @@
 		69FCB46226398E6800FF4B8C /* IndexerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FCB46126398E6800FF4B8C /* IndexerViewController.swift */; };
 		7E1EC4465D66F62717C50BF9 /* Pods_swift_algorand_sdk_ios_showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C825A343509CD7370298CD7D /* Pods_swift_algorand_sdk_ios_showcase.framework */; };
 		B1544303411AC408B933327B /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596E25B424AB510430A4D3E6 /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */; };
+		C892275B2664C06C00B24987 /* sample.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = C892275A2664C06C00B24987 /* sample.teal.txt */; };
+		C892275D2664C0E000B24987 /* stateful_clear.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = C892275C2664C0E000B24987 /* stateful_clear.teal.txt */; };
+		C892275F2664C14300B24987 /* stateful_approval_init.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = C892275E2664C14300B24987 /* stateful_approval_init.teal.txt */; };
+		C89227612664C18E00B24987 /* stateful_approval_refact.teal.txt in Resources */ = {isa = PBXBuildFile; fileRef = C89227602664C18E00B24987 /* stateful_approval_refact.teal.txt */; };
 		F8078A6DE2CC8496AF65B0F1 /* Pods_swift_algorand_sdk_ios_showcaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5D0894D21BFA2439EF4D9F /* Pods_swift_algorand_sdk_ios_showcaseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +65,6 @@
 		6903D697265025B300B8D714 /* CompileTealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompileTealViewController.swift; sourceTree = "<group>"; };
 		6903D69C265025C800B8D714 /* DryRunDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DryRunDebugViewController.swift; sourceTree = "<group>"; };
 		6903D6A1265025E800B8D714 /* StatefulContractsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulContractsViewController.swift; sourceTree = "<group>"; };
-		693E443A26525668006ABB3A /* stateful_clear.teal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stateful_clear.teal.txt; path = ../../../../Downloads/stateful_clear.teal.txt; sourceTree = "<group>"; };
-		693E443F26525672006ABB3A /* stateful_approval_refact.teal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stateful_approval_refact.teal.txt; path = ../../../../Downloads/stateful_approval_refact.teal.txt; sourceTree = "<group>"; };
-		693E44442652567C006ABB3A /* stateful_approval_init.teal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stateful_approval_init.teal.txt; path = ../../../../Downloads/stateful_approval_init.teal.txt; sourceTree = "<group>"; };
-		6947562B2650690E005C5CE2 /* sample.teal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sample.teal.txt; path = "../../../Swift-Algorand-Sdk/Sources/swift-algorand-sdk/Resources/sample.teal.txt"; sourceTree = "<group>"; };
 		695AAA0B25FBCD2D00706B69 /* AccountsAndTransactionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsAndTransactionsController.swift; sourceTree = "<group>"; };
 		69621FEC260671460031F645 /* SmartContractController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartContractController.swift; sourceTree = "<group>"; };
 		696B5D8825FB625400B33A94 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -95,6 +91,10 @@
 		80D1D3DA806B25B09EF578AC /* Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B1703CAABC26EFC94D7A446 /* Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcaseTests/Pods-swift-algorand-sdk-ios-showcaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		C825A343509CD7370298CD7D /* Pods_swift_algorand_sdk_ios_showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_algorand_sdk_ios_showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C892275A2664C06C00B24987 /* sample.teal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sample.teal.txt; sourceTree = "<group>"; };
+		C892275C2664C0E000B24987 /* stateful_clear.teal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stateful_clear.teal.txt; sourceTree = "<group>"; };
+		C892275E2664C14300B24987 /* stateful_approval_init.teal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stateful_approval_init.teal.txt; sourceTree = "<group>"; };
+		C89227602664C18E00B24987 /* stateful_approval_refact.teal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stateful_approval_refact.teal.txt; sourceTree = "<group>"; };
 		D98717179674AE6E115090A9 /* Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests/Pods-swift-algorand-sdk-ios-showcase-swift-algorand-sdk-ios-showcaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC49E2F561E8E7B36C14ACE2 /* Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig"; path = "Target Support Files/Pods-swift-algorand-sdk-ios-showcase/Pods-swift-algorand-sdk-ios-showcase.debug.xcconfig"; sourceTree = "<group>"; };
 		FD18A009FB406BAF432B1D9D /* Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_algorand_sdk_ios_showcase_swift_algorand_sdk_ios_showcaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,13 +169,9 @@
 				69A8B00E25F0E7D100509B2A /* AppDelegate.swift */,
 				69817FE725FACF4700391D77 /* NodeAndNetworkSettingsController.swift */,
 				69A8B01025F0E7D100509B2A /* SceneDelegate.swift */,
-				6947562B2650690E005C5CE2 /* sample.teal.txt */,
-				693E443A26525668006ABB3A /* stateful_clear.teal.txt */,
 				69A8B01225F0E7D100509B2A /* ViewController.swift */,
-				693E44442652567C006ABB3A /* stateful_approval_init.teal.txt */,
 				69A8B01425F0E7D100509B2A /* Main.storyboard */,
 				69A8B01725F0E7D400509B2A /* Assets.xcassets */,
-				693E443F26525672006ABB3A /* stateful_approval_refact.teal.txt */,
 				69A8B01925F0E7D400509B2A /* LaunchScreen.storyboard */,
 				69A8B01C25F0E7D400509B2A /* Info.plist */,
 				696B5D8825FB625400B33A94 /* Config.swift */,
@@ -189,6 +185,10 @@
 				6903D697265025B300B8D714 /* CompileTealViewController.swift */,
 				6903D69C265025C800B8D714 /* DryRunDebugViewController.swift */,
 				6903D6A1265025E800B8D714 /* StatefulContractsViewController.swift */,
+				C892275A2664C06C00B24987 /* sample.teal.txt */,
+				C892275C2664C0E000B24987 /* stateful_clear.teal.txt */,
+				C892275E2664C14300B24987 /* stateful_approval_init.teal.txt */,
+				C89227602664C18E00B24987 /* stateful_approval_refact.teal.txt */,
 			);
 			path = "swift-algorand-sdk-ios-showcase";
 			sourceTree = "<group>";
@@ -349,12 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A8B01B25F0E7D400509B2A /* LaunchScreen.storyboard in Resources */,
+				C89227612664C18E00B24987 /* stateful_approval_refact.teal.txt in Resources */,
 				69A8B01825F0E7D400509B2A /* Assets.xcassets in Resources */,
 				69A8B01625F0E7D100509B2A /* Main.storyboard in Resources */,
-				693E443B26525668006ABB3A /* stateful_clear.teal.txt in Resources */,
-				693E44452652567C006ABB3A /* stateful_approval_init.teal.txt in Resources */,
-				6947562C2650690E005C5CE2 /* sample.teal.txt in Resources */,
-				693E444026525672006ABB3A /* stateful_approval_refact.teal.txt in Resources */,
+				C892275F2664C14300B24987 /* stateful_approval_init.teal.txt in Resources */,
+				C892275D2664C0E000B24987 /* stateful_clear.teal.txt in Resources */,
+				C892275B2664C06C00B24987 /* sample.teal.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
