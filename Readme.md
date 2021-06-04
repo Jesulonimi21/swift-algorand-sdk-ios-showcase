@@ -15,8 +15,8 @@ This solution shows you how to develop an ios app with the swift algorand sdk by
 11. [Rekey Transaction](#rekey-transaction)
 12. [Indexer](#indexer)
 13. [Compile Teal](#compile-teal)
-14. [DryrunDebug](dryrun-debug)
-15. [Stateful Smart Contracts](stateful-smart-contracts)
+14. [Dryrun Debug](#dryrun-debug)
+15. [Stateful Smart Contracts](#stateful-contracts)
 14. [Conclusion](#conclusion)
 
 # Setup
@@ -1074,7 +1074,7 @@ Output should look similar to:
  "200px">
 </div>
 
-##Dryrun Debugging
+## Dryrun Debug
 To create a dryrun debugging file use the following code. Smart contracts can be debugged. An interactive debugger uses the tealdbg command-line tool to launch a debug session where the smart contract can be examined as the contract is being evaluated. The code can be found in `DryRunDebugViewController.swift` file in the `dryRunDebygClicked` function For more information see tealdbg utility [doc](https://developer.algorand.org/docs/features/asc1/debugging/#using-the-teal-debugger).
 
 ```swift
