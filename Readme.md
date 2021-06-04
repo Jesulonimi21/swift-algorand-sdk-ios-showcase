@@ -14,9 +14,9 @@ This solution shows you how to develop an ios app with the swift algorand sdk by
 10. [Algorand Smart Contract](#algorand-smart-contract)
 11. [Rekey Transaction](#rekey-transaction)
 12. [Indexer](#indexer)
-13. Compile Teal
-14. DryrunDebug
-15. Stateful Smart Contracts
+13. [Compile Teal](#compile-teal)
+14. [DryrunDebug](dryrun-debug)
+15. [Stateful Smart Contracts](stateful-smart-contracts)
 14. [Conclusion](#conclusion)
 
 # Setup
@@ -1035,6 +1035,435 @@ Outputs should look similar to
  "200px">
 </div>
 <br /><br />
+
+## Compile Teal
+The following code will compile TEAL source code. It can be found in the `Compile Teal View Controller` but first we have to create a function that can load the sample teal file we want to compile, we do this in a function called `loadSampleTeal` which can be found below
+```swift
+public static func loadSampleTeal()  -> [Int8] {
+        let configURL = Bundle.main.path(forResource: "sample.teal", ofType: "txt")
+        let contensts = try! String(contentsOfFile: configURL!.description)
+        let jsonData = contensts.data(using: .utf8)!
+
+        var  data = CustomEncoder.convertToInt8Array(input: Array(jsonData))
+        print(data)
+        return data
+       }
+```
+Then we use it in our `compileTeal` function below:
+```swift
+  @IBAction func compileTeal(_ sender: Any) {
+        var source:[Int8] = CompileTealViewController.loadSampleTeal()
+        showLoader();
+        Config.algodClient?.tealCompile().source(source: source).execute(){compileResponse in
+                if(compileResponse.isSuccessful){
+                    self.hideLoader();
+                    self.compiledTealLabel.text = "Result: \(compileResponse.data!.result!)\n Hash: \(compileResponse.data!.hash!)"
+                
+                }else{
+                    print(compileResponse.errorMessage!)
+                    self.hideLoader();
+                    self.compiledTealLabel.text = compileResponse.errorMessage
+                }
+        
+            }
+    }
+```
+Output should look similar to:
+<div style="text-align:center">
+ <img src="./compileTeal.png" width=
+ "200px">
+</div>
+
+##Dryrun Debugging
+To create a dryrun debugging file use the following code. Smart contracts can be debugged. An interactive debugger uses the tealdbg command-line tool to launch a debug session where the smart contract can be examined as the contract is being evaluated. The code can be found in `DryRunDebugViewController.swift` file in the `dryRunDebygClicked` function For more information see tealdbg utility [doc](https://developer.algorand.org/docs/features/asc1/debugging/#using-the-teal-debugger).
+
+```swift
+    @IBAction func dryRunDebygClicked(_ sender: Any) {
+        var sources:[DryrunSource] = Array()
+          var stxns:[SignedTransaction] = Array()
+          var source:[Int8] = CompileTealViewController.loadSampleTeal()
+         var dryRunSource = DryrunSource()
+          dryRunSource.fieldName =  "approv"
+          dryRunSource.source =  String(data: Data(CustomEncoder.convertToUInt8Array(input:  source)),encoding: .utf8)!
+
+        dryRunSource.txnIndex = 01
+      
+          sources.append(dryRunSource)
+      
+          var program:[Int8] = CustomEncoder.convertToInt8Array(input: CustomEncoder.convertBase64ToByteArray(data1: "ASABASI="))
+      
+          var lsig = try! LogicsigSignature(logicsig: program)
+      
+        var signedSig = try! Config.account1!.signLogicsig(lsig: lsig)
+        
+        showLoader();
+        
+        Config.algodClient!.transactionParams().execute(){ paramResponse in
+                if(!(paramResponse.isSuccessful)){
+                print(paramResponse.errorDescription);
+                    self.hideLoader()
+                    self.debugDryRunText.text = paramResponse.errorMessage
+                return;
+            }
+        
+            let tx = try! Transaction.paymentTransactionBuilder().setSender(Config.account1!.getAddress())
+                .amount(1000000)
+                    .receiver(Config.account2!.address)
+                .note("tx using in dryrun".bytes)
+                .suggestedParams(params: paramResponse.data!)
+                .build()
+        
+        
+                var stx = Account.signLogicsigTransaction(lsig: lsig, tx: tx)
+                stxns.append(stx)
+                var dryRunRequest = DryrunRequest()
+                dryRunRequest.sources = sources
+                dryRunRequest.txns = stxns
+        
+        
+                var jsonString = CustomEncoder.encodeToJson(obj: dryRunRequest)
+           
+        
+            Config.algodClient!.tealDryRun().request(request: dryRunRequest).execute(){ requestResponse in
+                self.hideLoader()
+                    if(requestResponse.isSuccessful){
+                     
+                        self.debugDryRunText.text = requestResponse.data!.toJson()!.replacingOccurrences(of: "\\", with: "")
+                    }else{
+                        self.hideLoader()
+                        self.debugDryRunText.text = requestResponse.errorMessage
+                     
+                    }
+                }
+            }
+    }
+    
+```
+Output should look similar to:
+<div style="text-align:center">
+ <img src="./debugDryrun.png" width=
+ "200px">
+</div>
+
+## Stateful Contracts
+Stateful smart contracts are contracts that live on the chain and are used to keep track of some form of global and/or local state for the contract. More information of the lifecycle for a stateful contract can be found here.
+The code can be found in the `StatefulContractsViewController.swift` file
+
+Create App
+```swift
+ public func createApplication(localInts:Int64,localBytes:Int64,globalBytes:Int64,globalInts:Int64,account1:Account,approvalProgramSource:String,clearStateProgramSource:String){
+        var algodClient = Config.algodClient!;
+        
+      
+        var address = account1.getAddress()
+        var address2 = account1.getAddress()
+        var approvalProgram:TEALProgram?
+        var clearStateProgram:TEALProgram?
+        tealCompile(resource: clearStateProgramSource){ clearProgResult in
+            clearStateProgram = try? TEALProgram(base64String: clearProgResult);
+            print(clearStateProgram)
+            print("ClearProg result: \(clearProgResult)")
+            
+            self.tealCompile(resource: approvalProgramSource){ approvalProgResult in
+                print("Approval Prog result: \(approvalProgResult)")
+                approvalProgram = try? TEALProgram(base64String:approvalProgResult)
+                print(approvalProgram)
+                algodClient.transactionParams().execute(){ paramResponse in
+                    if(!(paramResponse.isSuccessful)){
+                    print(paramResponse.errorDescription);
+                    return;
+                }
+    
+                    var tx = try! Transaction.applicationCreateTransactionBuilder()
+                        .setSender(account1.getAddress())
+                        .approvalProgram(approvalProgram: approvalProgram!)
+                        .clearStateProgram(clearStateProgram: clearStateProgram!)
+                        .globalStateSchema(globalStateSchema: StateSchema(numUint: globalInts, numByteSlice: globalBytes))
+                        .localStateSchema(localStateSchema:StateSchema(numUint: localInts, numByteSlice: localBytes))
+                        .suggestedParams(params: paramResponse.data!)
+                        .build()
+    
+                    var signedTransaction=account1.signTransaction(tx: tx)
+    
+                       var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+    
+                       print(CustomEncoder.encodeToJson(obj: signedTransaction))
+    
+                       algodClient.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+                          response in
+                           if(response.isSuccessful){
+                               print(response.data!.txId)
+                            print("Success")
+                            self.waitForTransaction(txId: response.data!.txId){ applicationIndex in
+                                self.infoTextView.text = "\(applicationIndex)"
+                                self.appId=applicationIndex!
+                                self.hideLoader();
+                            }
+                      
+                           }else{
+                                self.hideLoader();
+                               print(response.errorDescription)
+                            self.infoTextView.text=response.errorDescription!
+                               print("Faled")
+                           }
+    
+                       }
+    
+    
+                }
+                
+            }
+        }
+    
+    }
+```
+Outputs should look similar to:
+<div style="text-align:center">
+ <img src="./createApp.png" width=
+ "200px">
+</div>
+Opt In:
+
+
+```swift
+ public func applicationOptIn(account1:Account){
+        var account1 =  Config.account1!
+        var address = account1.getAddress()
+    
+                algodClient!.transactionParams().execute(){ paramResponse in
+                    if(!(paramResponse.isSuccessful)){
+                    print(paramResponse.errorDescription);
+                        self.hideLoader()
+                    return;
+                }
+    
+                    var tx = try! Transaction.applicationOptInTransactionBuilder()
+                        .setSender(account1.getAddress())
+                        .applicationId(applicationId: self.appId!)
+                        .suggestedParams(params: paramResponse.data!)
+                        .build()
+    
+                    var signedTransaction=account1.signTransaction(tx: tx)
+    
+                       var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+    
+                       print(CustomEncoder.encodeToJson(obj: signedTransaction))
+    
+                   //    return;
+    
+    
+                    self.algodClient!.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+                          response in
+                           if(response.isSuccessful){
+                               print(response.data!.txId)
+                            self.hideLoader()
+                            self.infoTextView.text="Opted in account \(address.description) successfully \n transaction id: \(response.data!.txId)"
+                           }else{
+                               print(response.errorDescription)
+                            self.hideLoader();
+                            self.infoTextView.text = response.errorDescription!
+                               print("Faled")
+                           }
+                       }
+                }
+    } 
+```
+
+Outputs should look similar to
+
+
+<div style="text-align:center">
+ <img src="./createApp.png" width=
+ "200px">
+</div>
+
+
+Call App
+```swift
+  public func applicationCallTransaction(){
+        var str = "2021-05-19 at 11:25:43"
+        var data = str.data;
+        var ingt8Arr = CustomEncoder.convertToInt8Array(input: Array(data));
+        print(ingt8Arr);
+        
+        var account1 =  Config.account1!
+    
+                algodClient!.transactionParams().execute(){ paramResponse in
+                    if(!(paramResponse.isSuccessful)){
+                    print(paramResponse.errorDescription);
+                        self.infoTextView.text = paramResponse.errorDescription!
+                        self.hideLoader();
+                    return;
+                }
+    
+                    var tx = try! Transaction.applicationCallTransactionBuilder()
+                        .setSender(account1.getAddress())
+                        .applicationId(applicationId: self.appId!)
+    
+                        .suggestedParams(params: paramResponse.data!)
+                        .args(args: [ingt8Arr])
+                        .build()
+    
+                    var signedTransaction=account1.signTransaction(tx: tx)
+    
+                       var encodedTrans:[Int8]=CustomEncoder.encodeToMsgPack(signedTransaction)
+    
+                       print(CustomEncoder.encodeToJson(obj: signedTransaction))
+    
+                   //    return;
+    
+    
+                    self.algodClient!.rawTransaction().rawtxn(rawtaxn: encodedTrans).execute(){
+                          response in
+                           if(response.isSuccessful){
+                               print(response.data!.txId)
+                            self.hideLoader()
+                            self.infoTextView.text="Call was successfull  \n transaction id: \(response.data!.txId)"
+                           }else{
+                               print(response.errorDescription)
+                            self.hideLoader();
+                            self.infoTextView.text = response.errorDescription!
+                               print("Faled")
+                           }
+    
+                       }
+    
+    
+                }
+    
+    }
+```
+The output should look similar to:
+<div style="text-align:center">
+ <img src="./callApp.png" width=
+ "200px">
+</div>
+Read Local State:
+
+```swift
+    public func readLocalState(account1:Account,applicationId:Int64){
+
+     
+        
+
+        print(account1.address.description)
+        Config.algodClient!.accountInformation(address: account1.getAddress().description).execute(){accountInformationResponse in
+            
+            if(!(accountInformationResponse.isSuccessful)){
+            print(accountInformationResponse.errorDescription);
+                self.infoTextView.text = accountInformationResponse.errorDescription!
+                self.hideLoader();
+            return;
+        }
+            
+            self.hideLoader()
+            if let appsLocalState = accountInformationResponse.data?.appsLocalState{
+                self.infoTextView.text = "";
+                for i in 0..<appsLocalState.count{
+                    if appsLocalState[i].id ?? -1 == applicationId{
+                        for j in 0..<(appsLocalState[i].keyValue?.count ?? 0){
+                            
+                            print(appsLocalState[i].keyValue![j].key)
+                            print(appsLocalState[i].keyValue![j].value.bytes)
+                            print(appsLocalState[i].keyValue![j].value.type)
+                            print(appsLocalState[i].keyValue![j].value.uint)
+                            var dDat = CustomEncoder.decodeFromBase64(CustomEncoder.convertBase64ToByteArray(data1: appsLocalState[i].keyValue![j].key))
+                            print(String(data: dDat, encoding: .utf8))
+                            var  keyString = String(data: dDat, encoding: .utf8)!
+                            self.infoTextView.text += "\(keyString): \(appsLocalState[i].keyValue![j].value.bytes)  \(appsLocalState[i].keyValue![j].value.uint) \n"
+                        }
+                    }
+                    print( appsLocalState[i].id)
+                }
+            }
+            
+        }
+    }
+```
+The output should look similar to this:
+<div style="text-align:center">
+ <img src="./optInApp.png" width=
+ "200px">
+</div>
+
+
+Read Global State:
+```swift
+public void ReadGlobalState(AlgodApi client, Account account, long? appId)
+{
+    var acctResponse = client.AccountInformation(account.Address.ToString());
+    var createdApplications = acctResponse.CreatedApps;
+    for (int i = 0; i < createdApplications.Count; i++)
+    {
+        if (createdApplications[i].Id == appId)
+        {
+            var outStr = "Application global state: ";
+            foreach (var v in createdApplications[i].Params.GlobalState)
+            {
+                outStr += v.ToString();
+            }
+            Console.WriteLine(outStr);
+            DisplayInfo(outStr);
+        }
+    }
+}
+```
+The output should look similar to:
+<div style="text-align:center">
+ <img src="./readGlobalState.png" width=
+ "200px">
+</div>
+
+Read Local State:
+
+```swift
+ public func readLocalState(account1:Account,applicationId:Int64){
+        print(account1.address.description)
+        Config.algodClient!.accountInformation(address: account1.getAddress().description).execute(){accountInformationResponse in
+            
+            if(!(accountInformationResponse.isSuccessful)){
+            print(accountInformationResponse.errorDescription);
+                self.infoTextView.text = accountInformationResponse.errorDescription!
+                self.hideLoader();
+            return;
+        }
+            
+            self.hideLoader()
+            if let appsLocalState = accountInformationResponse.data?.appsLocalState{
+                self.infoTextView.text = "";
+                for i in 0..<appsLocalState.count{
+                    if appsLocalState[i].id ?? -1 == applicationId{
+                        for j in 0..<(appsLocalState[i].keyValue?.count ?? 0){
+                            
+                            print(appsLocalState[i].keyValue![j].key)
+                            print(appsLocalState[i].keyValue![j].value.bytes)
+                            print(appsLocalState[i].keyValue![j].value.type)
+                            print(appsLocalState[i].keyValue![j].value.uint)
+                            var dDat = CustomEncoder.decodeFromBase64(CustomEncoder.convertBase64ToByteArray(data1: appsLocalState[i].keyValue![j].key))
+                            print(String(data: dDat, encoding: .utf8))
+                            var  keyString = String(data: dDat, encoding: .utf8)!
+                            self.infoTextView.text += "\(keyString): \(appsLocalState[i].keyValue![j].value.bytes)  \(appsLocalState[i].keyValue![j].value.uint) \n"
+                        }
+                    }
+                    print( appsLocalState[i].id)
+                }
+            }
+            
+        }
+    }
+```
+Outputs should look similar to:
+
+<div style="text-align:center">
+ <img src="./readLocalState.png" width=
+ "200px">
+</div>
+
+
+
+
+
+
 
 
 ## Conclusion

@@ -24,7 +24,7 @@ import  swift_algorand_sdk
     static var HACKATHON_API_TOKEN="ef920e2e7e002953f4b29a8af720efe8e4ecc75ff102b165e0472834b25832c1";
     static var account1:Account? = try! Account("cactus check vocal shuffle remember regret vanish spice problem property diesel success easily napkin deposit gesture forum bag talent mechanic reunion enroll buddy about attract")
     static var account2:Account? = try!Account("box wear empty voyage scout cheap arrive father wagon correct thought sand planet comfort also patient vast patient tide rather young cinnamon plastic abandon model")
-    static var account3:Account? = try! Account("soup someone render seven flip woman olive great random color scene physical put tilt say route coin clutch repair goddess rack cousin decide abandon cream")
+    static var account3:Account? = try! Account("panel toddler dynamic soccer pudding unfair mansion knock stereo bonus achieve day scare frog please boil twice upon master embody comic provide leopard abstract vibrant")
     static var multisigAddress:MultisigAddress?
 }
 

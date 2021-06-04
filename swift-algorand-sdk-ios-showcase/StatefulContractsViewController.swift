@@ -422,10 +422,6 @@ class StatefulContractsViewController: UIViewController {
     }
     
     public func readLocalState(account1:Account,applicationId:Int64){
-
-     
-        
-
         print(account1.address.description)
         Config.algodClient!.accountInformation(address: account1.getAddress().description).execute(){accountInformationResponse in
             
