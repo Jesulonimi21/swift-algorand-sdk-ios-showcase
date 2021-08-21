@@ -18,6 +18,8 @@ class StatefulContractsViewController: UIViewController {
         
         algodClient = Config.algodClient
         // Do any additional setup after loading the view.
+        
+        
     }
     
 
@@ -37,6 +39,7 @@ class StatefulContractsViewController: UIViewController {
         algodClient.tealCompile().source(source: source).execute(){compileResponse in
             if(compileResponse.isSuccessful){
                 print(compileResponse.data?.result)
+        
                 funcToCall(compileResponse.data!.result!)
             }else{
                 self.hideLoader();
@@ -112,7 +115,6 @@ class StatefulContractsViewController: UIViewController {
     
     public func showLoader(){
         let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
@@ -140,7 +142,7 @@ class StatefulContractsViewController: UIViewController {
             
             self.tealCompile(resource: approvalProgramSource){ approvalProgResult in
                 print("Approval Prog result: \(approvalProgResult)")
-                approvalProgram = try? TEALProgram(base64String:approvalProgResult)
+                approvalProgram = try! TEALProgram(base64String:approvalProgResult)
                 print(approvalProgram)
                 algodClient.transactionParams().execute(){ paramResponse in
                     if(!(paramResponse.isSuccessful)){

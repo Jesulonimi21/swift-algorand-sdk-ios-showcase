@@ -22,9 +22,9 @@ import  swift_algorand_sdk
     static var HACKATHON_API_PORT="9100";
     static var HACKATHON_API_ADDRESS="http://hackathon.algodev.network";
     static var HACKATHON_API_TOKEN="ef920e2e7e002953f4b29a8af720efe8e4ecc75ff102b165e0472834b25832c1";
-    static var account1:Account? = try! Account("cactus check vocal shuffle remember regret vanish spice problem property diesel success easily napkin deposit gesture forum bag talent mechanic reunion enroll buddy about attract")
-    static var account2:Account? = try!Account("box wear empty voyage scout cheap arrive father wagon correct thought sand planet comfort also patient vast patient tide rather young cinnamon plastic abandon model")
-    static var account3:Account? = try! Account("panel toddler dynamic soccer pudding unfair mansion knock stereo bonus achieve day scare frog please boil twice upon master embody comic provide leopard abstract vibrant")
+    static var account1:Account? = try! Account("smart cloud tissue evil exercise region brown field town system shy faith aisle mobile amazing salmon van trade velvet crack output robot phrase about slight")
+    static var account2:Account? = try!Account("mountain syrup orbit regret ostrich champion either push clock concert tissue slim gadget pencil pilot salt curious horse shallow civil arrange track sleep able alley")
+    static var account3:Account? = try! Account( "volcano permit just steak place thumb reason cabin firm bomb mammal harsh blame unit clump future rigid engage alpha erupt garden attend flee above warrior")
     static var multisigAddress:MultisigAddress?
 }
 
